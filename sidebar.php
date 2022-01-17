@@ -3,7 +3,7 @@
         <div class="sidebar-inner slimscroll">
           <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-            <li class="active">
+            <li class="">
                 <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
@@ -14,7 +14,7 @@
               <li class="list-divider"></li>
               
               <li>
-                <a href="calendar.php">
+                <a href="index.php">
                   <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
                 </a>
               </li>
