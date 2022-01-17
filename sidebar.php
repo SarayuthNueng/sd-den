@@ -3,18 +3,19 @@
         <div class="sidebar-inner slimscroll">
           <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-              <li class="active">
-                <a href="index.php">
-                <i class="fas fa-calendar-alt"></i>
-                  <span>Calendar</span>
+            <li class="active">
+                <a href="login.php">
+                <i class="fas fa-user"></i>
+                  <span>เข้าสู่ระบบ</span>
                 </a>
               </li>
+
 			  
               <li class="list-divider"></li>
               
               <li>
-                <a href="register.php">
-                  <i class="fas fa-user"></i><span>SignIn</span>
+                <a href="calendar.php">
+                  <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
                 </a>
               </li>
               

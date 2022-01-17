@@ -26,7 +26,7 @@
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
-          <a href="index.html" class="logo">
+          <a href="index.php" class="logo">
             <img
               src="assets/img/logo-sd.png"
               width="50"
