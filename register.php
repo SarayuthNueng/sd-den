@@ -1,9 +1,11 @@
-<div class="main-wrapper">
+
 
 <?php include "header.php" ?>
 
 <?php include "sidebar.php" ?>
 
+<div class="main-wrapper">
+<div class="page-wrapper">
 	<div class="main-wrapper login-body">
 		<div class="login-wrapper">
 			<div class="container">
@@ -34,6 +36,18 @@
 			</div>
 		</div>
 	</div>
+	
+
+	
+		
+	
+
+</div>
+
+
+
+
+</html>
 </div>
 	<script src="assets/js/jquery-3.5.1.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>

@@ -1,9 +1,10 @@
-<div class="main-wrapper">
+
 
 <?php include "header.php" ?>
 
 <?php include "sidebar.php" ?>
  
+<div class="main-wrapper">
  <div class="page-wrapper">
         <div class="content container-fluid">
         <div class="page-header">
