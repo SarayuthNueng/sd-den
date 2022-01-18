@@ -23,7 +23,7 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">236</h3>
-                      <h6 class="text-muted">Total Booking</h6>
+                      <h6 class="text-muted">จำนวนการนัดวันนี้</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -57,7 +57,7 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">180</h3>
-                      <h6 class="text-muted">Available Rooms</h6>
+                      <h6 class="text-muted">จำนวนแพทย์นัดวันนี้</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -89,7 +89,7 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">1538</h3>
-                      <h6 class="text-muted">Enquiry</h6>
+                      <h6 class="text-muted">จำนวนประเภทการนัดวันนี้</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
