@@ -305,6 +305,9 @@ table.table td h2 span {
   position: relative;
   width: 100%;
 }
+.icon-dashboard{
+  font-size: 5em;
+}
 .cal-icon:after {
   color: #979797;
   content: "\f073";
