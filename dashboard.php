@@ -27,8 +27,8 @@
                       <h6 class="text-muted">จำนวนการนัดวันนี้</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
-                      <span class="opacity-7 text-muted"
-                        ><svg
+                      <span class="opacity-7 text-muted">
+                        <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="24"
@@ -61,8 +61,11 @@
                       <h6 class="text-muted">จำนวนแพทย์นัดวันนี้</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
-                      <span class="opacity-7 text-muted"
-                        ><svg
+                      <span class="opacity-7 text-muted">
+                      <i 
+                         class="fas fa-user-md">
+                      </i>
+                        <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="24"
@@ -72,7 +75,7 @@
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="feather feather-dollar-sign"
+                          class="fas fa-user-md"
                         >
                           <line x1="12" y1="1" x2="12" y2="23"></line>
                           <path
