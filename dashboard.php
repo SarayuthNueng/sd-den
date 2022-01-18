@@ -16,6 +16,7 @@
 					</div>
 				</div>
 			</div>
+
           <div class="row">
             <div class="col-xl-4 col-sm-6 col-12">
               <div class="card board1 fill">
@@ -118,6 +119,15 @@
             </div>
           </div>
 
+          <div class="page-header">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="mt-5">
+							<h4 class="card-title float-left mt-2">การนัดแยกตามประเภทวันนี้</h4>
+						</div>
+					</div>
+				</div>
+			</div>
           <div class="row">
             <div class="col-xl-3 col-sm-6 col-12">
               <div class="card board1 fill">
@@ -125,7 +135,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">236</h3>
-                      <h6 class="text-muted">Total Booking</h6>
+                      <h6 class="text-muted">ขูดหินปูน/อุดคอฟัน</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -159,7 +170,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">180</h3>
-                      <h6 class="text-muted">Available Rooms</h6>
+                      <h6 class="text-muted">รักษารากฟัน/เดือยฟัน/ครอบฟัน/สะพานฟัน</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -191,7 +203,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">1538</h3>
-                      <h6 class="text-muted">Enquiry</h6>
+                      <h6 class="text-muted">อุดฟัน</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -224,7 +237,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">364</h3>
-                      <h6 class="text-muted">Collections</h6>
+                      <h6 class="text-muted">ผ่าฟันคุด/ฟันฝัง/แต่งกระดูก</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -260,7 +274,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">236</h3>
-                      <h6 class="text-muted">Total Booking</h6>
+                      <h6 class="text-muted">ฟันปลอม</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -294,7 +309,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">180</h3>
-                      <h6 class="text-muted">Available Rooms</h6>
+                      <h6 class="text-muted">เด็ก</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -326,7 +342,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">1538</h3>
-                      <h6 class="text-muted">Enquiry</h6>
+                      <h6 class="text-muted">Swab</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -359,7 +376,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">364</h3>
-                      <h6 class="text-muted">Collections</h6>
+                      <h6 class="text-muted">อื่นๆ</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -388,6 +406,16 @@
             </div>
           </div>
 
+
+          <div class="page-header">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="mt-5">
+							<h4 class="card-title float-left mt-2">ติดตามการนัดวันนี้</h4>
+						</div>
+					</div>
+				</div>
+			</div>
           <div class="row">
             <div class="col-xl-6 col-sm-6 col-12">
               <div class="card board1 fill">
@@ -395,7 +423,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">236</h3>
-                      <h6 class="text-muted">Total Booking</h6>
+                      <h6 class="text-muted">จำนวนผู้ป่วยมาตามนัดวันนี้</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -429,7 +458,8 @@
                   <div class="dash-widget-header">
                     <div>
                       <h3 class="card_widget_header">180</h3>
-                      <h6 class="text-muted">Available Rooms</h6>
+                      <h6 class="text-muted">จำนวนผู้ป่วยไม่มาตามนัดวันนี้</h6>
+                      <h7>ดูเพิ่มเติม</h7>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                       <span class="opacity-7 text-muted"
@@ -458,6 +488,15 @@
           </div>
 
 
+          <div class="page-header">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="mt-5">
+							<h4 class="card-title float-left mt-2">จำนวนการนัด ปีงบประมาณ 2565</h4>
+						</div>
+					</div>
+				</div>
+			</div>
           <div class="row">
             <div class="col-md-12 col-lg-6">
               <div class="card card-chart">
@@ -480,6 +519,17 @@
               </div>
             </div>
           </div>
+
+
+          <div class="page-header">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="mt-5">
+							<h4 class="card-title float-left mt-2">ค้นหาการนัดตามช่วงวัน</h4>
+						</div>
+					</div>
+				</div>
+			</div>
           <div class="row">
             <div class="col-md-12 d-flex">
               <div class="card card-table flex-fill">

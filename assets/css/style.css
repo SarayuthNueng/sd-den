@@ -412,7 +412,6 @@ button.bg-danger:hover {
 }
 .text-muted {
   color: #333 !important;
-  line-height: 0.5;
   font-weight: 200;
   font-size: 0.875rem;
 }
