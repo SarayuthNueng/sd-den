@@ -22,9 +22,9 @@
 						<div class="row formtype">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label>Purchased By</label>
+									<label>แพทย์</label>
 									<select class="form-control" id="sel1" name="sellist1">
-										<option>Select Buyer</option>
+										<option>เลือกแพทย์</option>
 										<option>Loren Gatlin</option>
 										<option>Tarah Shrosphire</option>
 									</select>
@@ -32,7 +32,17 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label>From</label>
+									<label>ประเภทการนัด</label>
+									<select class="form-control" id="sel1" name="sellist1">
+										<option>เลือกประเภท</option>
+										<option>Loren Gatlin</option>
+										<option>Tarah Shrosphire</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label>วันที่</label>
 									<div class="cal-icon">
 										<input type="text" class="form-control datetimepicker">
 									</div>
@@ -40,16 +50,8 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label>To</label>
-									<div class="cal-icon">
-										<input type="text" class="form-control datetimepicker">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Search</label>
-									<a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a>
+									<label>ค้นหาข้อมูลการนัด</label>
+									<a href="#" class="btn btn-success btn-block mt-0 search_button"> ค้นหา </a>
 
 								</div>
 							</div>

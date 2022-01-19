@@ -22,9 +22,9 @@
 									<a type="button" class="btn btn-primary btn-block" href="list-den.php" role="button">เข้าสู่ระบบ</a>
 								</div>
 							</form>
-							<div class="text-center forgotpass"><a href="forgot-password.html">หากลืมรหัสผ่าน?</a> </div>
-							<div class="login-or"> <span class="or-line"></span> <span class="span-or">หรือ</span> </div>
-							<div class="text-center dont-have">ยังไม่มีบัญชี? <a href="register.php">สมัครสมาชิก</a></div>
+							<!-- <div class="text-center forgotpass"><a href="forgot-password.html">หากลืมรหัสผ่าน?</a> </div> -->
+							<!-- <div class="login-or"> <span class="or-line"></span> <span class="span-or">หรือ</span> </div>
+							<div class="text-center dont-have">ยังไม่มีบัญชี? <a href="register.php">สมัครสมาชิก</a></div> -->
 						</div>
 					</div>
 				</div>

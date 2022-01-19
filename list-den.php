@@ -47,10 +47,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -66,10 +66,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -85,10 +85,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -104,10 +104,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -123,10 +123,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -142,10 +142,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -161,10 +161,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -180,10 +180,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -199,10 +199,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -218,10 +218,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -237,10 +237,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
@@ -256,10 +256,10 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-warning mt-2" 
 													href="add-den.php" role="button">แก้ไข
 													</a>
-													<a type="button" class="btn btn-primary " 
+													<a type="button" class="btn btn-outline-danger mt-2 " 
 													href="add-den.php" role="button">ลบ
 													</a>
 												</td>
