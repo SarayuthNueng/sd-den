@@ -84,7 +84,8 @@
 						</form>
 					</div>
 				</div>
-				<button href="list-den.php" type="button" class="btn btn-primary buttonedit ml-2">เพิ่ม</button>
+				<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
+				<a type="button" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a>
 			</div>
 		</div>
 	</div>

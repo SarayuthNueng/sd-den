@@ -19,7 +19,7 @@
 								<div class="form-group">
 									<input class="form-control" type="text" placeholder="รหัสผ่าน"> </div>
 								<div class="form-group">
-									<button class="btn btn-primary btn-block" type="submit">เข้าสู่ระบบ</button>
+									<a type="button" class="btn btn-primary btn-block" href="add-den.php" role="button">เข้าสู่ระบบ</a>
 								</div>
 							</form>
 							<div class="text-center forgotpass"><a href="forgot-password.html">หากลืมรหัสผ่าน?</a> </div>
