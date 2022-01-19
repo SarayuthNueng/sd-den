@@ -11,8 +11,7 @@
 <?php include "calendar.php" ?>
 <!-- content -->
 
-<!-- footer -->
-<!-- footer -->
+
 
 
 

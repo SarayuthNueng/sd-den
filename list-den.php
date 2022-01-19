@@ -32,7 +32,8 @@
 												<th>เบอร์โทรศัพท์</th>
 												<th>อีเมล</th>
 												<th>ตำแหน่ง</th>
-												<th>option</th>
+												<th>แก้ไข</th>
+												<th>ลบ</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -47,14 +48,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+											
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -66,14 +70,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -85,14 +92,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -104,14 +114,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -123,14 +136,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -142,14 +158,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -161,14 +180,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -180,14 +202,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -199,14 +224,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -218,14 +246,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -237,14 +268,17 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
 											<tr>
 												<td>Tiger Nixon</td>
 												<td>System Architect</td>
@@ -256,14 +290,61 @@
 												<td>$320,800</td>
 												<td>2011/04/25</td>
 												<td>
-													<a type="button" class="btn btn-outline-warning mt-2" 
-													href="add-den.php" role="button">แก้ไข
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
 													</a>
-													<a type="button" class="btn btn-outline-danger mt-2 " 
-													href="add-den.php" role="button">ลบ
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
 													</a>
 												</td>
 											</tr>
+
+											<tr>
+												<td>Tiger Nixon</td>
+												<td>System Architect</td>
+												<td>Edinburgh</td>
+												<td>61</td>
+												<td>2011/04/25</td>
+												<td>$320,800</td>
+												<td>2011/04/25</td>
+												<td>$320,800</td>
+												<td>2011/04/25</td>
+												<td>
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
+													</a>
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
+													</a>
+												</td>
+											</tr>
+
+											<tr>
+												<td>Tiger Nixon</td>
+												<td>System Architect</td>
+												<td>Edinburgh</td>
+												<td>61</td>
+												<td>2011/04/25</td>
+												<td>$320,800</td>
+												<td>2011/04/25</td>
+												<td>$320,800</td>
+												<td>2011/04/25</td>
+												<td>
+													<a type="button" class="fas fa-edit ml-2"
+													href="edit-den.php" role="button" style="color:steelblue;">
+													</a>
+												</td>
+												<td>
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
+													href="edit-den.php" role="button" style="color:tomato">
+													</a>
+												</td>
+											</tr>
+											
 											
 										
 											
@@ -274,6 +355,7 @@
 						</div>
 					</div>
 				</div>
+				<?php include "footer.php" ?>
 			</div>
 		</div>
 	</div>

@@ -12,6 +12,7 @@
     <link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css" />
     <link rel="stylesheet" href="assets/plugins/morris/morris.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/footers.css" />
     <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
@@ -19,8 +20,27 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 	  <link rel="stylesheet" type="text/css" href="assets/plugins/fontawesome/css/all.min.css">
 
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
   </head>
+
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
   <body>
     <div class="main-wrapper">
