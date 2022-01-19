@@ -1,0 +1,109 @@
+<?php include "header.php" ?>
+
+<?php include "sidebar.php" ?>
+ 
+
+	<div class="main-wrapper">
+		
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">เพิ่มสมาชิก</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>ชื่อ</label>
+										<input class="form-control" type="text" value="" placeholder="ชื่อ"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>นามสกุล</label>
+										<input class="form-control" type="text" value="" placeholder="นามสกุล"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>เลขบัตรประจำตัวประชาชน</label>
+										<input class="form-control" type="text" value="" placeholder="เลขบัตรประจำตัวประชาชน"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>ชื่อผู้ใช้งาน</label>
+										<input class="form-control" type="text" value="" placeholder="ชื่อผู้ใช้งาน"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>รหัสผ่าน</label>
+										<input class="form-control" type="text" value="" placeholder="รหัสผ่าน"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>ยืนยันรหัสผ่าน</label>
+										<input class="form-control" type="text" value="" placeholder="ยืนยันรหัสผ่าน"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>ที่อยู่</label>
+										<input class="form-control" type="text" value="" placeholder="ที่อยู่"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>เบอร์โทรศัพท์</label>
+										<input class="form-control" type="text" value="" placeholder="เบอร์โทรศัพท์"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>อีเมล</label>
+										<input class="form-control" type="text" value="" placeholder="อีเมล"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>วันที่สมัคร</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker"> </div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>ตำแหน่ง</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>เลือก</option>
+											<option>Admin</option>
+											<option>Manager</option>
+											<option>Staff</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<button href="list-den.php" type="button" class="btn btn-primary buttonedit ml-2">เพิ่ม</button>
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/jquery-3.5.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/select2.min.js"></script>
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/raphael/raphael.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script>
+	$(function() {
+		$('#datetimepicker3').datetimepicker({
+			format: 'LT'
+		});
+	});
+	</script>
+</body>
+
+</html>
