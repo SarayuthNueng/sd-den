@@ -84,7 +84,7 @@
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
 								<button type="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
-					</form>
+						</form>
 					</div>
 				</div>
 			</div>

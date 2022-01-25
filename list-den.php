@@ -23,6 +23,7 @@
 									<table class="datatable table table-stripped">
 										<thead>
 											<tr>
+												<th>รหัส</th>
 												<th>ชื่อ</th>
 												<th>นามสกุล</th>
 												<th>เลขบัตรประจำตัวประชาชน</th>
@@ -54,19 +55,21 @@
 												<td><?= $k['username'];?></td>
 												<td><?= $k['password'];?></td>
 												<td><?= $k['address'];?></td>
+												<td><?= $k['tel'];?></td>
 												<td><?= $k['email'];?></td>
 												<td><?= $k['date'];?></td>
 												<td><?= $k['role'];?></td>
 												<td>
 													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
+													href="edit-den.php?id=<?= $k['id'];?>" role="button" style="color:steelblue;">
 													</a>
 												</td>
 												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
+												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');"
+													href="del.php?id=<?= $k['id'];?>" role="button" style="color:tomato">
 													</a>
 												</td>
+
 											</tr>
 											<?php } ?>
 										</tbody>
