@@ -15,77 +15,78 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form>
+						<form action="add-den-db.php" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
-										<input class="form-control" type="text" value="" placeholder="ชื่อ"> </div>
+										<input type="text" name="fname" class="form-control" required minlength="3" placeholder="ชื่อ">
+									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>นามสกุล</label>
-										<input class="form-control" type="text" value="" placeholder="นามสกุล"> </div>
+										<input class="form-control" type="text" name="lname" placeholder="นามสกุล"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>เลขบัตรประจำตัวประชาชน</label>
-										<input class="form-control" type="text" value="" placeholder="เลขบัตรประจำตัวประชาชน"> </div>
+										<input class="form-control" type="text" name="cid" placeholder="เลขบัตรประจำตัวประชาชน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อผู้ใช้งาน</label>
-										<input class="form-control" type="text" value="" placeholder="ชื่อผู้ใช้งาน"> </div>
+										<input class="form-control" type="text" name="username" placeholder="ชื่อผู้ใช้งาน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>รหัสผ่าน</label>
-										<input class="form-control" type="text" value="" placeholder="รหัสผ่าน"> </div>
+										<input class="form-control" type="text" name="password" placeholder="รหัสผ่าน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ยืนยันรหัสผ่าน</label>
-										<input class="form-control" type="text" value="" placeholder="ยืนยันรหัสผ่าน"> </div>
+										<input class="form-control" type="text" name="" placeholder="ยืนยันรหัสผ่าน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ที่อยู่</label>
-										<input class="form-control" type="text" value="" placeholder="ที่อยู่"> </div>
+										<input class="form-control" type="text" name="address" placeholder="ที่อยู่"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>เบอร์โทรศัพท์</label>
-										<input class="form-control" type="text" value="" placeholder="เบอร์โทรศัพท์"> </div>
+										<input class="form-control" type="text" name="tel" placeholder="เบอร์โทรศัพท์"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>อีเมล</label>
-										<input class="form-control" type="text" value="" placeholder="อีเมล"> </div>
+										<input class="form-control" type="text" name="email" placeholder="อีเมล"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>วันที่สมัคร</label>
-										<div class="cal-icon">
-											<input type="text" class="form-control datetimepicker"> </div>
+										<div class="">
+											<input type="date" name="date" class="form-control "> </div>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ตำแหน่ง</label>
-										<select class="form-control" id="sel1" name="sellist1">
+										<select class="form-control" id="sel1" name="role">
 											<option>เลือก</option>
-											<option>Admin</option>
-											<option>Manager</option>
-											<option>Staff</option>
+											<option>แอดมิน</option>
+											<option>ทันตแพทย์</option>
 										</select>
 									</div>
 								</div>
 							</div>
-						</form>
+								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
+								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
+								<button type="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
+					</form>
 					</div>
 				</div>
-				<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
-				<a type="button" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a>
 			</div>
 		</div>
 	</div>
@@ -96,15 +97,8 @@
 	<script src="assets/js/select2.min.js"></script>
 	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/plugins/raphael/raphael.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="assets/js/script.js"></script>
-	<script>
-	$(function() {
-		$('#datetimepicker3').datetimepicker({
-			format: 'LT'
-		});
-	});
-	</script>
+	
 </body>
 
 </html>

@@ -31,6 +31,7 @@
 												<th>ที่อยู่</th>
 												<th>เบอร์โทรศัพท์</th>
 												<th>อีเมล</th>
+												<th>วันที่สมัคร</th>
 												<th>ตำแหน่ง</th>
 												<th>แก้ไข</th>
 												<th>ลบ</th>
@@ -38,15 +39,24 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
+											<?php
+											//คิวรี่ข้อมูลมาแสดงในตาราง
+											require_once 'connect.php';
+											$stmt = $conn->prepare("SELECT* FROM member");
+											$stmt->execute();
+											$result = $stmt->fetchAll();
+											foreach($result as $k) {
+											?>
+												<td><?= $k['id'];?></td>
+												<td><?= $k['fname'];?></td>
+												<td><?= $k['lname'];?></td>
+												<td><?= $k['cid'];?></td>
+												<td><?= $k['username'];?></td>
+												<td><?= $k['password'];?></td>
+												<td><?= $k['address'];?></td>
+												<td><?= $k['email'];?></td>
+												<td><?= $k['date'];?></td>
+												<td><?= $k['role'];?></td>
 												<td>
 													<a type="button" class="fas fa-edit ml-2"
 													href="edit-den.php" role="button" style="color:steelblue;">
@@ -58,296 +68,7 @@
 													</a>
 												</td>
 											</tr>
-											
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
-												<td>2011/04/25</td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true"
-													href="edit-den.php" role="button" style="color:tomato">
-													</a>
-												</td>
-											</tr>
-											
-											
-										
-											
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
