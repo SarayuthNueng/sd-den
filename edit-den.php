@@ -26,7 +26,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-					<form action="add-den-db.php" method="post">
+					<form action="edit-den-db.php" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
@@ -90,6 +90,7 @@
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
+								<input type="hidden" name="id" value="<?= $row['id'];?>">
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
 						</form>
 					</div>
