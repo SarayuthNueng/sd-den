@@ -53,7 +53,7 @@
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "add-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "list-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
