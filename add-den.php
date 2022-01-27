@@ -73,7 +73,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ตำแหน่ง</label>
-										<select class="form-control" id="sel1" name="role">
+										<select class="form-control" id="sel1" name="member_level">
 											<option>เลือก</option>
 											<option>แอดมิน</option>
 											<option>ทันตแพทย์</option>

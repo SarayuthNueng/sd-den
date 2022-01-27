@@ -58,7 +58,7 @@
 												<td><?= $k['tel'];?></td>
 												<td><?= $k['email'];?></td>
 												<td><?= $k['date'];?></td>
-												<td><?= $k['role'];?></td>
+												<td><?= $k['member_level'];?></td>
 												<td>
 													<a type="button" class="fas fa-edit ml-2"
 													href="edit-den.php?id=<?= $k['id'];?>" role="button" style="color:steelblue;">
