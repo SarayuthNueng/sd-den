@@ -1,10 +1,10 @@
 <?php 
-if(isset($_GET['id'])){
+if(isset($_GET['user_id'])){
 require_once 'connect.php';
 //ประกาศตัวแปรรับค่าจาก param method get
-$id = $_GET['id'];
-$stmt = $conn->prepare('DELETE FROM member WHERE id=:id');
-$stmt->bindParam(':id', $id , PDO::PARAM_INT);
+$user_id = $_GET['user_id'];
+$stmt = $db->prepare('DELETE FROM users WHERE user_id=:user_id');
+$stmt->bindParam(':user_id', $user_id , PDO::PARAM_INT);
 $stmt->execute();
 
 //  sweet alert 

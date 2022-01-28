@@ -1,13 +1,15 @@
+<?php session_start(); ?>
+
 <?php include "header.php" ?>
 <?php include "sidebar.php" ?>
 
 
 <div class="main-wrapper">
 <?php
-    if(isset($_GET['id'])){
+    if(isset($_GET['user_id'])){
       require_once 'connect.php';
-      $stmt = $conn->prepare("SELECT* FROM member WHERE id=?");
-      $stmt->execute([$_GET['id']]);
+      $stmt = $db->prepare("SELECT* FROM users WHERE user_id=?");
+      $stmt->execute([$_GET['user_id']]);
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       //ถ้าคิวรี่ผิดพลาดให้กลับไปหน้า index
       if($stmt->rowCount() < 1){
@@ -31,13 +33,13 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
-										<input type="text" name="fname" class="form-control" required value="<?= $row['fname'];?>" minlength="3" >
+										<input type="text" name="firstname" class="form-control" required value="<?= $row['firstname'];?>" minlength="3" >
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>นามสกุล</label>
-										<input class="form-control" type="text" name="lname" required value="<?= $row['lname'];?>" minlength="3" > </div>
+										<input class="form-control" type="text" name="lastname" required value="<?= $row['lastname'];?>" minlength="3" > </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
@@ -80,8 +82,8 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ตำแหน่ง</label>
-										<select class="form-control" id="sel1" name="role"  minlength="3" >
-											<option><?= $row['role'];?></option>
+										<select class="form-control" id="sel1" name="user_level"  minlength="3" >
+											<option><?= $row['user_level'];?></option>
 											<option>แอดมิน</option>
 											<option>ทันตแพทย์</option>
 										</select>
@@ -90,7 +92,7 @@
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
-								<input type="hidden" name="id" value="<?= $row['id'];?>">
+								<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
 						</form>
 					</div>

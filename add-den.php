@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php include "header.php" ?>
 
 <?php include "sidebar.php" ?>
@@ -15,18 +17,38 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
+				<?php if (isset($_SESSION['err_fill'])) : ?>
+				<div class="alert alert-danger alert-custom" role="alert">
+					<?php echo $_SESSION['err_fill']; ?>
+				</div>
+				<?php endif; ?>
+				<?php if (isset($_SESSION['err_pw'])) : ?>
+					<div class="alert alert-danger alert-custom" role="alert">
+						<?php echo $_SESSION['err_pw']; ?>
+					</div>
+				<?php endif; ?>
+				<?php if (isset($_SESSION['exist_uname'])) : ?>
+					<div class="alert alert-danger alert-custom" role="alert">
+						<?php echo $_SESSION['exist_uname']; ?>
+					</div>
+				<?php endif; ?>
+				<?php if (isset($_SESSION['err_insert'])) : ?>
+					<div class="alert alert-danger alert-custom" role="alert">
+						<?php echo $_SESSION['err_insert']; ?>
+					</div>
+				<?php endif; ?>
 						<form action="add-den-db.php" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
-										<input type="text" name="fname" class="form-control" required minlength="3" placeholder="ชื่อ">
+										<input type="text" name="firstname" class="form-control" required minlength="3" placeholder="ชื่อ">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>นามสกุล</label>
-										<input class="form-control" type="text" name="lname" placeholder="นามสกุล"> </div>
+										<input class="form-control" type="text" name="lastname" placeholder="นามสกุล"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
@@ -41,12 +63,12 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>รหัสผ่าน</label>
-										<input class="form-control" type="text" name="password" placeholder="รหัสผ่าน"> </div>
+										<input class="form-control" type="password" name="password" placeholder="รหัสผ่าน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ยืนยันรหัสผ่าน</label>
-										<input class="form-control" type="text" name="" placeholder="ยืนยันรหัสผ่าน"> </div>
+										<input class="form-control" type="text" name="confirm_password" placeholder="ยืนยันรหัสผ่าน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
@@ -70,7 +92,7 @@
 											<input type="date" name="date" class="form-control "> </div>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<label>ตำแหน่ง</label>
 										<select class="form-control" id="sel1" name="member_level">
@@ -79,11 +101,11 @@
 											<option>ทันตแพทย์</option>
 										</select>
 									</div>
-								</div>
+								</div> -->
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
-								<button type="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
+								<button type="submit" name="" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
 						</form>
 					</div>
 				</div>
