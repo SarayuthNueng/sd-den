@@ -105,7 +105,7 @@
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
-								<button type="submit" name="" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
+								<button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
 						</form>
 					</div>
 				</div>
@@ -124,3 +124,12 @@
 </body>
 
 </html>
+
+<?php
+    if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_insert'])) {
+        unset($_SESSION['err_fill']);
+        unset($_SESSION['err_pw']);
+        unset($_SESSION['exist_uname']);
+        unset($_SESSION['err_insert']);
+    }
+?>
