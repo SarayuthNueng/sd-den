@@ -3,7 +3,7 @@
 $db_host = "localhost"; 
 $db_user = "root";     
 $db_password = "";
-$db_name = "login_db";
+$db_name = "sd_den_calendar";
 
 try {   //ทำการเชื่อมต่อ database
     $db = new PDO("mysql:host={$db_host}; dbname={$db_name}", $db_user, $db_password);

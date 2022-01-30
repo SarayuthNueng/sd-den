@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
                                 title: "เพิ่มข้อมูลสำเร็จ",
                                 type: "success"
                             }, function() {
-                                window.location = "index.php"; //หน้าที่ต้องการให้กระโดดไป
+                                window.location = "list-den.php"; //หน้าที่ต้องการให้กระโดดไป
                             });
                             }, 1000);
                         </script>';
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
                                 title: "เกิดข้อผิดพลาด",
                                 type: "error"
                             }, function() {
-                                window.location = "index.php"; //หน้าที่ต้องการให้กระโดดไป
+                                window.location = "add-den.php"; //หน้าที่ต้องการให้กระโดดไป
                             });
                             }, 1000);
                         </script>';
