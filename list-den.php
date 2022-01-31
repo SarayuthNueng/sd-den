@@ -11,7 +11,7 @@
 							<h3 class="page-title">สมาชิกทั้งหมด</h3>
 						 </div>
 						 <div class="col-6">
-						 <a type="button" class="btn btn-primary buttonedit ml-2" href="add-den.php" role="button">เพิ่มสมาชิก</a>
+						 	<a type="button" class="btn btn-primary buttonedit ml-2" href="add-den.php" role="button">เพิ่มสมาชิก</a>
 						 </div>
 					</div>
 				</div>
