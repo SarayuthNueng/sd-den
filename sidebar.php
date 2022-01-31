@@ -1,14 +1,29 @@
+<?php
+    session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
+	include('connect.php');  // นำเข้าไฟล์ database
 
+?>
 <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
           <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-            <li class="">
+              
+              <?php if(isset($_SESSION['is_logged_in']) || (isset($_SESSION['admin']))){ ?>
+                <li class="">
+                <a href="list-den.php">
+                <i class="fas fa-user"></i>
+                  <span>เข้าสู่ระบบ</span>
+                </a>
+                </li>
+               <?php }else{ ?>
+                <li class="">
                 <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
-              </li>
+                </li>
+               <?php } ?>
+             
 
 			  
               <li class="list-divider"></li>

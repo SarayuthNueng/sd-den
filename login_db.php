@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['username'] = $username;
                     $_SESSION['is_logged_in'] = true;
-                    header('location: user-page.php');
+                    header('location: add-calendar.php');
                 }
                 else if ($row['user_level'] == 'admin') {
                     $_SESSION['username'] = $row['username'];

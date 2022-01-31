@@ -6,16 +6,6 @@
 		
 		<div class="page-wrapper">
 			<div class="content container-fluid">
-				<div class="page-header">
-					<div class="row align-items-center">
-						<div class="col">
-							<div class="mt-5">
-								<h4 class="card-title float-left mt-2">Calendar</h4>
-								<button type="button" class="btn btn-primary float-right veiwbutton" data-toggle="modal" data-target="#add_event1">Add Event</button>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="col-lg-12 col-md-8">
 					<div class="card">
 						<div class="card-body">
