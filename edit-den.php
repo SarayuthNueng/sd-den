@@ -1,6 +1,5 @@
-<?php session_start(); ?>
 
-<?php include "header.php" ?>
+<?php include "header-user-level.php" ?>
 <?php include "sidebar.php" ?>
 
 

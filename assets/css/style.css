@@ -1468,7 +1468,7 @@ button.bg-danger:hover {
   display: flex;
   align-items: center;
   border-top: 1px solid #e3e3e3;
-  padding: 10px 15px;
+  padding: 10px 75px;
 }
 .user-menu .dropdown-menu .dropdown-item:hover {
   color: #009688;
@@ -1558,7 +1558,7 @@ button.bg-danger:hover {
   padding: 10px 15px;
 }
 .user-header .user-text {
-  margin-left: 10px;
+  margin: auto;
 }
 .user-header .user-text h6 {
   margin-bottom: 2px;
