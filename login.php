@@ -1,8 +1,3 @@
-<?php
-    session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-	include('connect.php');  // นำเข้าไฟล์ database
-
-?>
 
 <?php include "header.php" ?>
 
@@ -10,7 +5,7 @@
 
 <div class="main-wrapper">
 <div class="page-wrapper">
-	<div class="main-wrapper login-body">
+	<div class="main-wrapper login-body mt-5">
 		<div class="login-wrapper">
 			<div class="container">
 				<div class="loginbox">

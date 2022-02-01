@@ -80,7 +80,7 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>ตำแหน่ง</label>
+										<label>ระดับผู้ใช้งาน</label>
 										<select class="form-control" id="sel1" name="user_level"  minlength="3" >
 											<option><?= $row['user_level'];?></option>
 											<option>แอดมิน</option>
@@ -92,7 +92,7 @@
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
 								<a type="submit" class="btn btn-warning " href="list-den.php" role="button">กลับ</a>
-								<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
+								<input type="hidden" name="submit" value="<?= $row['user_id'];?>">
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
 						</form>
 					</div>
