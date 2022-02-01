@@ -99,11 +99,11 @@
 	  	<ul class="nav user-menu">
 		  <li class="nav-item dropdown has-arrow">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> 
-						<span class="user-img"><img class="rounded-circle" src="assets/img/user.svg" width="31" alt="<?php echo $row['username']; ?>"></span> 
+						<span class="user-img px-2"><img class="rounded-circle px-2" src="assets/img/user.svg" width="40" alt="username"><?php echo $row['username']; ?></span> 
 					</a>
 					<div class="dropdown-menu">
 						<div class="user-header">
-							<div class="avatar avatar-sm"> <img src="assets/img/user.svg" alt="User Image" class="avatar-img rounded-circle"> </div>
+							
 							<div class="user-text">
 								<h6><?php echo $row['username']; ?></h6>
 								<p class="text-muted mb-0"><?php echo $row['user_level']; ?></p>
@@ -121,7 +121,7 @@
 	<div class="main-wrapper">		
 		<div class="page-wrapper">
 			<div class="content container-fluid">
-				<div class="page-header mt-5">
+				<div class="page-header ">
 					
 					<div class="row">
 						<div class="col-6">

@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+    session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
+	include('connect.php');  // นำเข้าไฟล์ database
+
+?>
 
 <?php include "header.php" ?>
 

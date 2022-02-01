@@ -1,6 +1,10 @@
 <?php
-    session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
+  session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
 	include('connect.php');  // นำเข้าไฟล์ database
+  $select_stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
+  $select_stmt->bindParam(':username', $_SESSION['username']);
+  $select_stmt->execute();
+  $row = $select_stmt->fetch(PDO::FETCH_ASSOC); 
 
 ?>
 <div class="sidebar" id="sidebar">
@@ -8,14 +12,30 @@
           <div id="sidebar-menu" class="sidebar-menu">
             <ul>
               
-              <?php if(isset($_SESSION['is_logged_in']) || (isset($_SESSION['admin']))){ ?>
+            <!-- เงื่อนไขตรวจสอบว่าได้ทำการ login ไว้ไหม // ดักไว้ที่ปุ่ม เข้าสู่ระบบ -->
+            <!-- เช็คว่า session ได้เข้าสู่ระบบหรือยัง -->
+            <?php if(isset($_SESSION['is_logged_in'])){ ?>  
+
+              <!-- ถ้าเข้าสู่ระบบแล้ว ก็ให้ไปเช็ค user_level ต่อ -->
+              <!-- ถ้า user_level = admin ให้ไปที่ list-den.php -->
+              <?php if($row['user_level'] == 'admin'){ ?>
                 <li class="">
                 <a href="list-den.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
                 </li>
-               <?php }else{ ?>
+              <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
+               <?php }else if($row['user_level'] == 'user'){ ?>
+                <li class="">
+                <a href="add-calendar.php">
+                <i class="fas fa-user"></i>
+                  <span>เข้าสู่ระบบ</span>
+                </a>
+                </li>
+
+              <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->
+               <?php }else {?>
                 <li class="">
                 <a href="login.php">
                 <i class="fas fa-user"></i>
@@ -23,9 +43,17 @@
                 </a>
                 </li>
                <?php } ?>
-             
 
-			  
+            <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->   
+            <?php } else { ?>
+              <li class="">
+                <a href="login.php">
+                <i class="fas fa-user"></i>
+                  <span>เข้าสู่ระบบ</span>
+                </a>
+                </li>
+            <?php } ?>
+
               <li class="list-divider"></li>
               
               <li>
