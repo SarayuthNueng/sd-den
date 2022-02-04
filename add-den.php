@@ -40,7 +40,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
-										<input class="form-control" type="text" name="firstname"  required minlength="3" placeholder="ชื่อ">
+										<input class="form-control" type="text" name="firstname"  minlength="3" placeholder="ชื่อ">
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -66,7 +66,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ยืนยันรหัสผ่าน</label>
-										<input class="form-control" type="text" name="confirm_password" placeholder="ยืนยันรหัสผ่าน"> </div>
+										<input class="form-control" type="password" name="confirm_password" placeholder="ยืนยันรหัสผ่าน"> </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">

@@ -15,18 +15,18 @@ if (isset($_POST['submit'])) {
     $tel = $_POST['tel'];
     $date = $_POST['date'];
 
-    // ถ้าไม่มีการกรอกข้อมูลเข้ามาให้ทำการส่งข้อความกลับไปยังหน้า register.php
+    // ถ้าไม่มีการกรอกข้อมูลเข้ามาให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
     if (empty($username) || empty($password) || empty($confirm_password) || empty($firstname) || empty($lastname) || empty($cid) || empty($address) || empty($email) || empty($tel) || empty($date)) {
         $_SESSION['err_fill'] = "กรุณากรอกข้อมูลให้ครบถ้วน";
-        header('location: register.php');
+        header('location: add-den.php');
     } 
 
     // กรณีที่มีการกรอกข้อมูลเข้ามาครบถ้วน จะทำการตรวจสอบว่ารหัสผ่านกับยืนยันรหัสผ่านตรงกันหรือไม่
     else {
-        // ถ้ารหัสผ่านกับยืนยันรหัสผ่านไม่ตรงกัน ให้ทำการส่งข้อความกลับไปยังหน้า register.php
+        // ถ้ารหัสผ่านกับยืนยันรหัสผ่านไม่ตรงกัน ให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
         if ($password !== $confirm_password) {
             $_SESSION['err_pw'] = "กรุณากรอกรหัสผ่านให้ตรงกัน";
-            header('location: register.php');
+            header('location: add-den.php');
         } 
 
         // ถ้ารหัสผ่านกับยืนยันรหัสผ่านตรงกันจะทำการ query ข้อมูล เพื่อเช็คว่ามี username นี้อยู่ในระบบหรือไม่
@@ -37,10 +37,10 @@ if (isset($_POST['submit'])) {
             $select_stmt->execute();
             $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
 
-            // ถ้ามี username ในระบบให้ทำการส่งข้อความกลับไปยังหน้า register.php
+            // ถ้ามี username ในระบบให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
             if ($row['count_uname'] != 0) {
                 $_SESSION['exist_uname'] = "มี username นี้ในระบบ";
-                header('location: register.php');
+                header('location: add-den.php');
             } 
 
             // ถ้าไม่มี username จะทำการเข้ารหัสโดย password_hash()
@@ -98,10 +98,10 @@ if (isset($_POST['submit'])) {
                 //     header('location: index.php');
                 // } 
 
-                // ถ้าสมัครสมาชิกไม่สำเร็จจะกลับไปยังหน้า register.php
+                // ถ้าสมัครสมาชิกไม่สำเร็จจะกลับไปยังหน้า add-den.php
                 // else {
                 //     $_SESSION['err_insert'] = "ไม่สามารถนำเข้าข้อมูลได้";
-                //     header('location: register.php');
+                //     header('location: add-den.php');
                 // }
             }
         }
