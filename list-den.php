@@ -50,7 +50,11 @@
 											?>
 												<td><?= $k['user_id'];?></td>
 												<td><?= $k['username'];?></td>
-												<td><?= $k['password'];?></td>
+												<td>
+													<a type="button" style="color: steelblue; font-weight: bold;" href="edit-password-den.php">
+														แก้ไขรหัสผ่าน	
+													</a>
+												</td>
 												<td><?= $k['firstname'];?></td>
 												<td><?= $k['lastname'];?></td>
 												<td><?= $k['cid'];?></td>

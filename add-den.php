@@ -40,7 +40,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
-										<input type="text" name="firstname" class="form-control" required minlength="3" placeholder="ชื่อ">
+										<input class="form-control" type="text" name="firstname"  required minlength="3" placeholder="ชื่อ">
 									</div>
 								</div>
 								<div class="col-md-4">

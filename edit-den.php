@@ -50,11 +50,6 @@
 										<label>ชื่อผู้ใช้งาน</label>
 										<input class="form-control" type="text" name="username" required value="<?= $row['username'];?>" minlength="3" > </div>
 								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>รหัสผ่าน</label>
-										<input class="form-control" type="text" name="password" required value="<?= $row['password'];?>" minlength="3" > </div>
-								</div>
 								
 								<div class="col-md-4">
 									<div class="form-group">
