@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
             // ถ้าไม่มี username จะทำการเข้ารหัสโดย password_hash()
             else {
                 // ทำการเข้ารหัสโดย password_hash()
-                $password = password_hash($password, PASSWORD_DEFAULT);
+                $password = md5($password, PASSWORD_DEFAULT);
                 $insert_stmt = $db->prepare("INSERT INTO users (username, password, firstname, lastname, cid, 
                 address, email, tel, date, user_level) VALUES (:username, :password, :firstname, :lastname, :cid, :address, :email, :tel, :date, 'user')");
                 $insert_stmt->bindParam(':username', $username);
