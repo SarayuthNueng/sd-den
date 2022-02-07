@@ -29,6 +29,11 @@
 					<div class="col-lg-12">
 					<form action="edit-den-db.php" method="post">
 							<div class="row formtype">
+							<div class="col-md-4">
+									<div class="form-group">
+										<label>ชื่อผู้ใช้งาน</label>
+										<input class="form-control" type="text" name="username" required value="<?= $row['username'];?>" minlength="3" > </div>
+								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>ชื่อ</label>
@@ -47,24 +52,18 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>ชื่อผู้ใช้งาน</label>
-										<input class="form-control" type="text" name="username" required value="<?= $row['username'];?>" minlength="3" > </div>
-								</div>
-								
-								<div class="col-md-4">
-									<div class="form-group">
 										<label>ที่อยู่</label>
 										<input class="form-control" type="text" name="address" required value="<?= $row['address'];?>" minlength="3" > </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>เบอร์โทรศัพท์</label>
-										<input class="form-control" type="text" name="tel" required value="<?= $row['tel'];?>" minlength="3" > </div>
+										<label>อีเมล</label>
+										<input class="form-control" type="text" name="email" required value="<?= $row['email'];?>" minlength="3" > </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>อีเมล</label>
-										<input class="form-control" type="text" name="email" required value="<?= $row['email'];?>" minlength="3" > </div>
+										<label>เบอร์โทรศัพท์</label>
+										<input class="form-control" type="text" name="tel" required value="<?= $row['tel'];?>" minlength="3" > </div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
@@ -88,7 +87,7 @@
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
 								<a type="submit" class="btn btn-warning " href="list-den.php" role="button">กลับ</a>
 								<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
-								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
+								<button type="submit" name="update" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
 						</form>
 					</div>
 				</div>
