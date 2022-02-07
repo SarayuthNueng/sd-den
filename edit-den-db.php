@@ -1,36 +1,31 @@
-
 <?php
-
-
  //ถ้ามีค่าส่งมาจากฟอร์ม
-if(isset($_POST['user_id']) && isset($_POST['username']) && isset($_POST['firstname']) && isset($_POST['lastname']) &&
-  isset($_POST['cid']) && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['date'])) {
-
-    require_once 'connect.php';  // นำเข้าไฟล์ database
-
- //ประกาศตัวแปรรับค่าจากฟอร์ม
-    $username = $_POST['username'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $cid = $_POST['cid'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $tel = $_POST['tel'];
-    $date = $_POST['date'];
-    
-    
+if(isset($_POST['user_id']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid']) && isset($_POST['username']) 
+    && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['tel'])) {
+    //ไฟล์เชื่อมต่อฐานข้อมูล
+     require_once 'connect.php';
+//ประกาศตัวแปรรับค่าจากฟอร์ม
+$user_id = $_POST['user_id'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$cid = $_POST['cid'];
+$username = $_POST['username'];
+$address = $_POST['address'];
+$email = $_POST['email'];
+$date = $_POST['date'];
+$tel = $_POST['tel'];
 //sql update
-$stmt = $db->prepare("UPDATE users SET username=:username, firstname=:firstname, lastname=:lastname, cid=:cid,  
-        address=:address, email=:email, tel=:tel, date=:date WHERE user_id=:user_id");
+$stmt = $db->prepare("UPDATE users SET firstname=:firstname, lastname=:lastname, cid=:cid, username=:username, 
+        address=:address, email=:email, date=:date, tel=:tel WHERE user_id=:user_id");
 $stmt->bindParam(':user_id', $user_id , PDO::PARAM_INT);
-$stmt->bindParam(':username', $username , PDO::PARAM_STR);
 $stmt->bindParam(':firstname', $firstname , PDO::PARAM_STR);
 $stmt->bindParam(':lastname', $lastname , PDO::PARAM_STR);
 $stmt->bindParam(':cid', $cid , PDO::PARAM_STR);
+$stmt->bindParam(':username', $username , PDO::PARAM_STR);
 $stmt->bindParam(':address', $address , PDO::PARAM_STR);
 $stmt->bindParam(':email', $email , PDO::PARAM_STR);
-$stmt->bindParam(':tel', $tel , PDO::PARAM_STR);
 $stmt->bindParam(':date', $date , PDO::PARAM_STR);
+$stmt->bindParam(':tel', $tel , PDO::PARAM_STR);
 $stmt->execute();
 
 // sweet alert 
@@ -57,7 +52,7 @@ $stmt->execute();
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "edit-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
