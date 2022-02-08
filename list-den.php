@@ -6,13 +6,16 @@
 			<div class="content container-fluid">
 				<div class="page-header ">
 					
-					<div class="row mt-5">
+					<div class="row formtype mt-5">
 						<div class="col-6">
 							<h3 class="page-title">สมาชิกทั้งหมด</h3>
-						 </div>
-						 <div class="col-6">
+						</div>
+						 <div class="col-3">
 						 <a type="button" class="btn btn-primary buttonedit ml-2" href="add-den.php" role="button">เพิ่มสมาชิก</a>
 						 </div>
+						 <div class="col-3">
+							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="add-procedure.php" role="button">เพิ่มประเภทการนัด</a>
+						 </div> 
 					</div>
 				</div>
 				<div class="row">

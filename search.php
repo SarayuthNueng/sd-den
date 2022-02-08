@@ -2,7 +2,7 @@
 
 <?php include "header.php" ?>
 
-<?php include "sidebar-user-level.php" ?>
+<?php include "sidebar.php" ?>
 
 <div class="main-wrapper">
 	<div class="page-wrapper">

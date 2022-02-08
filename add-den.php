@@ -6,7 +6,7 @@
 	<div class="main-wrapper">
 		
 		<div class="page-wrapper">
-			<div class="content container-fluid">
+			<div class="content container-fluid mt-5">
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
@@ -103,7 +103,7 @@
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
-								<a type="submit" class="btn btn-warning " href="list-den.php" role="button">กลับ</a>
+								<a type="submit" class="btn btn-secondary" href="list-den.php" role="button">กลับ</a>
 								<button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
 						</form>
 					</div>
