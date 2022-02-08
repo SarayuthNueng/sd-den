@@ -1,7 +1,7 @@
 
 <?php include "header.php" ?>
 
-<?php include "sidebar.php" ?>
+<?php include "sidebar-user-level.php" ?>
 
 <div class="main-wrapper">
 <div class="page-wrapper">

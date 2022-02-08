@@ -4,7 +4,7 @@
 <!-- header -->
   
 <!-- sidebar -->
-<?php include "sidebar.php" ?>
+<?php include "sidebar-user-level.php" ?>
 <!-- sidebar -->
 
 <!-- content -->

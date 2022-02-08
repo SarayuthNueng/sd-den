@@ -1,6 +1,6 @@
 
 <?php include "header-user-level.php" ?>
-<?php include "sidebar.php" ?>
+<?php include "sidebar-user-level.php" ?>
  
 
 	<div class="main-wrapper">

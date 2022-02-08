@@ -1,12 +1,12 @@
 <?php include "header-user-level.php" ?>
-<?php include "sidebar.php" ?>
+<?php include "sidebar-user-level.php" ?>
 
 	<div class="main-wrapper">		
 		<div class="page-wrapper">
 			<div class="content container-fluid">
 				<div class="page-header ">
 					
-					<div class="row">
+					<div class="row mt-5">
 						<div class="col-6">
 							<h3 class="page-title">สมาชิกทั้งหมด</h3>
 						 </div>
