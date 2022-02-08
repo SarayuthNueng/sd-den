@@ -8,13 +8,13 @@
 					
 					<div class="row formtype mt-5">
 						<div class="col-6">
-							<h3 class="page-title">สมาชิกทั้งหมด</h3>
+							<h3 class="page-title">ประเภทการนัดทั้งหมด</h3>
 						</div>
 						 <div class="col-3">
-						 <a type="button" class="btn btn-primary buttonedit ml-2" href="add-den.php" role="button">+ เพิ่มสมาชิก</a>
+						 <a type="button" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">สมาชิก</a>
 						 </div>
 						 <div class="col-3">
-							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="list-procedure.php" role="button">ประเภทการนัด</a>
+							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="add-procedure.php" role="button">+ เพิ่มประเภทการนัด</a>
 						 </div> 
 					</div>
 				</div>
@@ -27,16 +27,8 @@
 										<thead>
 											<tr>
 												<th>รหัส</th>
-												<th>ชื่อผู้ใช้งาน</th>
-												<th>รหัสผ่าน</th>
-												<th>ชื่อ</th>
-												<th>นามสกุล</th>
-												<th>เลขบัตรประจำตัวประชาชน</th>
-												<th>ที่อยู่</th>
-												<th>อีเมล</th>
-												<th>เบอร์โทรศัพท์</th>
-												<th>วันที่สมัคร</th>
-												<th>ระดับผู้ใช้งาน</th>
+												<th>ชื่อหัตถการ</th>
+												<th>สีของหัตถการ</th>
 												<th>แก้ไข</th>
 												<th>ลบ</th>
 											</tr>
@@ -46,34 +38,22 @@
 											<?php
 											//คิวรี่ข้อมูลมาแสดงในตาราง
 											require_once 'connect.php';
-											$stmt = $db->prepare("SELECT* FROM users");
+											$stmt = $db->prepare("SELECT* FROM procedures");
 											$stmt->execute();
 											$result = $stmt->fetchAll();
-											foreach($result as $k) {
+											foreach($result as $p) {
 											?>
-												<td><?= $k['user_id'];?></td>
-												<td><?= $k['username'];?></td>
-												<td>
-													<a type="button" style="color: steelblue; font-weight: bold;" href="edit-password-den.php">
-														แก้ไขรหัสผ่าน	
-													</a>
-												</td>
-												<td><?= $k['firstname'];?></td>
-												<td><?= $k['lastname'];?></td>
-												<td><?= $k['cid'];?></td>
-												<td><?= $k['address'];?></td>
-												<td><?= $k['email'];?></td>
-												<td><?= $k['tel'];?></td>
-												<td><?= $k['date'];?></td>
-												<td><?= $k['user_level'];?></td>
+												<td><?= $p['procedure_id'];?></td>
+												<td><?= $p['procedure_name'];?></td>
+												<td><?= $p['color'];?></td>
 												<td>
 													<a type="button" class="fas fa-edit ml-2"
-													href="edit-den.php?user_id=<?= $k['user_id'];?>" role="button" style="color:steelblue;">
+													href="edit-procedure.php?procedure_id=<?= $p['procedure_id'];?>" role="button" style="color:steelblue;">
 													</a>
 												</td>
 												<td>
 												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');"
-													href="del-user.php?user_id=<?= $k['user_id'];?>" role="button" style="color:tomato">
+													href="del-procedure.php?procedure_id=<?= $p['procedure_id'];?>" role="button" style="color:tomato">
 													</a>
 												</td>
 
