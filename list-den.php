@@ -54,7 +54,8 @@
 												<td><?= $k['user_id'];?></td>
 												<td><?= $k['username'];?></td>
 												<td>
-													<a type="button" style="color: steelblue; font-weight: bold;" href="edit-password-den.php">
+													<a type="button" style="color: steelblue; font-weight: bold;" 
+													href="edit-password-den.php?user_id=<?= $k['user_id'];?>">
 														แก้ไขรหัสผ่าน	
 													</a>
 												</td>

@@ -22,27 +22,27 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
-							<h3 class="page-title mt-5">แก้ไขรหัสผ่าน</h3> </div>
+							<h3 class="page-title mt-5 text-center">แก้ไขรหัสผ่าน</h3> </div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 0%;">
 					<div class="col-lg-12">
-					<form action="edit-den-db.php" method="post">
-							<div class="row formtype">
+					<form action="edit-password-den-db.php" method="post">
+							<div class="row ">
 								
-								<div class="col-md-4">
+								<div class="col-md-12">
 									<div class="form-group">
 										<label>รหัสผ่าน</label>
-										<input class="form-control" type="text" name="password" required value="<?= $row['password'];?>" minlength="3" > </div>
+										<input class="form-control" type="password" name="password" required value="" minlength="3" > </div>
 								</div>
 								
 							</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
 								<a type="submit" class="btn btn-warning " href="list-den.php" role="button">กลับ</a>
-								<input type="hidden" name="submit" value="<?= $row['user_id'];?>">
+								<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไข</button>
-						</form>
+					</form>
 					</div>
 				</div>
 			</div>

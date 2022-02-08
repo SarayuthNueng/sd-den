@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
         // ถ้าไม่พบ username จะทำการตรวจสอบ password โดยเทียบ password ที่กรอกเข้ามาตรงกับ password ใน database หรือไม่ ผ่านฟังก์ชัน password_verify() ถ้าตรงกันเงื่อนไขจะเป็นจริง
         else {
             // ถ้า password ที่กรอกเข้ามาตรงกับ password ใน database
-            if (password_verify($password, $row['password'])) {
+            if (md5($password, $row['password'])) {
                 //เช็คระดับผู้ใช้งาน และ เก็บ username และ สถานะ login และไปยังหน้า user_page.php เมื่อ = user , ไปหน้า admin_page.php เมื่อ = admin
                
                 if ($row['user_level'] == 'user') {

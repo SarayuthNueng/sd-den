@@ -10,7 +10,7 @@
 				<div class="page-header">
 					<div class="row align-items-center" >
 						<div class="col">
-							<h3 class="page-title text-center">เพิ่มประเภทการนัด</h3> </div>
+							<h3 class="page-title text-center">เพิ่มประเภทหัตถการ</h3> </div>
 					</div>
 				</div>
 				<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
@@ -34,19 +34,19 @@
 							<div class="row formtype">
 								<div class="col-md-12">
 									<div class="form-group ">
-										<label>ชื่อประเภทการนัด</label>
-										<input class="form-control" type="text" name="procedure_name"  minlength="3" placeholder="ชื่อประเภทการนัด">
+										<label>ชื่อประเภทหัตถการ</label>
+										<input class="form-control" type="text" name="procedure_name"  minlength="3" placeholder="ชื่อประเภทหัตถการ">
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group ">
-										<label>สีประเภทการนัด</label>
-										<input class="form-control" type="text" name="color" placeholder="สีประเภทการนัด"> 
+										<label>สีประเภทหัตถการ</label>
+										<input class="form-control" type="text" name="color" placeholder="สีประเภทหัตถการ"> 
                                     </div>
 								</div>
 							</div>
                                 <a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
-                                <button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มประเภทการนัด</button>
+                                <button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มประเภทหัตถการ</button>
                                   
 						</form>
 					</div>

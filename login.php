@@ -14,9 +14,9 @@
 						<div class="login-right-wrap">
 							<h1>เข้าสู่ระบบสมาชิก</h1>
 							<p class="account-subtitle"></p>
-							<?php if (isset($_SESSION['err_fill'])) : ?>
+						<?php if (isset($_SESSION['err_fill'])) : ?>
 						<div class="alert alert-danger alert-custom" role="alert">
-							<?php echo $_SESSION['err_fill']; ?>
+						<?php echo $_SESSION['err_fill']; ?>
 						</div>
         				<?php endif; ?>
 						<?php if (isset($_SESSION['err_pw'])) : ?>
