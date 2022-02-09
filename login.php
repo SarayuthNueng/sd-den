@@ -31,9 +31,9 @@
 						<?php endif; ?>
 							<form action="login_db.php" method="post">
 								<div class="form-group">
-									<input class="form-control" type="text" name="username" placeholder="ผู้ใช้งาน"> </div>
+									<input class="form-control" type="text" name="username" required placeholder="ผู้ใช้งาน"> </div>
 								<div class="form-group">
-									<input class="form-control" type="password" name="password" placeholder="รหัสผ่าน"> </div>
+									<input class="form-control" type="password" name="password" required placeholder="รหัสผ่าน"> </div>
 								<div class="form-group">
 								<!-- <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">Login</button> -->
 									<button type="submit" name="submit" class="btn btn-primary btn-block" role="button">เข้าสู่ระบบ</button>

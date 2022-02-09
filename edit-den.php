@@ -88,7 +88,7 @@
 								<a type="submit" class="btn btn-warning " href="list-den.php" role="button">กลับ</a>
 								<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขข้อมูล</button>
-						</form>
+					</form>
 					</div>
 				</div>
 			</div>

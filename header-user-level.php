@@ -111,7 +111,10 @@
 						</div> 
 						<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
 						<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
-            <a class="dropdown-item" href="profile.php">My Profile</a> 
+            <?php if($row['user_level'] == 'user') {?>
+              <a class="dropdown-item" href="add-calendar.php">Add Event calendar</a> 
+            <?php } ?>
+            <a class="dropdown-item" href="profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
 						<a class="dropdown-item" href="logout.php">Logout</a> </div>
 				</li>
 		  </ul>
