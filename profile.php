@@ -89,128 +89,54 @@
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
 													</div>
 													<div class="modal-body">
-											<?php
-												if(isset($_POST['update']))
-												{	
-													$user_id = $_POST['user_id'];
-													$username=$_POST['username'];
-													$firstname=$_POST['firstname'];
-													$lastname=$_POST['lastname'];
-													$cid=$_POST['cid'];
-													$address=$_POST['address'];
-													$email=$_POST['email'];	
-													$tel=$_POST['tel'];
-													$date=$_POST['date'];
-													
-													// checking empty fields
-													if(empty($username) || empty($firstname) || empty($firstname) || empty($lastname) || empty($cid) 
-														|| empty($address) || empty($email) || empty($tel) || empty($date)) {	
-															
-														if(empty($username)) {
-															echo "<font color='red'>Name field is empty.</font><br/>";
-														}
-														
-														if(empty($firstname)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-
-														if(empty($lastname)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-
-														if(empty($cid)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-
-														if(empty($address)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-														
-														if(empty($email)) {
-															echo "<font color='red'>Email field is empty.</font><br/>";
-														}
-														
-														if(empty($tel)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-
-														if(empty($date)) {
-															echo "<font color='red'>Age field is empty.</font><br/>";
-														}
-													} else {	
-														//updating the table
-														$sql = "UPDATE users SET username=:username, firstname=:firstname, lastname=:lastname, 
-																cid=:cid, address=:address, email=:email, tel=:tel, date=:date, WHERE user_id=:user_id";
-														$query = $dbConn->prepare($sql);
-																
-														$query->bindparam(':user_id', $user_id);
-														$query->bindparam(':username', $username);
-														$query->bindparam(':firstname', $firstname);
-														$query->bindparam(':lastname', $lastname);
-														$query->bindparam(':cid', $cid);
-														$query->bindparam(':address', $address);
-														$query->bindparam(':email', $email);
-														$query->bindparam(':tel', $tel);
-														$query->bindparam(':date', $date);
-														$query->execute();
-														
-														// Alternative to above bindparam and execute
-														// $query->execute(array(':id' => $id, ':name' => $name, ':email' => $email, ':age' => $age));
-																
-														//redirectig to the display page. In our case, it is index.php
-														header("Location: profile.php");
-													}
-												}
-											?>
-
-														<form action="profile.php" method="post">
+														<form action="edit-profile-db.php" method="post">
 															<div class="row form-row">
 															<div class="col-12">
 																	<div class="form-group">
 																		<label>ชื่อผู้ใช้งาน</label>
 																		<div class="form-group">
-																			<input type="text" class="form-control" value="<?php echo $row['username']; ?>"> </div>
+																			<input type="text" disabled="disabled" name="username" class="form-control" value="<?php echo $row['username']; ?>"> </div>
 																	</div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>ชื่อ</label>
-																		<input type="text" class="form-control" value="<?php echo $row['firstname']; ?>"> </div>
+																		<input type="text" class="form-control" name="firstname" value="<?php echo $row['firstname']; ?>"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>นามสกุล</label>
-																		<input type="text" class="form-control" value="<?php echo $row['lastname']; ?>"> </div>
+																		<input type="text" class="form-control" name="lastname" value="<?php echo $row['lastname']; ?>"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
-																		<label>เลขบัตรประจำตัวประชาชน</label>
-																		<input type="text" class="form-control" value="<?php echo $row['cid']; ?>"> </div>
+																		<label>เลขบัตรประจำตัวประชาชน</label> 
+																		<input type="text" class="form-control" name="cid" value="<?php echo $row['cid']; ?>"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>ที่อยู่</label>
-																		<input type="text" value="<?php echo $row['address']; ?>" class="form-control"> </div>
+																		<input type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>อีเมล</label>
-																		<input type="text" value="<?php echo $row['email']; ?>" class="form-control"> </div>
+																		<input type="text" name="email" value="<?php echo $row['email']; ?>" class="form-control"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>เบอร์โทรศัพท์</label>
-																		<input type="text" value="<?php echo $row['tel']; ?>" class="form-control"> </div>
+																		<input type="text" name="tel" value="<?php echo $row['tel']; ?>" class="form-control"> </div>
 																</div>
 																<div class="col-12 col-sm-6">
 																	<div class="form-group">
 																		<label>วันที่สมัคร</label>
-																		<input type="date" value="<?php echo $row['date']; ?>" class="form-control"> </div>
+																		<input type="date" name="date" value="<?php echo $row['date']; ?>" class="form-control"> </div>
 																</div>
 																
 															</div>
 															<input type="hidden" name="user_id" value="<?= $row['user_id'];?>">
-															<button type="submit" name="update" class="btn btn-primary btn-block">Save Changes</button>
+															<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
 														</form>
 													</div>
 												</div>
