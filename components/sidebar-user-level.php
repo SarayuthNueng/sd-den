@@ -19,19 +19,26 @@
               <!-- ถ้าเข้าสู่ระบบแล้ว ก็ให้ไปเช็ค user_level ต่อ -->
               <!-- ถ้า user_level = admin ให้ไปที่ list-den.php -->
               <?php if($row['user_level'] == 'admin'){ ?>
-                <li class="">
-                <a href="list-den.php">
-                <i class="fas fa-user"></i>
-                  <span><?php echo $row['username']; ?></span>
-                </a>
+                <li class="submenu">
+                  <a href="#">
+                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
+                    <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="submenu_class" style="display: none">
+                    <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
+                    <li><a  href="list-procedure.php">ประเภทการนัด</a></li>
+                  </ul>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
                <?php }else if($row['user_level'] == 'user'){ ?>
-                <li class="">
-                <a href="add-calendar.php">
-                <i class="fas fa-user"></i>
-                  <span><?php echo $row['username']; ?></span>
-                </a>
+                <li class="submenu">
+                  <a href="#">
+                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
+                    <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="submenu_class" style="display: none">
+                    <li><a  href="add-calendar.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                  </ul>
                 </li>
 
               <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->

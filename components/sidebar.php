@@ -21,21 +21,24 @@
               <?php if($row['user_level'] == 'admin'){ ?>
                 <li class="submenu">
                   <a href="#">
-                    <i class="fas fa-tooth"></i> <span><?php echo $row['username']; ?></span>
+                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
-                    <li><a style="pointer-events: none; color: #05eeff;" href="">สมาชิกทั้งหมด</a></li>
-                    <li><a style="pointer-events: none; color: #05eeff;" href="">ประเภทการนัด</a></li>
+                    <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
+                    <li><a  href="list-procedure.php">ประเภทการนัด</a></li>
                   </ul>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
                <?php }else if($row['user_level'] == 'user'){ ?>
-                <li class="">
-                <a href="add-calendar.php">
-                <i class="fas fa-user"></i>
-                  <span><?php echo $row['username']; ?></span>
-                </a>
+                <li class="submenu">
+                  <a href="#">
+                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
+                    <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="submenu_class" style="display: none">
+                    <li><a  href="add-calendar.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                  </ul>
                 </li>
 
               <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->
