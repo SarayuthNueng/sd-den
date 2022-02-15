@@ -1,6 +1,6 @@
 <?php
 session_start();    // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-include('connect.php');  // นำเข้าไฟล์ database
+include('db/connect.php');  // นำเข้าไฟล์ database
 
 // ทำการเช็คว่ามีการ submit form หรือไม่ isset() จะเช็คว่ามี data หรือไม่
 if (isset($_POST['submit'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     // ถ้าไม่มีการกรอกข้อมูลเข้ามาให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
     if (empty($procedure_name) || empty($color)) {
         $_SESSION['err_fill'] = "กรุณากรอกข้อมูลให้ครบถ้วน";
-        header('location: add-procedure.php');
+        header('location: ../pages/add-procedure.php');
     } 
 
         // ถ้ารหัสผ่านกับยืนยันรหัสผ่านตรงกันจะทำการ query ข้อมูล เพื่อเช็คว่ามี procedure นี้อยู่ในระบบหรือไม่
@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
             // ถ้ามี procedure ในระบบให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
             if ($row['count_pname'] != 0) {
                 $_SESSION['exist_pname'] = "มี ประเภทการนัด นี้ในระบบ";
-                header('location: add-procedure.php');
+                header('location: ../pages/add-procedure.php');
             } 
 
             // ถ้าไม่มี procedure จะทำการบันทึกข้อมูล
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                                 title: "เพิ่มข้อมูลสำเร็จ",
                                 type: "success"
                             }, function() {
-                                window.location = "list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                                window.location = "../pages/list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
                             });
                             }, 1000);
                         </script>';
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
                                 title: "เกิดข้อผิดพลาด",
                                 type: "error"
                             }, function() {
-                                window.location = "add-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                                window.location = "../pages/add-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
                             });
                             }, 1000);
                         </script>';

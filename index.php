@@ -1,14 +1,14 @@
 ﻿
 <!-- header -->
-<?php include "header.php" ?>
+<?php include "components/header.php" ?>
 <!-- header -->
   
 <!-- sidebar -->
-<?php include "sidebar.php" ?>
+<?php include "components/sidebar.php" ?>
 <!-- sidebar -->
 
 <!-- content -->
-<?php include "calendar.php" ?>
+<?php include "pages/calendar.php" ?>
 <!-- content -->
 
 

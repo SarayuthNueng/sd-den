@@ -1,6 +1,6 @@
 <?php 
 if(isset($_GET['user_id'])){
-require_once 'connect.php';
+require_once 'db/connect.php';
 //ประกาศตัวแปรรับค่าจาก param method get
 $user_id = $_GET['user_id'];
 $stmt = $db->prepare('DELETE FROM users WHERE user_id=:user_id');
@@ -20,7 +20,7 @@ echo '
                   title: "ลบข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../pages/list-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -31,7 +31,7 @@ echo '
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../pages/list-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

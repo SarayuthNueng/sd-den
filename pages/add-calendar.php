@@ -1,6 +1,6 @@
 
-<?php include "header-user-level.php" ?>
-<?php include "sidebar-user-level.php" ?>
+<?php include "../components/header-user-level.php" ?>
+<?php include "../components/sidebar-user-level.php" ?>
 <div class="main-wrapper">
 		
 		<div class="page-wrapper">
@@ -117,18 +117,18 @@
 							</div>
 						</form>
 					</div>
-					<?php include "footer.php" ?>
+					<?php include "../components/footer.php" ?>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="assets/js/jquery-3.5.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="assets/js/jquery-ui.min.js"></script>
-	<script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
-	<script src="assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="../components/assets/js/popper.min.js"></script>
+	<script src="../components/assets/js/bootstrap.min.js"></script>
+	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../components/assets/js/moment.min.js"></script>
+	<script src="../components/assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="../components/assets/js/jquery-ui.min.js"></script>
+	<script src="../components/assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+	<script src="../components/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+	<script src="../components/assets/js/script.js"></script>

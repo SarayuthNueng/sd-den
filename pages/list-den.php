@@ -1,5 +1,5 @@
-<?php include "header-user-level.php" ?>
-<?php include "sidebar-user-level.php" ?>
+<?php include "../components/header-user-level.php" ?>
+<?php include "../components/sidebar-user-level.php" ?>
 
 	<div class="main-wrapper">		
 		<div class="page-wrapper">
@@ -45,7 +45,7 @@
 											<tr>
 											<?php
 											//คิวรี่ข้อมูลมาแสดงในตาราง
-											require_once 'connect.php';
+											require_once 'db/connect.php';
 											$stmt = $db->prepare("SELECT* FROM users");
 											$stmt->execute();
 											$result = $stmt->fetchAll();
@@ -87,17 +87,17 @@
 						</div>
 					</div>
 				</div>
-				<?php include "footer.php" ?>
+				<?php include "../components/footer.php" ?>
 			</div>
 		</div>
 	</div>
-	<script src="assets/js/jquery-3.5.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="assets/plugins/datatables/datatables.min.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="../components/assets/js/popper.min.js"></script>
+	<script src="../components/assets/js/bootstrap.min.js"></script>
+	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../components/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="../components/assets/plugins/datatables/datatables.min.js"></script>
+	<script src="../components/assets/js/script.js"></script>
 </body>
 
 </html>

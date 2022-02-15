@@ -1,10 +1,10 @@
-﻿<?php include "header-user-level.php" ?>
-<?php include "sidebar-user-level.php" ?>
+﻿<?php include "../components/header-user-level.php" ?>
+<?php include "../components/sidebar-user-level.php" ?>
 
 <div class="main-wrapper">
 <?php
     if(isset($_GET['user_id'])){
-      require_once 'connect.php';
+      require_once 'db/connect.php';
       $stmt = $db->prepare("SELECT* FROM users WHERE user_id=?");
       $stmt->execute([$_GET['user_id']]);
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -175,14 +175,14 @@
 		</div>
 	</div>
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script src="assets/js/jquery-3.5.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/select2.min.js"></script>
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="../components/assets/js/popper.min.js"></script>
+	<script src="../components/assets/js/bootstrap.min.js"></script>
+	<script src="../components/assets/js/moment.min.js"></script>
+	<script src="../components/assets/js/select2.min.js"></script>
+	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../components/assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="../components/assets/js/script.js"></script>
 </body>
 
 </html>
