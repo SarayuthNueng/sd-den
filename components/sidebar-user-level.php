@@ -1,6 +1,6 @@
 <?php
 //   session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-	include('../db/connect.php');  // นำเข้าไฟล์ database
+	include('db/connect.php');  // นำเข้าไฟล์ database
   $select_stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
   $select_stmt->bindParam(':username', $_SESSION['username']);
   $select_stmt->execute();
@@ -20,24 +20,24 @@
               <!-- ถ้า user_level = admin ให้ไปที่ list-den.php -->
               <?php if($row['user_level'] == 'admin'){ ?>
                 <li class="">
-                <a href="../pages/list-den.php">
+                <a href="list-den.php">
                 <i class="fas fa-user"></i>
-                  <span>เข้าสู่ระบบ</span>
+                  <span><?php echo $row['username']; ?></span>
                 </a>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
                <?php }else if($row['user_level'] == 'user'){ ?>
                 <li class="">
-                <a href="../pages/add-calendar.php">
+                <a href="add-calendar.php">
                 <i class="fas fa-user"></i>
-                  <span>เข้าสู่ระบบ</span>
+                  <span><?php echo $row['username']; ?></span>
                 </a>
                 </li>
 
               <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->
                <?php }else {?>
                 <li class="">
-                <a href="../pages/login.php">
+                <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
@@ -47,7 +47,7 @@
             <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->   
             <?php } else { ?>
               <li class="">
-                <a href="../pages/login.php">
+                <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
@@ -57,19 +57,19 @@
               <li class="list-divider"></li>
               
               <li>
-                <a href="../index.php">
+                <a href="index.php">
                   <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
                 </a>
               </li>
               
               <li>
-                <a href="../pages/dashboard.php">
+                <a href="dashboard.php">
                   <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
                 </a>
               </li>
 
 			        <li>
-                <a href="../pages/search.php">
+                <a href="search.php">
                   <i class="fas fa-search"></i><span>ค้นหาข้อมูล</span>
                 </a>
               </li>

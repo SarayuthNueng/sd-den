@@ -1,6 +1,6 @@
 
-<?php include "../components/header-user-level.php" ?>
-<?php include "../components/sidebar-user-level.php" ?>
+<?php include "components/header-user-level.php" ?>
+<?php include "components/sidebar-user-level.php" ?>
 
 
 <div class="main-wrapper">
@@ -12,7 +12,7 @@
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       //ถ้าคิวรี่ผิดพลาดให้กลับไปหน้า index
       if($stmt->rowCount() < 1){
-          header('Location: ../index.php');
+          header('Location: index.php');
           exit();
       }
     }//isset
@@ -27,7 +27,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-					<form action="edit-den-db.php" method="post">
+					<form action="function/edit-den-db.php" method="post">
 							<div class="row formtype">
 							<div class="col-md-4">
 									<div class="form-group">
@@ -65,13 +65,7 @@
 										<label>เบอร์โทรศัพท์</label>
 										<input class="form-control" type="text" name="tel" required value="<?= $row['tel'];?>" minlength="3" > </div>
 								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>วันที่สมัคร</label>
-										<div class="">
-											<input type="date" name="date" class="form-control " required value="<?= $row['date'];?>" minlength="3" > </div>
-									</div>
-								</div>
+								
 								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<label>ระดับผู้ใช้งาน</label>
@@ -94,15 +88,15 @@
 			</div>
 		</div>
 	</div>
-	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="../components/assets/js/popper.min.js"></script>
-	<script src="../components/assets/js/bootstrap.min.js"></script>
-	<script src="../components/assets/js/moment.min.js"></script>
-	<script src="../components/assets/js/select2.min.js"></script>
-	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../components/assets/plugins/raphael/raphael.min.js"></script>
-	<script src="../components/assets/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="../components/assets/js/script.js"></script>
+	<script src="components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="components/assets/js/popper.min.js"></script>
+	<script src="components/assets/js/bootstrap.min.js"></script>
+	<script src="components/assets/js/moment.min.js"></script>
+	<script src="components/assets/js/select2.min.js"></script>
+	<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="components/assets/plugins/raphael/raphael.min.js"></script>
+	<script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="components/assets/js/script.js"></script>
 	<script>
 	$(function() {
 		$('#datetimepicker3').datetimepicker({

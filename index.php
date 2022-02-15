@@ -8,7 +8,7 @@
 <!-- sidebar -->
 
 <!-- content -->
-<?php include "pages/calendar.php" ?>
+<?php include "calendar.php" ?>
 <!-- content -->
 
 

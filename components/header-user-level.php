@@ -1,10 +1,10 @@
 <?php
     session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-	include('../db/connect.php');  // นำเข้าไฟล์ database
+	include('db/connect.php');  // นำเข้าไฟล์ database
 
     // ถ้าไม่มี $_SESSION['is_logged_in'] (เก็บสถานะ login โดยจะเก็บตอนที่สมัครสมาชิกหรือ login แล้วเท่านั้น) ให้กลับไปยังหน้า login.php เพื่อทำการ login ก่อน
     if (!isset($_SESSION['is_logged_in'])) {
-        header('location: ../pages/login.php');
+        header('location: login.php');
     }
 	// ถ้ามี $_SESSION['is_logged_in'] แสดงว่ามีการ login เข้ามาแล้ว
     else {
@@ -22,24 +22,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
     <title>ปฏิทินนัดทันตกรรม | โรงพยาบาลสมเด็จ</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../components/assets/img/logo-sd.png"/>
-    <link rel="stylesheet" href="../components/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../components/assets/plugins/fontawesome/css/fontawesome.min.css"/>
-    <link rel="stylesheet" href="../components/assets/plugins/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="../components/assets/css/feathericon.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="components/assets/img/logo-sd.png"/>
+    <link rel="stylesheet" href="components/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="components/assets/plugins/fontawesome/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="components/assets/plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="components/assets/css/feathericon.min.css" />
     <link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css" />
-    <link rel="stylesheet" href="../components/assets/plugins/morris/morris.css" />
-    <link rel="stylesheet" href="../components/assets/css/style.css" />
-    <link rel="stylesheet" href="../components/assets/css/footers.css" />
-    <link rel="stylesheet" href="../components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="../components/assets/plugins/fullcalendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="../components/assets/plugins/datatables/datatables.min.css">
-    <link rel="stylesheet" type="text/css" href="../components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../components/assets/img/favicon.png">
-	  <link rel="stylesheet" type="text/css" href="../components/assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="components/assets/plugins/morris/morris.css" />
+    <link rel="stylesheet" href="components/assets/css/style.css" />
+    <link rel="stylesheet" href="components/assets/css/footers.css" />
+    <link rel="stylesheet" href="components/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="components/assets/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="components/assets/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="components/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="components/assets/img/favicon.png">
+	  <link rel="stylesheet" type="text/css" href="components/assets/plugins/fontawesome/css/all.min.css">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
-    <link href="../components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
   </head>
@@ -66,7 +66,7 @@
         <div class="header-left">
           <a href="../index.php" class="logo">
             <img
-              src="../components/assets/img/logo-sd.png"
+              src="components/assets/img/logo-sd.png"
               width="50"
               height="70"
               alt="logo"
@@ -75,7 +75,7 @@
           </a>
           <a href="../index.php" class="logo logo-small">
             <img
-              src="../components/assets/img/logo-sd.png"
+              src="components/assets/img/logo-sd.png"
               alt="Logo"
               width="30"
               height="30"
@@ -99,7 +99,7 @@
 	  	<ul class="nav user-menu">
 		  <li class="nav-item dropdown has-arrow">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> 
-						<span class="user-img px-2"><img class="rounded-circle px-2" src="../components/assets/img/user.svg" width="40" alt="username"><?php echo $row['username']; ?></span> 
+						<span class="user-img px-2"><img class="rounded-circle px-2" src="components/assets/img/user.svg" width="40" alt="username"><?php echo $row['username']; ?></span> 
 					</a>
 					<div class="dropdown-menu">
 						<div class="user-header">
@@ -112,10 +112,10 @@
 						<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
 						<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
             <?php if($row['user_level'] == 'user') {?>
-              <a class="dropdown-item" href="../pages/add-calendar.php">Add Event calendar</a> 
+              <a class="dropdown-item" href="add-calendar.php">Add Event calendar</a> 
             <?php } ?>
-            <a class="dropdown-item" href="../pages/profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
-						<a class="dropdown-item" href="../pages/logout.php">Logout</a> </div>
+            <a class="dropdown-item" href="profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
+						<a class="dropdown-item" href="logout.php">Logout</a> </div>
 				</li>
 		  </ul>
 		

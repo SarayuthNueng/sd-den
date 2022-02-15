@@ -2,7 +2,7 @@
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['user_id']) && isset($_POST['password'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once 'db/connect.php';
+     require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
 $password = $_POST['password'];
@@ -27,7 +27,7 @@ $stmt->execute();
                   title: "แก้ไขข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "../pages/list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -38,7 +38,7 @@ $stmt->execute();
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "../pages/edit-password-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../edit-password-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

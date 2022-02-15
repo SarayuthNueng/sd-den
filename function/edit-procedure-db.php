@@ -2,7 +2,7 @@
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['procedure_id']) && isset($_POST['procedure_name']) && isset($_POST['color'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once 'db/connect.php';
+     require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $procedure_id = $_POST['procedure_id'];
 $procedure_name = $_POST['procedure_name'];
@@ -28,7 +28,7 @@ $stmt->execute();
                   title: "แก้ไขข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "pages/list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -39,7 +39,7 @@ $stmt->execute();
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "pages/edit-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../edit-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

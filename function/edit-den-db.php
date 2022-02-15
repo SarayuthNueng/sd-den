@@ -1,9 +1,9 @@
 <?php
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['user_id']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid']) && isset($_POST['username']) 
-    && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['tel'])) {
+    && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['tel'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once 'db/connect.php';
+     require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
 $firstname = $_POST['firstname'];
@@ -12,7 +12,6 @@ $cid = $_POST['cid'];
 $username = $_POST['username'];
 $address = $_POST['address'];
 $email = $_POST['email'];
-$date = $_POST['date'];
 $tel = $_POST['tel'];
 //sql update
 $stmt = $db->prepare("UPDATE users SET firstname=:firstname, lastname=:lastname, cid=:cid, username=:username, 
@@ -41,7 +40,7 @@ $stmt->execute();
                   title: "แก้ไขข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "../pages/list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -52,7 +51,7 @@ $stmt->execute();
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "../pages/edit-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../edit-den.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

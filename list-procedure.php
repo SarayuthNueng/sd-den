@@ -1,5 +1,5 @@
-<?php include "../components/header-user-level.php" ?>
-<?php include "../components/sidebar-user-level.php" ?>
+<?php include "components/header-user-level.php" ?>
+<?php include "components/sidebar-user-level.php" ?>
 
 	<div class="main-wrapper">		
 		<div class="page-wrapper">
@@ -53,7 +53,7 @@
 												</td>
 												<td>
 												<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');"
-													href="del-procedure.php?procedure_id=<?= $p['procedure_id'];?>" role="button" style="color:tomato">
+													href="function/del-procedure.php?procedure_id=<?= $p['procedure_id'];?>" role="button" style="color:tomato">
 													</a>
 												</td>
 
@@ -66,17 +66,17 @@
 						</div>
 					</div>
 				</div>
-				<?php include "../components/footer.php" ?>
+				<?php include "components/footer.php" ?>
 			</div>
 		</div>
 	</div>
-	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="../components/assets/js/popper.min.js"></script>
-	<script src="../components/assets/js/bootstrap.min.js"></script>
-	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../components/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="../components/assets/plugins/datatables/datatables.min.js"></script>
-	<script src="../components/assets/js/script.js"></script>
+	<script src="components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="components/assets/js/popper.min.js"></script>
+	<script src="components/assets/js/bootstrap.min.js"></script>
+	<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="components/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="components/assets/plugins/datatables/datatables.min.js"></script>
+	<script src="components/assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php 
 if(isset($_GET['procedure_id'])){
-require_once 'db/connect.php';
+require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจาก param method get
 $procedure_id = $_GET['procedure_id'];
 $stmt = $db->prepare('DELETE FROM procedures WHERE procedure_id=:procedure_id');
@@ -20,7 +20,7 @@ echo '
                   title: "ลบข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "../pages/list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -31,7 +31,7 @@ echo '
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "../pages/list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

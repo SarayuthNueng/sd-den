@@ -3,7 +3,7 @@
 if(isset($_POST['user_id']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid'])  
     && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['tel'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once 'db/connect.php';
+     require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
 $firstname = $_POST['firstname'];
@@ -39,7 +39,7 @@ $stmt->execute();
                   title: "แก้ไขโปรไฟล์สำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "../pages/profile.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../profile.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -50,7 +50,7 @@ $stmt->execute();
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "../pages/profile.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../profile.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

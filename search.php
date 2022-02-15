@@ -1,8 +1,8 @@
 
 
-<?php include "../components/header.php" ?>
+<?php include "components/header.php" ?>
 
-<?php include "../components/sidebar.php" ?>
+<?php include "components/sidebar.php" ?>
 
 <div class="main-wrapper">
 	<div class="page-wrapper">
@@ -121,7 +121,7 @@
 							</div>
 						</div>
 					</div>
-					<?php include "../components/footer.php" ?>
+					<?php include "components/footer.php" ?>
 				</div>
 			</div>
 		</div>
@@ -129,20 +129,20 @@
 </div>
 
 
-<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
+<script src="components/assets/js/jquery-3.5.1.min.js"></script>
 
-<script src="../components/assets/js/popper.min.js"></script>
-<script src="../components/assets/js/bootstrap.min.js"></script>
-<script src="../components/assets/js/moment.min.js"></script>
-<script src="../components/assets/js/select2.min.js"></script>
+<script src="components/assets/js/popper.min.js"></script>
+<script src="components/assets/js/bootstrap.min.js"></script>
+<script src="components/assets/js/moment.min.js"></script>
+<script src="components/assets/js/select2.min.js"></script>
 
-<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="../components/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
 
-<script src="../components/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../components/assets/plugins/datatables/datatables.min.js"></script>
+<script src="components/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="components/assets/plugins/datatables/datatables.min.js"></script>
 
-<script src="../components/assets/js/script.js"></script>
+<script src="components/assets/js/script.js"></script>
 <script>
 	$(function () {
 		$('#datetimepicker3').datetimepicker({

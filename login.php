@@ -1,7 +1,7 @@
 
-<?php include "../components/header.php" ?>
+<?php include "components/header.php" ?>
 
-<?php include "../components/sidebar-user-level.php" ?>
+<?php include "components/sidebar-user-level.php" ?>
 
 <div class="main-wrapper">
 <div class="page-wrapper">
@@ -9,7 +9,7 @@
 		<div class="login-wrapper">
 			<div class="container">
 				<div class="loginbox">
-					<div class="login-left"> <img class="img-fluid" src="assets/img/logo-sd.png" alt="Logo"> </div>
+					<div class="login-left"> <img class="img-fluid" src="components/assets/img/logo-sd.png" alt="Logo"> </div>
 					<div class="login-right">
 						<div class="login-right-wrap">
 							<h1>เข้าสู่ระบบสมาชิก</h1>
@@ -29,7 +29,7 @@
 								<?php echo $_SESSION['err_uname']; ?>
 							</div>
 						<?php endif; ?>
-							<form action="login_db.php" method="post">
+							<form action="function/login_db.php" method="post">
 								<div class="form-group">
 									<input class="form-control" type="text" name="username" required placeholder="ผู้ใช้งาน"> </div>
 								<div class="form-group">
@@ -51,11 +51,11 @@
 	</div>
 </div>
 </div>
-	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="../components/assets/js/popper.min.js"></script>
-	<script src="../components/assets/js/bootstrap.min.js"></script>
-	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../components/assets/js/script.js"></script>
+	<script src="components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="components/assets/js/popper.min.js"></script>
+	<script src="components/assets/js/bootstrap.min.js"></script>
+	<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="components/assets/js/script.js"></script>
 </body>
 
 </html>

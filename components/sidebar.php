@@ -19,25 +19,29 @@
               <!-- ถ้าเข้าสู่ระบบแล้ว ก็ให้ไปเช็ค user_level ต่อ -->
               <!-- ถ้า user_level = admin ให้ไปที่ list-den.php -->
               <?php if($row['user_level'] == 'admin'){ ?>
-                <li class="">
-                <a href="../pages/list-den.php">
-                <i class="fas fa-user"></i>
-                  <span>เข้าสู่ระบบ</span>
-                </a>
+                <li class="submenu">
+                  <a href="#">
+                    <i class="fas fa-tooth"></i> <span><?php echo $row['username']; ?></span>
+                    <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="submenu_class" style="display: none">
+                    <li><a style="pointer-events: none; color: #05eeff;" href="">สมาชิกทั้งหมด</a></li>
+                    <li><a style="pointer-events: none; color: #05eeff;" href="">ประเภทการนัด</a></li>
+                  </ul>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
                <?php }else if($row['user_level'] == 'user'){ ?>
                 <li class="">
-                <a href="../pages/add-calendar.php">
+                <a href="add-calendar.php">
                 <i class="fas fa-user"></i>
-                  <span>เข้าสู่ระบบ</span>
+                  <span><?php echo $row['username']; ?></span>
                 </a>
                 </li>
 
               <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->
                <?php }else {?>
                 <li class="">
-                <a href="../pages/login.php">
+                <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
@@ -47,7 +51,7 @@
             <!-- ถ้า นอกเหนือจากนี้ ให้แสดงปกติ -->   
             <?php } else { ?>
               <li class="">
-                <a href="../pages/login.php">
+                <a href="login.php">
                 <i class="fas fa-user"></i>
                   <span>เข้าสู่ระบบ</span>
                 </a>
@@ -57,19 +61,19 @@
               <li class="list-divider"></li>
               
               <li>
-                <a href="../index.php">
+                <a href="index.php">
                   <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
                 </a>
               </li>
               
               <li>
-                <a href="../pages/dashboard.php">
+                <a href="dashboard.php">
                   <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
                 </a>
               </li>
 
 			        <li>
-                <a href="../pages/search.php">
+                <a href="search.php">
                   <i class="fas fa-search"></i><span>ค้นหาข้อมูล</span>
                 </a>
               </li>

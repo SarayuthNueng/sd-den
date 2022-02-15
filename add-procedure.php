@@ -1,6 +1,6 @@
 
-<?php include "../components/header-user-level.php" ?>
-<?php include "../components/sidebar-user-level.php" ?>
+<?php include "components/header-user-level.php" ?>
+<?php include "components/sidebar-user-level.php" ?>
  
 
 	<div class="main-wrapper">
@@ -30,7 +30,7 @@
 						<?php echo $_SESSION['err_insert']; ?>
 					</div>
 				<?php endif; ?>
-						<form action="add-procedure-db.php" method="post">
+						<form action="function/add-procedure-db.php" method="post">
 							<div class="row formtype">
 								<div class="col-md-12">
 									<div class="form-group ">
@@ -54,14 +54,14 @@
 			</div>
 		</div>
 	</div>
-	<script src="../components/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="../components/assets/js/popper.min.js"></script>
-	<script src="../components/assets/js/bootstrap.min.js"></script>
-	<script src="../components/assets/js/moment.min.js"></script>
-	<script src="../components/assets/js/select2.min.js"></script>
-	<script src="../components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../components/assets/plugins/raphael/raphael.min.js"></script>
-	<script src="../components/assets/js/script.js"></script>
+	<script src="components/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="components/assets/js/popper.min.js"></script>
+	<script src="components/assets/js/bootstrap.min.js"></script>
+	<script src="components/assets/js/moment.min.js"></script>
+	<script src="components/assets/js/select2.min.js"></script>
+	<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="components/assets/plugins/raphael/raphael.min.js"></script>
+	<script src="components/assets/js/script.js"></script>
 	
 </body>
 
