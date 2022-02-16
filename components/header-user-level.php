@@ -3,7 +3,7 @@
 	include('db/connect.php');  // นำเข้าไฟล์ database
 
     // ถ้าไม่มี $_SESSION['is_logged_in'] (เก็บสถานะ login โดยจะเก็บตอนที่สมัครสมาชิกหรือ login แล้วเท่านั้น) ให้กลับไปยังหน้า login.php เพื่อทำการ login ก่อน
-    if (!isset($_SESSION['is_logged_in'])) {
+    if ($_SESSION['user_id'] == "") {
         header('location: login.php');
     }
 	// ถ้ามี $_SESSION['is_logged_in'] แสดงว่ามีการ login เข้ามาแล้ว
@@ -112,7 +112,7 @@
 						<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
 						<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
             <?php if($row['user_level'] == 'user') {?>
-              <a class="dropdown-item" href="add-calendar.php">Add Event calendar</a> 
+              <a class="dropdown-item" href="update-password-profile.php">change password</a> 
             <?php } ?>
             <a class="dropdown-item" href="profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
 						<a class="dropdown-item" href="logout.php">Logout</a> </div>

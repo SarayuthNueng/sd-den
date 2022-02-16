@@ -14,7 +14,7 @@
               
             <!-- เงื่อนไขตรวจสอบว่าได้ทำการ login ไว้ไหม // ดักไว้ที่ปุ่ม เข้าสู่ระบบ -->
             <!-- เช็คว่า session ได้เข้าสู่ระบบหรือยัง -->
-            <?php if(isset($_SESSION['is_logged_in'])){ ?>  
+            <?php if(isset($_SESSION['user_id'])){ ?>  
 
               <!-- ถ้าเข้าสู่ระบบแล้ว ก็ให้ไปเช็ค user_level ต่อ -->
               <!-- ถ้า user_level = admin ให้ไปที่ list-den.php -->
@@ -78,6 +78,12 @@
 			        <li>
                 <a href="search.php">
                   <i class="fas fa-search"></i><span>ค้นหาข้อมูล</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="test-login.php">
+                  <i class="fas fa-search"></i><span>test_login</span>
                 </a>
               </li>
               
