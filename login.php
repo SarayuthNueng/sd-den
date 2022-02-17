@@ -1,4 +1,45 @@
 
+<?php 
+    session_start();
+    include_once('function/login-function.php'); 
+    
+    $userdata = new DB_con();
+
+    if (isset($_POST['login'])) {
+        $uname = $_POST['username'];
+        $password = md5($_POST['password']);
+
+        $result = $userdata->login($uname, $password);
+        $num = mysqli_fetch_array($result);
+
+        if ($num > 0) {
+            $_SESSION['user_id'] = $num['user_id'];
+            $_SESSION['firstname'] = $num['firstname'];
+            $_SESSION['lastname'] = $num['lastname'];
+            $_SESSION['username'] = $num['username'];
+            $_SESSION['email'] = $num['email'];
+            $_SESSION['tel'] = $num['tel'];
+            $_SESSION['address'] = $num['address'];
+            $_SESSION['user_level'] = $num['user_level'];
+
+            if ($_SESSION['user_level'] == 'admin') {
+                echo "<script>alert('Login Admin Successful!');</script>";
+                echo "<script>window.location.href='list-den.php'</script>";
+            }
+
+            if ($_SESSION['user_level'] == 'user') {
+                echo "<script>alert('Login User Successful!');</script>";
+                echo "<script>window.location.href='add-calendar.php'</script>";
+            }
+            
+        } else {
+            echo "<script>alert('Something went wrong! Please try again.');</script>";
+            echo "<script>window.location.href='login.php'</script>";
+        }
+    } 
+
+?>
+
 <?php include "components/header.php" ?>
 
 <?php include "components/sidebar-user-level.php" ?>
@@ -14,29 +55,15 @@
 						<div class="login-right-wrap">
 							<h1>เข้าสู่ระบบสมาชิก</h1>
 							<p class="account-subtitle"></p>
-						<?php if (isset($_SESSION['err_fill'])) : ?>
-						<div class="alert alert-danger alert-custom" role="alert">
-						<?php echo $_SESSION['err_fill']; ?>
-						</div>
-        				<?php endif; ?>
-						<?php if (isset($_SESSION['err_pw'])) : ?>
-							<div class="alert alert-danger alert-custom" role="alert">
-								<?php echo $_SESSION['err_pw']; ?>
-							</div>
-						<?php endif; ?>
-						<?php if (isset($_SESSION['err_uname'])) : ?>
-							<div class="alert alert-danger alert-custom" role="alert">
-								<?php echo $_SESSION['err_uname']; ?>
-							</div>
-						<?php endif; ?>
-							<form action="function/login_db.php" method="post">
+						
+							<form action="" method="post">
 								<div class="form-group">
 									<input class="form-control" type="text" name="username" required placeholder="ผู้ใช้งาน"> </div>
 								<div class="form-group">
 									<input class="form-control" type="password" name="password" required placeholder="รหัสผ่าน"> </div>
 								<div class="form-group">
 								<!-- <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">Login</button> -->
-									<button type="submit" name="submit" class="btn btn-primary btn-block" role="button">เข้าสู่ระบบ</button>
+									<button type="submit" name="login" class="btn btn-primary btn-block" role="button">เข้าสู่ระบบ</button>
 								</div>
 							</form>
 
@@ -60,10 +87,3 @@
 
 </html>
 
-<?php
-    if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['err_uname'])) {
-        unset($_SESSION['err_fill']);
-        unset($_SESSION['err_pw']);
-        unset($_SESSION['err_uname']);
-    }
-?>

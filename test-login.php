@@ -33,7 +33,7 @@
             
         } else {
             echo "<script>alert('Something went wrong! Please try again.');</script>";
-            echo "<script>window.location.href='test-login.php'</script>";
+            echo "<script>window.location.href='login.php'</script>";
         }
     } 
 

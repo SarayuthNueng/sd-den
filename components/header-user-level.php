@@ -4,7 +4,7 @@
 
     // ถ้าไม่มี $_SESSION['is_logged_in'] (เก็บสถานะ login โดยจะเก็บตอนที่สมัครสมาชิกหรือ login แล้วเท่านั้น) ให้กลับไปยังหน้า login.php เพื่อทำการ login ก่อน
     if ($_SESSION['user_id'] == "") {
-        header('location: login.php');
+        header('location: ../login.php');
     }
 	// ถ้ามี $_SESSION['is_logged_in'] แสดงว่ามีการ login เข้ามาแล้ว
     else {

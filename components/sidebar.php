@@ -81,11 +81,7 @@
                 </a>
               </li>
 
-              <li>
-                <a href="test-login.php">
-                  <i class="fas fa-search"></i><span>test_login</span>
-                </a>
-              </li>
+              
               
               <li class="list-divider"></li>
               <li class="submenu">
