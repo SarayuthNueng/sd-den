@@ -111,9 +111,9 @@
 						</div> 
 						<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
 						<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
-            <?php if($row['user_level'] == 'user') {?>
-              <a class="dropdown-item" href="update-password-profile.php">change password</a> 
-            <?php } ?>
+            <!-- <?php // if($row['user_level'] == 'user') {?>
+              <a class="dropdown-item" href="change-password-profile.php">change password</a> 
+            <?php // } ?> -->
             <a class="dropdown-item" href="profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
 						<a class="dropdown-item" href="logout.php">Logout</a> </div>
 				</li>

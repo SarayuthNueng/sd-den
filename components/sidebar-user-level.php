@@ -38,6 +38,7 @@
                   </a>
                   <ul class="submenu_class" style="display: none">
                     <li><a  href="add-calendar.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                    <li><a  href="logout.php">ออกจากระบบ</a></li>
                   </ul>
                 </li>
 

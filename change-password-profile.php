@@ -1,4 +1,4 @@
-﻿<?php include "components/header-user-level.php" ?>
+<?php include "components/header-user-level.php" ?>
 <?php include "components/sidebar-user-level.php" ?>
 
 <div class="main-wrapper">
@@ -32,12 +32,12 @@
 					<div class="col-md-12">
 						<div class="profile-menu">
 							<ul class="nav nav-tabs nav-tabs-solid">
-								<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a> </li>
-								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password_tab">Password</a> </li>
+								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#per_details_tab">About</a> </li>
+								<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#password_tab">Password</a> </li>
 							</ul>
 						</div>
 						<div class="tab-content profile-tab-cont">
-							<div class="tab-pane fade show active" id="per_details_tab">
+							<div class="tab-pane fade show " id="per_details_tab">
 								<div class="row ">
 									<div class="col-lg-12">
 										<div class="card ">
@@ -145,7 +145,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="password_tab" class="tab-pane fade">
+							<div id="password_tab" class="tab-pane fade show active">
 								<div class="card">
 									<div class="card-body">
 										<h5 class="card-title">Change Password</h5>

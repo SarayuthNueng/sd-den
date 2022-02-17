@@ -5,8 +5,8 @@ include('../db/connect.php');  // นำเข้าไฟล์ database
 // ทำการเช็คว่ามีการ submit form หรือไม่ isset() จะเช็คว่ามี data หรือไม่
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $password = md5($_POST['password']);
+    $confirm_password = md5($_POST['confirm_password']);
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $cid = $_POST['cid'];
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
             // ถ้าไม่มี username จะทำการเข้ารหัสโดย password_hash()
             else {
                 // ทำการเข้ารหัสโดย password_hash()
-                $password = md5($password, PASSWORD_DEFAULT);
+                // $password = md5($password, PASSWORD_DEFAULT);
                 $insert_stmt = $db->prepare("INSERT INTO users (username, password, firstname, lastname, cid, 
                 address, email, tel, user_level) VALUES (:username, :password, :firstname, :lastname, :cid, :address, :email, :tel, 'user')");
                 $insert_stmt->bindParam(':username', $username);
