@@ -23,7 +23,17 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
     <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <meta charset='utf-8' />
 
+  
+
+
+  <style type="text/css">
+    #calendar {
+      width: 80%;
+      margin: auto;
+    }
+  </style>
   </head>
 
   <style>

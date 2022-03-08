@@ -2,6 +2,9 @@
 <?php include "components/header.php" ?>
 
 <?php include "components/sidebar-user-level.php" ?>
+<?php
+$fullcalendar_path = "fullcalendar-4.4.2/packages/";
+?>
 <div class="main-wrapper">
 		
 		<div class="page-wrapper mt-5">
