@@ -25,15 +25,6 @@
 
     <meta charset='utf-8' />
 
-  
-
-
-  <style type="text/css">
-    #calendar {
-      width: 80%;
-      margin: auto;
-    }
-  </style>
   </head>
 
   <style>
