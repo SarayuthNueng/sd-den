@@ -38,11 +38,27 @@
 										<input class="form-control" type="text" name="procedure_name"  minlength="3" placeholder="ชื่อประเภทหัตถการ">
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group ">
+								<div class="col-md-12 mb-3">
+									<!-- <div class="form-group ">
 										<label>สีประเภทหัตถการ</label>
 										<input class="form-control" type="text" name="color" placeholder="สีประเภทหัตถการ"> 
-                                    </div>
+                                    </div> -->
+										<label for="color">สีประเภทหัตถการ</label>
+											<select class="form-control" 
+												name="color" id="color">
+												<option>เหลือง</option>
+												<option>แดง</option>
+												<option>ม่วง</option>
+												<option>เขียว</option>
+												<option>น้ำตาล</option>
+												<option>ฟ้า</option>
+												<option>เทา</option>
+												<option>น้ำเงิน</option>
+												<option>ชมพู</option>
+												<option>ดำ</option>
+												<option>เขียวเทา</option>
+												<option>ทอง</option>
+											</select>
 								</div>
 							</div>
                                 <a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
