@@ -14,7 +14,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $p_event_allday = (isset($_POST['event_allday']))?1:0;
     $p_event_detail = (isset($_POST['event_detail']))?$_POST['event_detail']:"";
     $sql = "
-    INSERT INTO tbl_event SET
+    INSERT INTO event SET
     event_title='".$p_event_title."',
     event_startdate='".$p_event_startdate."',
     event_enddate='".$p_event_enddate."',

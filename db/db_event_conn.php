@@ -1,5 +1,5 @@
 <?php  
-$mysqli = new mysqli("localhost", "root","","event");  
+$mysqli = new mysqli("localhost", "root","","sd_den_calendar");  
 /* check connection */
 if ($mysqli->connect_errno) { 
    

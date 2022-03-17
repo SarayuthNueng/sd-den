@@ -7,7 +7,7 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 $json_data = array();
  
 $sql ="
-SELECT * FROM tbl_event WHERE event_startdate>='".$_GET['start']."'
+SELECT * FROM event WHERE event_startdate>='".$_GET['start']."'
 AND event_enddate<='".$_GET['end']."'
 ";
 $result = $mysqli->query($sql);

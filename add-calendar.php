@@ -15,7 +15,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $p_event_allday = (isset($_POST['event_allday']))?1:0;
     $p_event_detail = (isset($_POST['event_detail']))?$_POST['event_detail']:"";
     $sql = "
-    INSERT INTO tbl_event SET
+    INSERT INTO event SET
     event_title='".$p_event_title."',
     event_startdate='".$p_event_startdate."',
     event_enddate='".$p_event_enddate."',
@@ -146,6 +146,17 @@ $fullcalendar_path = "fullcalendar-4.4.2/packages/";
 							calendar.render();
 
 							});
+						</script>
+						<script type="text/javascript">
+							function viewdetail(id) {
+							// ก่อนที่ modal จะแสดง
+							$('#calendarmodal').on('show.bs.modal', function(e) {
+								var event = calendar.getEventById(id) // ดึงข้อมูล ผ่าน api
+								$("#calendarmodal-title").html(event.title);
+								$("#calendarmodal-detail").html(event.extendedProps.detail); // ข้อมูลเพิ่มเติมจะเรียกผ่าน extendedProps
+							});
+							$("#calendarmodal").modal(); // แสดง modal
+							}
 						</script>
 
 						</div>
