@@ -2,6 +2,22 @@
 <?php include "components/header-user-level.php" ?>
 <?php include "components/sidebar-user-level.php" ?>
  
+<?php 
+	$เหลือง = '#FFCC00';
+	$แดง = '#FF3300';
+	$ม่วง = '#CC33FF';
+	$เขียว = '#66CC33';
+	$น้ำตาล = '#996600';
+	$ฟ้า = '#6699FF';
+	$เทา = '#666666';
+	$น้ำเงิน = '#000080';
+	$ชมพู = '#FF69B4';
+	$ดำ = '#000000';
+	$เขียวเทา = '#2F4F4F';
+	$แดงอ่อน = '#CD5C5C';
+	
+
+?>
 
 	<div class="main-wrapper">
 
@@ -38,11 +54,26 @@
 										<input class="form-control" type="text" name="procedure_name" required value="<?= $row['procedure_name'];?>"  minlength="3" placeholder="ชื่อประเภทการนัด">
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group ">
+								<div class="col-md-12 mb-3">
+									<!-- <div class="form-group ">
 										<label>สีประเภทการนัด</label>
-										<input class="form-control" type="text" name="color" required value="<?= $row['color'];?>" placeholder="สีประเภทการนัด"> 
-                                    </div>
+										<input class="form-control" type="text" name="color" required value="<?//= $row['color'];?>" placeholder="สีประเภทการนัด"> 
+                                    </div> -->
+									<label for="color">สีประเภทหัตถการ</label>
+											<select class="form-control" type="text" name="color" required value="<?= $row['color'];?>" id="color" >
+												<option style="color: white; background-color: <?php echo $เหลือง?>;"><?php echo $เหลือง ?></option>
+												<option style="color: white; background-color: <?php echo $แดง?>;"><?php echo $แดง ?></option>
+												<option style="color: white; background-color: <?php echo $ม่วง?>;"><?php echo $ม่วง ?></option>
+												<option style="color: white; background-color: <?php echo $เขียว?>;"><?php echo $เขียว ?></option>
+												<option style="color: white; background-color: <?php echo $น้ำตาล?>;"><?php echo $น้ำตาล ?></option>
+												<option style="color: white; background-color: <?php echo $ฟ้า?>;"><?php echo $ฟ้า ?></option>
+												<option style="color: white; background-color: <?php echo $เทา?>;"><?php echo $เทา ?></option>
+												<option style="color: white; background-color: <?php echo $น้ำเงิน?>;"><?php echo $น้ำเงิน ?></option>
+												<option style="color: white; background-color: <?php echo $ชมพู?>;"><?php echo $ชมพู ?></option>
+												<option style="color: white; background-color: <?php echo $ดำ?>;"><?php echo $ดำ ?></option>
+												<option style="color: white; background-color: <?php echo $เขียวเทา?>;"><?php echo $เขียวเทา ?></option>
+												<option style="color: white; background-color: <?php echo $แดงอ่อน?>;"><?php echo $แดงอ่อน ?></option>
+											</select>
 								</div>
 							</div>
                                 <a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>

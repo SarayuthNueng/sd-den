@@ -2,6 +2,22 @@
 <?php include "components/header-user-level.php" ?>
 <?php include "components/sidebar-user-level.php" ?>
  
+<?php 
+	$เหลือง = '#FFCC00';
+	$แดง = '#FF3300';
+	$ม่วง = '#CC33FF';
+	$เขียว = '#66CC33';
+	$น้ำตาล = '#996600';
+	$ฟ้า = '#6699FF';
+	$เทา = '#666666';
+	$น้ำเงิน = '#000080';
+	$ชมพู = '#FF69B4';
+	$ดำ = '#000000';
+	$เขียวเทา = '#2F4F4F';
+	$แดงอ่อน = '#CD5C5C';
+	
+
+?>
 
 	<div class="main-wrapper">
 		
@@ -44,20 +60,19 @@
 										<input class="form-control" type="text" name="color" placeholder="สีประเภทหัตถการ"> 
                                     </div> -->
 										<label for="color">สีประเภทหัตถการ</label>
-											<select class="form-control" 
-												name="color" id="color">
-												<option>เหลือง</option>
-												<option>แดง</option>
-												<option>ม่วง</option>
-												<option>เขียว</option>
-												<option>น้ำตาล</option>
-												<option>ฟ้า</option>
-												<option>เทา</option>
-												<option>น้ำเงิน</option>
-												<option>ชมพู</option>
-												<option>ดำ</option>
-												<option>เขียวเทา</option>
-												<option>ทอง</option>
+											<select class="form-control" name="color" id="color">
+												<option style="color: white; background-color: <?php echo $เหลือง?>;"><?php echo $เหลือง ?></option>
+												<option style="color: white; background-color: <?php echo $แดง?>;"><?php echo $แดง ?></option>
+												<option style="color: white; background-color: <?php echo $ม่วง?>;"><?php echo $ม่วง ?></option>
+												<option style="color: white; background-color: <?php echo $เขียว?>;"><?php echo $เขียว ?></option>
+												<option style="color: white; background-color: <?php echo $น้ำตาล?>;"><?php echo $น้ำตาล ?></option>
+												<option style="color: white; background-color: <?php echo $ฟ้า?>;"><?php echo $ฟ้า ?></option>
+												<option style="color: white; background-color: <?php echo $เทา?>;"><?php echo $เทา ?></option>
+												<option style="color: white; background-color: <?php echo $น้ำเงิน?>;"><?php echo $น้ำเงิน ?></option>
+												<option style="color: white; background-color: <?php echo $ชมพู?>;"><?php echo $ชมพู ?></option>
+												<option style="color: white; background-color: <?php echo $ดำ?>;"><?php echo $ดำ ?></option>
+												<option style="color: white; background-color: <?php echo $เขียวเทา?>;"><?php echo $เขียวเทา ?></option>
+												<option style="color: white; background-color: <?php echo $แดงอ่อน?>;"><?php echo $แดงอ่อน ?></option>
 											</select>
 								</div>
 							</div>

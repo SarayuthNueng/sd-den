@@ -45,7 +45,7 @@
 											?>
 												<td><?= $p['procedure_id'];?></td>
 												<td><?= $p['procedure_name'];?></td>
-												<td><?= $p['color'];?></td>
+												<td style="color:white; background-color: <?php echo $p['color']?>; width: 5%;"><?= $p['color'];?></td>
 												<td>
 													<a type="button" class="fas fa-edit ml-2"
 													href="edit-procedure.php?procedure_id=<?= $p['procedure_id'];?>" role="button" style="color:steelblue;">
