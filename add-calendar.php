@@ -80,88 +80,60 @@ $fullcalendar_path = "fullcalendar-4.4.2/packages/";
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-12 col-md-8">
-					<div class="card">
-						<div class="card-body">
-							<!-- calendar -->
-							<div id="calendar"></div>
+				<!-- calendar -->
+				<div class="col-md-9">
+                          <div id="calendar"></div>
+                      </div>
 
-							<div class="modal fade" id="calendarmodal" tabindex="-1" role="dialog">
-							<!--กำหนด id ให้กับ modal-->
-							<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-								<h5 class="modal-title" id="calendarmodal-title">Modal title</h5>
-								<!--กำหนด id ให้ส่วนหัวข้อ-->
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								</div>
-								<div class="modal-body" id="calendarmodal-detail">
-								<!--ำหนด id ให้ส่วนรายละเอียด-->
-								Modal detail
-								</div>
-								<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-								</div>
-							</div>
-							</div>
-						</div>
-
-						<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-						
-						<script type="text/javascript">
-							var calendar; // สร้างตัวแปรไว้ด้านนอก เพื่อให้สามารถอ้างอิงแบบ global ได้
-							$(function() {
-							// กำหนด element ที่จะแสดงปฏิทิน
-							var calendarEl = $("#calendar")[0];
-
-							// กำหนดการตั้งค่า
-							calendar = new FullCalendar.Calendar(calendarEl, {
-								plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'], // plugin ที่เราจะใช้งาน
-								defaultView: 'dayGridMonth', // ค้าเริ่มร้นเมื่อโหลดแสดงปฏิทิน
-								header: {
-								left: 'prev,next today',
-								center: 'title',
-								right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-								},
-								events: { // เรียกใช้งาน event จาก json ไฟล์ ที่สร้างด้วย php
-								url: 'events.php?gData=1',
-								error: function() {
-
-								}
-								},
-								eventLimit: true, // allow "more" link when too many events
-								locale: 'th', // กำหนดให้แสดงภาษาไทย
-								firstDay: 0, // กำหนดวันแรกในปฏิทินเป็นวันอาทิตย์ 0 เป็นวันจันทร์ 1
-								showNonCurrentDates: false, // แสดงที่ของเดือนอื่นหรือไม่
-								eventTimeFormat: { // รูปแบบการแสดงของเวลา เช่น '14:30' 
-								hour: '2-digit',
-								minute: '2-digit',
-								meridiem: false
-								}
-							});
-
-							// แสดงปฏิทิน 
-							calendar.render();
-
-							});
-						</script>
-						<script type="text/javascript">
-							function viewdetail(id) {
-							// ก่อนที่ modal จะแสดง
-							$('#calendarmodal').on('show.bs.modal', function(e) {
-								var event = calendar.getEventById(id) // ดึงข้อมูล ผ่าน api
-								$("#calendarmodal-title").html(event.title);
-								$("#calendarmodal-detail").html(event.extendedProps.detail); // ข้อมูลเพิ่มเติมจะเรียกผ่าน extendedProps
-							});
-							$("#calendarmodal").modal(); // แสดง modal
-							}
-						</script>
-
-						</div>
-					</div>
-				</div>
+                      <!-- form event -->
+                  <div class="col-md-3">
+                      <div class="cardt rounded-0 shadow">
+                          <div class="card-header text-light text-center" style="background-color:#2C3E50;">
+                              <h5 class="card-title">ฟอร์ม เพิ่มกิจกรรม</h5>
+                          </div>
+                          <div class="card-body">
+                              <div class="container-fluid">
+                                  <form action="save_schedule.php" method="post" id="schedule-form">
+                                      <input type="hidden" name="id" value="">
+                                      <div class="form-group mb-2">
+                                          <label for="title" class="control-label">ชื่อแพทย์</label>
+                                          <input type="text" class="form-control form-control-sm rounded-0" name="title_dentist" id="title_dentist" required>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="title" class="control-label">ชื่อคนไข้</label>
+                                          <input type="text" class="form-control form-control-sm rounded-0" name="patient_name" id="patient_name" required>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="title" class="control-label">เบอร์โทรคนไข้</label>
+                                          <input type="text" class="form-control form-control-sm rounded-0" name="patient_tel" id="patient_tel" required>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="title" class="control-label">ประเภทหัตถการ</label>
+                                          <input type="text" class="form-control form-control-sm rounded-0" name="procedure_color" id="procedure_color" required>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="description" class="control-label">รายละเอียด</label>
+                                          <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="start_datetime" class="control-label">วันและเวลาที่เริ่ม</label>
+                                          <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
+                                      </div>
+                                      <div class="form-group mb-2">
+                                          <label for="end_datetime" class="control-label">วันและเวลาที่สิ้นสุด</label>
+                                          <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="card-footer">
+                              <div class="text-center">
+                                  <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
+                                  <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 			</div>
 			
 			

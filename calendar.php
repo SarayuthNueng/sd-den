@@ -1,26 +1,39 @@
-<?php
-$fullcalendar_path = "fullcalendar-4.4.2/packages/";
-?>
+<?php require_once('db-connect.php') ?>
 <!DOCTYPE html>
 <html lang='en'>
 
 <head>
-  <meta charset='utf-8' />
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/style-calendar.min.css">
+    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/style-calendar.min.js"></script>
+    <script src="./fullcalendar/lib/main.min.js"></script>
+    <!-- <style>
+        :root {
+            --bs-success-rgb: 71, 222, 152 !important;
+        }
 
-  <link href='<?= $fullcalendar_path ?>/core/main.css' rel='stylesheet' />
-  <link href='<?= $fullcalendar_path ?>/daygrid/main.css' rel='stylesheet' />
-  <!--   ส่วนที่เพิ่มเข้ามาใหม่-->
-  <link href='<?= $fullcalendar_path ?>/timegrid/main.css' rel='stylesheet' />
-  <link href='<?= $fullcalendar_path ?>/list/main.css' rel='stylesheet' />
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
 
-  <script src='<?= $fullcalendar_path ?>/core/main.js'></script>
-  <script src='<?= $fullcalendar_path ?>/daygrid/main.js'></script>
-  <!--   ส่วนที่เพิ่มเข้ามาใหม่-->
-  <script src='<?= $fullcalendar_path ?>/core/locales/th.js'></script>
-  <script src='<?= $fullcalendar_path ?>/timegrid/main.js'></script>
-  <script src='<?= $fullcalendar_path ?>/interaction/main.js'></script>
-  <script src='<?= $fullcalendar_path ?>/list/main.js'></script>
-
+        .btn-info.text-light:hover,
+        .btn-info.text-light:focus {
+            background: #000;
+        }
+        table, tbody, td, tfoot, th, thead, tr {
+            border-color: #ededed !important;
+            border-style: solid;
+            border-width: 0.1px !important;
+        }
+    </style> -->
 
   <style type="text/css">
     #calendar {
@@ -46,81 +59,77 @@ $fullcalendar_path = "fullcalendar-4.4.2/packages/";
 						<div class="card-body">
 
               <div id='calendar'></div>
-                  <div class="modal fade" id="calendarmodal" tabindex="-1" role="dialog">
-                    <!--กำหนด id ให้กับ modal-->
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="calendarmodal-title">Modal title</h5>
-                          <!--กำหนด id ให้ส่วนหัวข้อ-->
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body" id="calendarmodal-detail">
-                          <!--ำหนด id ให้ส่วนรายละเอียด-->
-                          Modal detail
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        </div>
+
+              <!-- Event Details Modal -->
+              <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="event-details-modal">
+                  <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content rounded-0">
+                          <div class="modal-header rounded-0">
+                              <h5 class="modal-title fw-bold">ฟอร์ม เพิ่มกิจกรรม</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body rounded-0">
+                              <div class="container-fluid">
+                                  <dl>
+                                      <dt class="text-muted fw-bold">ชื่อแพทย์</dt>
+                                      <dd id="title_dentist" class=""></dd>
+                                      <dt class="text-muted fw-bold">ชื่อคนไข้</dt>
+                                      <dd id="patient_name" class=""></dd>
+                                      <dt class="text-muted fw-bold">เบอร์โทรคนไข้</dt>
+                                      <dd id="patient_tel" class=""></dd>
+                                      <dt class="text-muted fw-bold">ประเภทหัตถการ</dt>
+                                      <dd id="procedure_color" class=""></dd>
+                                      <dt class="text-muted fw-bold">รายละเอียด</dt>
+                                      <dd id="description" class=""></dd>
+                                      <dt class="text-muted fw-bold">วันและเวลาที่เริ่ม</dt>
+                                      <dd id="start" class=""></dd>
+                                      <dt class="text-muted fw-bold">วันและเวลาที่สิ้นสุด</dt>
+                                      <dd id="end" class=""></dd>
+                                  </dl>
+                              </div>
+                          </div>
+                          <div class="modal-footer rounded-0">
+                              <div class="text-end">
+                                  <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">แก้ไข</button>
+                                  <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">ลบ</button>
+                                  <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">ปิด</button>
+                              </div>
+                          </div>
                       </div>
-                    </div>
                   </div>
+              </div>
+              <!-- Event Details Modal -->
+                  
+              <script src="./fullcalendar/lib/locales/th.js"></script>
 
-                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+              <!-- covert date-time-thai -->
+              <?php
+                  function DateThai($strDate)
+                  {
+                      $strYear = date("Y",strtotime($strDate))+543;
+                      $strMonth= date("n",strtotime($strDate));
+                      $strDay= date("j",strtotime($strDate));
+                      $strHour= date("H",strtotime($strDate));
+                      $strMinute= date("i",strtotime($strDate));
+                      $strSeconds= date("s",strtotime($strDate));
+                      $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                      $strMonthThai=$strMonthCut[$strMonth];
+                      return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
+                  }
+              ?>
 
-                  <script type="text/javascript">
-                    var calendar; // สร้างตัวแปรไว้ด้านนอก เพื่อให้สามารถอ้างอิงแบบ global ได้
-                    $(function() {
-                      // กำหนด element ที่จะแสดงปฏิทิน
-                      var calendarEl = $("#calendar")[0];
-
-                      // กำหนดการตั้งค่า
-                      calendar = new FullCalendar.Calendar(calendarEl, {
-                        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'], // plugin ที่เราจะใช้งาน
-                        defaultView: 'dayGridMonth', // ค้าเริ่มร้นเมื่อโหลดแสดงปฏิทิน
-                        header: {
-                          left: 'prev,next today',
-                          center: 'title',
-                          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-                        },
-                        events: { // เรียกใช้งาน event จาก json ไฟล์ ที่สร้างด้วย php
-                          url: 'events.php?gData=1',
-                          error: function() {
-
-                          }
-                        },
-                        eventLimit: true, // allow "more" link when too many events
-                        locale: 'th', // กำหนดให้แสดงภาษาไทย
-                        firstDay: 0, // กำหนดวันแรกในปฏิทินเป็นวันอาทิตย์ 0 เป็นวันจันทร์ 1
-                        showNonCurrentDates: false, // แสดงที่ของเดือนอื่นหรือไม่
-                        eventTimeFormat: { // รูปแบบการแสดงของเวลา เช่น '14:30' 
-                          hour: '2-digit',
-                          minute: '2-digit',
-                          meridiem: false
-                        }
-                      });
-
-                      // แสดงปฏิทิน 
-                      calendar.render();
-
-                    });
-                  </script>
-
-                  <script type="text/javascript">
-                    function viewdetail(id) {
-                      // ก่อนที่ modal จะแสดง
-                      $('#calendarmodal').on('show.bs.modal', function(e) {
-                        var event = calendar.getEventById(id) // ดึงข้อมูล ผ่าน api
-                        $("#calendarmodal-title").html(event.title);
-                        $("#calendarmodal-detail").html(event.extendedProps.detail); // ข้อมูลเพิ่มเติมจะเรียกผ่าน extendedProps
-                      });
-                      $("#calendarmodal").modal(); // แสดง modal
-                    }
-                  </script>
-
+              <?php 
+              $schedules = $conn->query("SELECT * FROM `event_list`");
+              $sched_res = [];
+              foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
+                  $row['sdate'] = datethai($row['start_datetime']);
+                  $row['edate'] = datethai($row['end_datetime']);
+                  $sched_res[$row['id']] = $row;
+              }
+              ?>
+              <?php 
+              if(isset($conn)) $conn->close();
+              ?>
 						</div>
 					</div>
 				</div>
@@ -128,11 +137,9 @@ $fullcalendar_path = "fullcalendar-4.4.2/packages/";
 		</div>
 
 </div>
-	<script src="components/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="components/assets/js/popper.min.js"></script>
-	<script src="components/assets/js/bootstrap.min.js"></script>
+  <script>
+      var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
+  </script>
+  <script src="./js/script.js"></script>
 	<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="components/assets/js/moment.min.js"></script>
-	<script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="components/assets/js/jquery-ui.min.js"></script>
 	<script src="components/assets/js/script.js"></script>
