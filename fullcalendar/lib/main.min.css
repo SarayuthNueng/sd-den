@@ -309,6 +309,7 @@ a.fc-event:hover {
 .fc .fc-scrollgrid-section table,
 .fc .fc-scrollgrid-section > td {
   height: 1px;
+  width: 100%;
 }
 .fc .fc-scrollgrid-section-liquid > td {
   height: 100%;
@@ -320,6 +321,7 @@ a.fc-event:hover {
 .fc .fc-scrollgrid-section-body table,
 .fc .fc-scrollgrid-section-footer table {
   border-bottom-style: hidden;
+  width: 100%;
 }
 .fc .fc-scrollgrid-section-sticky > * {
   background: var(--fc-page-bg-color, #fff);

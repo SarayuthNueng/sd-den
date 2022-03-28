@@ -13,7 +13,7 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/style-calendar.min.js"></script>
     <script src="./fullcalendar/lib/main.min.js"></script>
-    <!-- <style>
+    <style>
         :root {
             --bs-success-rgb: 71, 222, 152 !important;
         }
@@ -33,7 +33,7 @@
             border-style: solid;
             border-width: 0.1px !important;
         }
-    </style> -->
+    </style>
 
   <style type="text/css">
     #calendar {
@@ -47,9 +47,7 @@
 <?php include "components/header.php" ?>
 
 <?php include "components/sidebar-user-level.php" ?>
-<?php
-$fullcalendar_path = "fullcalendar-4.4.2/packages/";
-?>
+
 <div class="main-wrapper">
 		
 		<div class="page-wrapper mt-5">
