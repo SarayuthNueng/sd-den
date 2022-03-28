@@ -299,7 +299,6 @@ a.fc-event:hover {
   border-bottom-style: hidden;
 }
 .fc .fc-scrollgrid {
-  border-collapse: separate;
   border-right-width: 0;
 }
 .fc .fc-scrollgrid-liquid {

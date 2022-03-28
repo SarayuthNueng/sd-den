@@ -37,7 +37,7 @@
 
   <style type="text/css">
     #calendar {
-      width: 90%;
+      width: 70%;
       margin: auto;
     }
   </style>
@@ -86,13 +86,7 @@
                                   </dl>
                               </div>
                           </div>
-                          <div class="modal-footer rounded-0">
-                              <div class="text-end">
-                                  <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">แก้ไข</button>
-                                  <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">ลบ</button>
-                                  <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">ปิด</button>
-                              </div>
-                          </div>
+                          
                       </div>
                   </div>
               </div>
