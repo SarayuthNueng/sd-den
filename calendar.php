@@ -14,7 +14,8 @@
 
   <style type="text/css">
     #calendar {
-      width: 75%;
+      /* width: 77%; */
+      height: 700;
       margin: auto;
     }
   </style>
@@ -34,10 +35,11 @@
 						<div class="card-body">
 
            
-                <div class="container text-center col-md-12">
+                <div class="mb-4 container text-center col-md-12">
                   <h4>ปฏิทินการนัดทันตกรรม</h4>
-                  <div id='calendar'></div>
                 </div>
+
+                <div id='calendar'></div>
               
 
             <!-- Button trigger modal Edit data-->
