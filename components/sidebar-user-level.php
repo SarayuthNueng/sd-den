@@ -25,8 +25,10 @@
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
+                    <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
                     <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
                     <li><a  href="list-procedure.php">ประเภทการนัด</a></li>
+                    <li><a  href="logout.php">ออกจากระบบ</a></li>
                   </ul>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
@@ -37,6 +39,7 @@
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
+                    <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
                     <li><a  href="add-calendar.php">เพิ่มข้อมูลในปฏิทิน</a></li>
                     <li><a  href="logout.php">ออกจากระบบ</a></li>
                   </ul>

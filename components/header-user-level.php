@@ -97,26 +97,7 @@
         </div> -->
 
 	  	<ul class="nav user-menu">
-		  <li class="nav-item dropdown has-arrow">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> 
-						<span class="user-img px-2"><img class="rounded-circle px-2" src="components/assets/img/user.svg" width="40" alt="username"><?php echo $row['username']; ?></span> 
-					</a>
-					<div class="dropdown-menu">
-						<div class="user-header">
-							<div class="user-text">
-								<p class="text-muted mb-0" style="font-weight: bold; text-align: center;">
-									User Level : <?php echo $row['user_level']; ?>
-								</p>
-							</div>
-						</div> 
-						<!-- <a class="dropdown-item" href="profile.html">My Profile</a> 
-						<a class="dropdown-item" href="settings.html">Account Settings</a>  -->
-            <!-- <?php // if($row['user_level'] == 'user') {?>
-              <a class="dropdown-item" href="change-password-profile.php">change password</a> 
-            <?php // } ?> -->
-            <a class="dropdown-item" href="profile.php?user_id=<?= $row['user_id'];?>">My Profile</a> 
-						<a class="dropdown-item" href="logout.php">Logout</a> </div>
-				</li>
+		  
 		  </ul>
 		
       </div>

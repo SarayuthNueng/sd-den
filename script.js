@@ -7,6 +7,12 @@ $(document).ready(function() {
 			right: 'month,agendaWeek,agendaDay'
 		},
 		editable: false,
+		dayMaxEventRows: true, // allow "more" link when too many events
+		showNonCurrentDates: false, // แสดงที่ของเดือนอื่นหรือไม่
+		firstDay: 0, // กำหนดวันแรกในปฏิทินเป็นวันอาทิตย์ 0 เป็นวันจันทร์ 1
+        hour: 'numeric',
+        minute: '2-digit',
+        meridiem: false,
 		eventLimit: true, // allow "more" link when too many events
 		events:{
 			url:'json-event.php?get_json=get_json',
