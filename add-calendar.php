@@ -2,21 +2,21 @@
 <html lang='en'>
 
 <head>
-	<meta charset='utf-8' />
-	<link rel="stylesheet" href="fullcalendar-3.6.2/fullcalendar.min.css">
+  <meta charset='utf-8' />
+  <link rel="stylesheet" href="fullcalendar-3.6.2/fullcalendar.min.css">
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
 
-	<style>
-		#calendar {
-			/* width: 70%; */
-			margin: auto;
-		}
-	</style>
+  <style>
+    #calendar {
+      /* width: 70%; */
+      margin: auto;
+    }
+  </style>
 
 </head>
 
@@ -24,79 +24,79 @@
 <?php include "components/sidebar-user-level.php" ?>
 <div class="main-wrapper">
 
-	<div class="page-wrapper mt-5">
-			<div class="content container-fluid">
-				<div class="col-lg-12 col-md-8">
-					<div class="card">
-						<div class="card-body">
+  <div class="page-wrapper mt-5">
+    <div class="content container-fluid">
+      <div class="col-lg-12 col-md-8">
+        <div class="card">
+          <div class="card-body">
 
-			
-                <div class="mb-5 row">
-					<div class=" col-md-6 ">
-					<h4>เพิ่มข้อมูลในปฏิทิน</h4>
-					</div>
-					<div class=" container text-center col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_calendar_modal">+ เพิ่มข้อมูล</button>
-					</div>
-				</div>
 
-                <div id='calendar'></div>
-              
+            <div class="mb-5 row">
+              <div class=" col-md-6 ">
+                <h4>เพิ่มข้อมูลในปฏิทิน</h4>
+              </div>
+              <div class=" container text-center col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_calendar_modal">+ เพิ่มข้อมูล</button>
+              </div>
+            </div>
+
+            <div id='calendar'></div>
+
 
             <!-- Button trigger modal Edit data-->
-			      <span id="trigger_modal" data-toggle="modal" data-target="#calendar_modal"></span>
+            <span id="trigger_modal" data-toggle="modal" data-target="#calendar_modal"></span>
 
             <!-- Modal For edit data-->
             <div class="modal fade" id="calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="text-center modal-title" id="myModalLabel">Fullcalendar</h4>
-                </div>
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="text-center modal-title" id="myModalLabel">Fullcalendar</h4>
+                  </div>
                   <div id="get_calendar"></div>
-              </div>
+                </div>
               </div>
             </div>
 
-                <!-- Modal For new data-->
+            <!-- Modal For new data-->
             <div class="modal fade" id="new_calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="text-center modal-title" id="myModalLabel">New Fullcalendar</h4>
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="text-center modal-title" id="myModalLabel">New Fullcalendar</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="new_calendar">
+                      <div class="form-group">
+                        <label>เรื่อง</label>
+                        <input type="text" class="form-control" name="title" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>รายละเอียด</label>
+                        <input type="text" class="form-control" name="detail" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>วันที่เริมต้น</label>
+                        <input type="date" class="form-control" name="start" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>วันที่สิ้นสุด</label>
+                        <input type="date" class="form-control" name="end" placeholder="">
+                      </div>
+                      <input type="hidden" name="new_calendar_form">
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+
+                  </div>
                 </div>
-                <div class="modal-body">
-                  <form id="new_calendar">
-                    <div class="form-group">
-                    <label >เรื่อง</label>
-                    <input type="text" class="form-control" name="title" placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >รายละเอียด</label>
-                    <input type="text" class="form-control" name="detail" placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >วันที่เริมต้น</label>
-                    <input type="date" class="form-control" name="start"  placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >วันที่สิ้นสุด</label>
-                    <input type="date" class="form-control" name="end"  placeholder="">
-                    </div>
-                    <input type="hidden" name="new_calendar_form">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                
-                </div>
-              </div>
               </div>
             </div>
 
             <!-- Javascript -->
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
             <script type="text/javascript" src="fullcalendar-3.6.2/lib/moment.min.js"></script>
             <script type="text/javascript" src="fullcalendar-3.6.2/fullcalendar.min.js"></script>
@@ -105,14 +105,14 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
             <!-- นำเข้า script File -->
-            <script src='script.js'></script>	
-                  
+            <script src='script.js'></script>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 <script src="components/assets/js/popper.min.js"></script>
