@@ -4,7 +4,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <link rel="stylesheet" href="fullcalendar-3.6.2/fullcalendar.min.css">
+  <link rel="stylesheet" href="fullcalendar-3.9.0/fullcalendar.min.css">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -97,9 +97,9 @@
             <!-- Javascript -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/lib/moment.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/fullcalendar.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/locale/th.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/lib/moment.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/fullcalendar.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/locale/th.js"></script>
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 

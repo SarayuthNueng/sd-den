@@ -43,11 +43,11 @@ if(isset($_POST['id'])){
 				  </div>
 				  <div class="form-group">
 					<label >วันที่เริ่มต้น</label>
-					<input type="date" class="form-control" name="start"  value="'.$get_data['start'].'">
+					<input type="datetime" class="form-control" name="start"  value="'.$get_data['start'].'">
 				  </div>
 				  <div class="form-group">
 					<label >วันที่สิ้นสุด</label>
-					<input type="date" class="form-control" name="end" value="'.$get_data['end'].'">
+					<input type="datetime" class="form-control" name="end" value="'.$get_data['end'].'">
 				  </div>
 					<input type="hidden" name="edit_calendar_id" value="'.$get_data['id'].'">
 				</form>

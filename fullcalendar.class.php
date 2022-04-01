@@ -82,9 +82,9 @@ class Fullcalendar {
 		
 		$db = $this->connect();
 		
-		$add_user = $db->prepare("UPDATE calendar SET title = ? , start = ? ,end = ? WHERE id = ?");
+		$add_user = $db->prepare("UPDATE calendar SET title = ? , detail = ?, start = ? ,end = ? WHERE id = ?");
 		
-		$add_user->bind_param("sssi",$data['title'],$data['start'],$data['end'],$data['edit_calendar_id']);
+		$add_user->bind_param("ssssi",$data['title'],$data['detail'],$data['start'],$data['end'],$data['edit_calendar_id']);
 		
 		if(!$add_user->execute()){
 			

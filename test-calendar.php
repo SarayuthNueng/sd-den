@@ -1,3 +1,4 @@
+
 <?php
 require_once('connect.php');
 
@@ -193,8 +194,9 @@ $events = $req->fetchAll();
               </div>
             </div>
 
-           
+            
             <!-- calendar js -->
+    
             <?php date_default_timezone_set("Asia/Bangkok");
             $date = date("Y-m-d");
             ?>
@@ -319,9 +321,9 @@ $events = $req->fetchAll();
             <!-- Javascript -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/lib/moment.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/fullcalendar.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/locale/th.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/lib/moment.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/fullcalendar.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/locale/th.js"></script>
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 

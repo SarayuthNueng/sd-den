@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <link rel="stylesheet" href="fullcalendar-3.6.2/fullcalendar.min.css">
+  <link rel="stylesheet" href="fullcalendar-3.9.0/fullcalendar.min.css">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -58,6 +58,7 @@
               </div>
             </div>
 
+
             <!-- Modal For new data-->
             <div class="modal fade" id="new_calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
@@ -77,11 +78,11 @@
                       </div>
                       <div class="form-group">
                         <label>วันที่เริมต้น</label>
-                        <input type="date" class="form-control" name="start" placeholder="">
+                        <input type="datetime-local" class="form-control" name="start" placeholder="">
                       </div>
                       <div class="form-group">
                         <label>วันที่สิ้นสุด</label>
-                        <input type="date" class="form-control" name="end" placeholder="">
+                        <input type="datetime-local" class="form-control" name="end" placeholder="">
                       </div>
                       <input type="hidden" name="new_calendar_form">
                     </form>
@@ -98,27 +99,20 @@
             <!-- Javascript -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/lib/moment.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/fullcalendar.min.js"></script>
-            <script type="text/javascript" src="fullcalendar-3.6.2/locale/th.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/lib/moment.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/fullcalendar.min.js"></script>
+            <script type="text/javascript" src="fullcalendar-3.9.0/locale/th.js"></script>
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
             <!-- นำเข้า script File -->
             <script src='script.js'></script>
 
-
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-<script src="components/assets/js/popper.min.js"></script>
-<script src="components/assets/js/bootstrap.min.js"></script>
-<script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="components/assets/js/moment.min.js"></script>
-<script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="components/assets/js/jquery-ui.min.js"></script>
-<script src="components/assets/js/script.js"></script>
+          <script src="components/assets/js/popper.min.js"></script>
+          <script src="components/assets/js/bootstrap.min.js"></script>
+          <script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+          <script src="components/assets/js/moment.min.js"></script>
+          <script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
+          <script src="components/assets/js/jquery-ui.min.js"></script>
+          <script src="components/assets/js/script.js"></script>
