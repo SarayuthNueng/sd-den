@@ -4,7 +4,7 @@ class Fullcalendar {
     private $host = 'localhost'; //ชื่อ Host 
 	   private $user = 'root'; //ชื่อผู้ใช้งาน ฐานข้อมูล
 	   private $password = ''; // password สำหรับเข้าจัดการฐานข้อมูล
-	   private $database = 'demo'; //ชื่อ ฐานข้อมูล
+	   private $database = 'sd_den_calendar'; //ชื่อ ฐานข้อมูล
 
 	//function เชื่อมต่อฐานข้อมูล
 	protected function connect(){
