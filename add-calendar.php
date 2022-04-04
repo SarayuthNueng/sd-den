@@ -64,17 +64,41 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h4 class="text-center modal-title" id="myModalLabel">New Fullcalendar</h4>
+                    <h4 class="text-center modal-title" id="myModalLabel">เพิ่มข้อมูลในปฏิทิน</h4>
                   </div>
                   <div class="modal-body">
                     <form id="new_calendar">
                       <div class="form-group">
-                        <label>เรื่อง</label>
+                        <label>แพทย์</label>
                         <input type="text" class="form-control" name="title" placeholder="">
                       </div>
                       <div class="form-group">
+                        <label>ชื่อคนไข้</label>
+                        <input type="text" class="form-control" name="title" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>เบอร์โทรศัพท์คนไข้</label>
+                        <input type="text" class="form-control" name="title" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="color" class="control-label">ประเภทหัตถการ</label>
+                        <div class="">
+                          <select name="color" class="form-control" id="color">
+                            <option value="">เลือกสี</option>
+                            <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                            <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                            <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                            <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                            <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                            <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                            <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label>รายละเอียด</label>
-                        <input type="text" class="form-control" name="detail" placeholder="">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
                       </div>
                       <div class="form-group">
                         <label>วันที่เริมต้น</label>
@@ -89,7 +113,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">ปิด</button>
 
                   </div>
                 </div>

@@ -55,7 +55,7 @@ if(isset($_POST['id'])){
 		  <div class="modal-footer">
 				<button type="button" class="btn btn-danger pull-left" onclick="return del_calendar('.$get_data['id'].');">Delete</button>
 				<button type="button" class="btn btn-primary" onclick="return edit_calendar();">Save changes</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
 		  </div>';
 }
 

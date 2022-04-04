@@ -12,6 +12,8 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style type="text/css">
     #calendar {
       /* width: 77%; */
@@ -49,10 +51,10 @@
             <div class="modal fade" id="calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="text-center modal-title" id="myModalLabel">Fullcalendar</h4>
+                <div class="">
+                <h4 class="mt-3 text-center modal-title" id="myModalLabel">ข้อมูลการนัด</h4>
                 </div>
-                  <div id="get_calendar"></div>
+                  <div id="get_calendar_show"></div>
               </div>
               </div>
             </div>
@@ -104,7 +106,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
             <!-- นำเข้า script File -->
-            <script src='script.js'></script>	
+            <script src='script-show.js'></script>	
                   
 
 						</div>
