@@ -41,10 +41,10 @@ class Fullcalendar {
 	public function get_fullcalendar_id($get_id){
 		
 		$db = $this->connect();
-		$get_user = $db->prepare("SELECT id,title,detail,start,end FROM calendar WHERE id = ?");
+		$get_user = $db->prepare("SELECT id,title,detail,start,end,color,patient_name,patient_tel FROM calendar WHERE id = ?");
 		$get_user->bind_param('i',$get_id);
 		$get_user->execute();
-		$get_user->bind_result($id,$title,$detail,$start,$end);
+		$get_user->bind_result($id,$title,$detail,$start,$end,$color,$patient_name,$patient_tel);
 		$get_user->fetch();
 		
 		$result = array(
@@ -52,7 +52,10 @@ class Fullcalendar {
 			'title'=>$title,
             'detail'=>$detail,
 			'start'=>$start,
-			'end'=>$end
+			'end'=>$end,
+			'color'=>$color,
+			'patient_name'=>$patient_name,
+			'patient_tel'=>$patient_tel
 		);
 		
 		return $result;
@@ -63,9 +66,9 @@ class Fullcalendar {
 		
 		$db = $this->connect();
 		
-		$add_user = $db->prepare("INSERT INTO calendar (id,title,detail,start,end) VALUES(NULL,?,?,?,?) ");
+		$add_user = $db->prepare("INSERT INTO calendar (id,title,detail,start,end,color,patient_name,patient_tel) VALUES(NULL,?,?,?,?,?,?,?) ");
 		
-		$add_user->bind_param("ssss",$data['title'],$data['detail'],$data['start'],$data['end']);
+		$add_user->bind_param("sssssss",$data['title'],$data['detail'],$data['start'],$data['end'],$data['color'],$data['patient_name'],$data['patient_tel']);
 		
 		if(!$add_user->execute()){
 			
@@ -82,9 +85,9 @@ class Fullcalendar {
 		
 		$db = $this->connect();
 		
-		$add_user = $db->prepare("UPDATE calendar SET title = ? , detail = ?, start = ? ,end = ? WHERE id = ?");
+		$add_user = $db->prepare("UPDATE calendar SET title = ? , detail = ?, start = ? ,end = ? ,color = ? ,patient_name = ? ,patient_tel = ? WHERE id = ?");
 		
-		$add_user->bind_param("ssssi",$data['title'],$data['detail'],$data['start'],$data['end'],$data['edit_calendar_id']);
+		$add_user->bind_param("sssssssi",$data['title'],$data['detail'],$data['start'],$data['end'],$data['color'],$data['patient_name'],$data['patient_tel'],$data['edit_calendar_id']);
 		
 		if(!$add_user->execute()){
 			

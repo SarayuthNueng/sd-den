@@ -74,11 +74,11 @@
                       </div>
                       <div class="form-group">
                         <label>ชื่อคนไข้</label>
-                        <input type="text" class="form-control" name="title" placeholder="">
+                        <input type="text" class="form-control" name="patient_name" placeholder="">
                       </div>
                       <div class="form-group">
                         <label>เบอร์โทรศัพท์คนไข้</label>
-                        <input type="text" class="form-control" name="title" placeholder="">
+                        <input type="text" class="form-control" name="patient_tel" placeholder="">
                       </div>
                       <div class="form-group">
                         <label for="color" class="control-label">ประเภทหัตถการ</label>

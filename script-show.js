@@ -4,12 +4,12 @@ $(document).ready(function() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay'
+			right: 'month,agendaWeek,agendaDay,listMonth'
 		},
 		editable: false,
 		eventLimit: true, // allow "more" link when too many events
 		events:{
-			url:'json-event.php?get_json=get_json',
+			url:'json-event-show.php?get_json=get_json',
 		}
 	});
 	
