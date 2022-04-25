@@ -50,12 +50,8 @@
             <!-- Modal For edit data-->
             <div class="modal fade" id="calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="">
-                <h4 class="mt-3 text-center modal-title" id="myModalLabel">ข้อมูลการนัด</h4>
-                </div>
+              
                   <div id="get_calendar_show"></div>
-              </div>
               </div>
             </div>
 
