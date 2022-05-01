@@ -26,7 +26,7 @@
                   </a>
                   <ul class="submenu_class" style="display: none">
                     <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
-                    <li><a  href="list-procedure.php">ประเภทการนัด</a></li>
+                    <li><a  href="list-procedure.php">รายการหัตถการ</a></li>
                   </ul>
                 </li>
               <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
@@ -88,20 +88,29 @@
               <li class="list-divider"></li>
               <li class="submenu">
                 <a href="#">
-                  <i class="fas fa-tooth"></i> <span> สีแทนประเภทการนัด </span>
+                  <i class="fas fa-tooth"></i> <span> สีรายการหัตถการ </span>
                   <span class="menu-arrow"></span>
                 </a>
                 <ul class="submenu_class" style="display: none">
-                  <li><a style="pointer-events: none; color: #05eeff;" href="">ขูดหินปูน/อุดคอฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #982abc;" href="">รักษารากฟัน/เดือยฟัน/ครอบฟัน/สะพานฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #a28415;" href="">อุดฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #008040;" href="">ผ่าฟันคุด/ฟันฝัง/แต่งกระดูก </a></li>
-                  <li><a style="pointer-events: none; color: #0061fe;" href="">ฟันปลอม </a></li>
-                  <li><a style="pointer-events: none; color: #f6c1d9;" href="">เด็ก </a></li>
-                  <li><a style="pointer-events: none; color: #ff0000;" href="">Swab </a></li>
-                  <li><a style="pointer-events: none; color: #000000;" href="">อื่นๆ </a></li>
+                <li><a style="pointer-events: none; color: #FFCC00;" href="">ตรวจฟันและให้คำปรึกษา </a></li>
+                  <li><a style="pointer-events: none; color: #FF3300;" href="">อุดฟัน</a></li>
+                  <li><a style="pointer-events: none; color: #CC33FF;" href="">ถอนฟัน </a></li>
+                  <li><a style="pointer-events: none; color: #66CC33;" href="">ผ่าฟันคุด</a></li>
+                  <li><a style="pointer-events: none; color: #996600;" href="">รักษารากฟัน </a></li>
+                  <li><a style="pointer-events: none; color: #6699FF;" href="">ฟันปลอมฐานพลาสติก/โลหะ </a></li>
+                  <li><a style="pointer-events: none; color: #666666;" href="">อุดปิดฟันห่าง </a></li>
+                  <li><a style="pointer-events: none; color: #000080;" href="">เคลือบหลุมร่องฟัน </a></li>
+                  <li><a style="pointer-events: none; color: #FF69B4;" href="">เคลือบฟลูออไรด์ </a></li>
+                  <li><a style="pointer-events: none; color: #000000;" href="">เอ็กซเรย์ฟัน </a></li>
+                  <li><a style="pointer-events: none; color: #2F4F4F;" href="">ครอบฟัน </a></li>
                 </ul>
               </li>
+
+              <!-- <li>
+                <a href="search.php">
+                  <i class="fas fa-sign-out-alt"></i><span>ออกจากระบบ</span>
+                </a>
+              </li> -->
               
               
             </ul>

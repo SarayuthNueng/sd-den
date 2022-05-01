@@ -1,11 +1,12 @@
 <?php
  //ถ้ามีค่าส่งมาจากฟอร์ม
-if(isset($_POST['user_id']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid']) && isset($_POST['username']) 
+if(isset($_POST['user_id']) && isset($_POST['pname']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid']) && isset($_POST['username']) 
     && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['tel'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
      require_once '../db/connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
+$pname = $_POST['pname'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $cid = $_POST['cid'];
@@ -14,9 +15,10 @@ $address = $_POST['address'];
 $email = $_POST['email'];
 $tel = $_POST['tel'];
 //sql update
-$stmt = $db->prepare("UPDATE users SET firstname=:firstname, lastname=:lastname, cid=:cid, username=:username, 
+$stmt = $db->prepare("UPDATE users SET pname=:pname, firstname=:firstname, lastname=:lastname, cid=:cid, username=:username, 
         address=:address, email=:email, date=:date, tel=:tel WHERE user_id=:user_id");
 $stmt->bindParam(':user_id', $user_id , PDO::PARAM_INT);
+$stmt->bindParam(':pname', $pname , PDO::PARAM_STR);
 $stmt->bindParam(':firstname', $firstname , PDO::PARAM_STR);
 $stmt->bindParam(':lastname', $lastname , PDO::PARAM_STR);
 $stmt->bindParam(':cid', $cid , PDO::PARAM_STR);

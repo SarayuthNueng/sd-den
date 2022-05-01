@@ -14,7 +14,7 @@
 						 <a type="button" class="btn btn-primary buttonedit ml-2" href="add-den.php" role="button">+ เพิ่มสมาชิก</a>
 						 </div>
 						 <div class="col-3">
-							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="list-procedure.php" role="button">ประเภทการนัด</a>
+							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="list-procedure.php" role="button">รายการหัตถการ</a>
 						 </div> 
 					</div>
 				</div>
@@ -29,6 +29,7 @@
 												<th>รหัส</th>
 												<th>ชื่อผู้ใช้งาน</th>
 												<th>รหัสผ่าน</th>
+												<th>คำนำหน้า</th>
 												<th>ชื่อ</th>
 												<th>นามสกุล</th>
 												<th>เลขบัตรประจำตัวประชาชน</th>
@@ -59,6 +60,7 @@
 														แก้ไขรหัสผ่าน	
 													</a>
 												</td>
+												<td><?= $k['pname']?></td>
 												<td><?= $k['firstname'];?></td>
 												<td><?= $k['lastname'];?></td>
 												<td><?= $k['cid'];?></td>

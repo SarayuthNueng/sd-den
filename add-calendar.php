@@ -22,6 +22,25 @@
 
 <?php include "components/header-user-level.php" ?>
 <?php include "components/sidebar-user-level.php" ?>
+
+<?php
+
+require_once 'db/connect.php';
+
+//list dentist.
+$sql = "SELECT * FROM users WHERE user_level='user' ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$dentist = $stmt->fetchAll();
+
+//list procedures
+$sql = "SELECT * FROM procedures ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$procedures_color = $stmt->fetchAll();
+
+
+?>
 <div class="main-wrapper">
 
   <div class="page-wrapper mt-5">
@@ -68,10 +87,21 @@
                   </div>
                   <div class="modal-body">
                     <form id="new_calendar">
-                      <div class="form-group">
+                    <div class="form-group">
+                        <label for="color" class="control-label">แพทย์</label>
+                        <div class="">
+                          <select name="title" class="form-control" id="title">
+                            <option value="">กรุณาเลือก</option>
+                            <?php foreach ($dentist as $den) : ?>
+                              <option value="<?= $den['pname']; ?><?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?>"><?= $den['pname']; ?>&nbsp;<?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group">
                         <label>แพทย์</label>
                         <input type="text" class="form-control" name="title" placeholder="">
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <label>ชื่อคนไข้</label>
                         <input type="text" class="form-control" name="patient_name" placeholder="">
@@ -84,15 +114,10 @@
                         <label for="color" class="control-label">ประเภทหัตถการ</label>
                         <div class="">
                           <select name="color" class="form-control" id="color">
-                            <option value="">เลือกสี</option>
-                            <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
-                            <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
-                            <option style="color:#008000;" value="#008000">&#9724; Green</option>
-                            <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
-                            <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
-                            <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
-                            <option style="color:#000;" value="#000">&#9724; Black</option>
-
+                            <option value="">กรุณาเลือก</option>
+                            <?php foreach ($procedures_color as $color) : ?>
+                              <option style="color:<?= $color['color']; ?>" value="<?= $color['color']; ?>"><?= $color['procedure_name']; ?></option>
+                            <?php endforeach; ?>
                           </select>
                         </div>
                       </div>
@@ -114,7 +139,6 @@
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">ปิด</button>
-
                   </div>
                 </div>
               </div>

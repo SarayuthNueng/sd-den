@@ -36,15 +36,39 @@ class Fullcalendar {
 			return $result;
 		}
 	}
+
+
+	//show data in modal
+	public function get_procedures($get_id){
+		
+		$db = $this->connect();
+		$get_color = $db->prepare(" SELECT * FROM procedures ");
+		// $get_color->bind_param('i',$get_id);
+		$get_color->execute();
+		$get_color->bind_result($procedure_id,$procedure_name,$color);
+		$get_color->fetch();
+		
+		$result = array(
+			'procedure_id'=>$procedure_id,
+			'procedure_name'=>$procedure_name,
+            'color'=>$color
+		);
+		
+		return $result;
+	}
+	
 	
 	//show data in modal
 	public function get_fullcalendar_id($get_id){
 		
 		$db = $this->connect();
-		$get_user = $db->prepare("SELECT id,title,detail,start,end,color,patient_name,patient_tel FROM calendar WHERE id = ?");
+		$get_user = $db->prepare(" SELECT c.id,c.title,c.detail,c.start,c.end,c.color,c.patient_name,c.patient_tel,p.procedure_name 
+		FROM calendar c
+		LEFT JOIN procedures p ON p.color = c.color
+		WHERE id = ? ");
 		$get_user->bind_param('i',$get_id);
 		$get_user->execute();
-		$get_user->bind_result($id,$title,$detail,$start,$end,$color,$patient_name,$patient_tel);
+		$get_user->bind_result($id,$title,$detail,$start,$end,$color,$patient_name,$patient_tel,$procedure_name);
 		$get_user->fetch();
 		
 		$result = array(
@@ -55,7 +79,8 @@ class Fullcalendar {
 			'end'=>$end,
 			'color'=>$color,
 			'patient_name'=>$patient_name,
-			'patient_tel'=>$patient_tel
+			'patient_tel'=>$patient_tel,
+			'procedure_name'=>$procedure_name
 		);
 		
 		return $result;

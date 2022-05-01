@@ -1,6 +1,7 @@
 <?php
 require "fullcalendar.class.php";
 
+
 //new object
 $fullcalendar = new Fullcalendar();
 
@@ -33,6 +34,9 @@ if (isset($_GET['get_json'])) {
 if (isset($_POST['id'])) {
 
 	$get_data = $fullcalendar->get_fullcalendar_id($_POST['id']);
+	$get_data2 = $fullcalendar->get_procedures($_POST['id']);
+
+	//   <option value="' . $get_data2['color'] . '">' . $get_data2['procedure_id'] . ' ' . $get_data2['procedure_name'] . '</option>
 
 	echo '<div class="modal-body">
 			<form id="edit_fullcalendar">
@@ -48,9 +52,18 @@ if (isset($_POST['id'])) {
 					<label >เบอร์โทรศัพท์คนไข้</label>
 					<input type="text" class="form-control" name="patient_tel" value="' . $get_data['patient_tel'] . '">
 				  </div>
+				  <div class="form-group">
+			  	    <label >testประเภทหัตถการ</label>
+			  		<select name="color" class="form-control" id="color">
+                            <option value="'  . $get_data['procedure_name'] . '">'  . $get_data['procedure_name'] . '</option>
+                             foreach (' . $get_data2['procedure_id'] . '){
+                            
+							 }
+                    </select>
+				  </div>
 			  	  <div class="form-group">
 			  	    <label >ประเภทหัตถการ</label>
-			  		<input type="text" class="form-control" name="color" value="' . $get_data['color'] . '">
+			  		<input type="text" class="form-control" name="color" value="'  . $get_data['procedure_name'] . '" >
 				  </div>
 				  <div class="form-group">
 					<label >รายละเอียด</label>

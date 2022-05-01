@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
     $confirm_password = md5($_POST['confirm_password']);
+    $pname = $_POST['pname'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $cid = $_POST['cid'];
@@ -15,7 +16,7 @@ if (isset($_POST['submit'])) {
     $tel = $_POST['tel'];
 
     // ถ้าไม่มีการกรอกข้อมูลเข้ามาให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
-    if (empty($username) || empty($password) || empty($confirm_password) || empty($firstname) || empty($lastname) || empty($cid) || empty($address) || empty($email) || empty($tel)) {
+    if (empty($username) || empty($password) || empty($confirm_password) || empty($pname) || empty($firstname) || empty($lastname) || empty($cid) || empty($address) || empty($email) || empty($tel)) {
         $_SESSION['err_fill'] = "กรุณากรอกข้อมูลให้ครบถ้วน";
         header('location: ../add-den.php');
     } 
@@ -46,10 +47,11 @@ if (isset($_POST['submit'])) {
             else {
                 // ทำการเข้ารหัสโดย password_hash()
                 // $password = md5($password, PASSWORD_DEFAULT);
-                $insert_stmt = $db->prepare("INSERT INTO users (username, password, firstname, lastname, cid, 
-                address, email, tel, user_level) VALUES (:username, :password, :firstname, :lastname, :cid, :address, :email, :tel, 'user')");
+                $insert_stmt = $db->prepare("INSERT INTO users (username, password, pname, firstname, lastname, cid, 
+                address, email, tel, user_level) VALUES (:username, :password, :pname, :firstname, :lastname, :cid, :address, :email, :tel, 'user')");
                 $insert_stmt->bindParam(':username', $username);
                 $insert_stmt->bindParam(':password', $password);
+                $insert_stmt->bindParam(':pname', $pname);
                 $insert_stmt->bindParam(':firstname', $firstname);
                 $insert_stmt->bindParam(':lastname', $lastname);
                 $insert_stmt->bindParam(':cid', $cid);

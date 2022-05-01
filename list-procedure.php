@@ -8,13 +8,13 @@
 					
 					<div class="row formtype mt-5">
 						<div class="col-6">
-							<h3 class="page-title">ประเภทการนัดทั้งหมด</h3>
+							<h3 class="page-title">รายการหัตถการ</h3>
 						</div>
 						 <div class="col-3">
 						 <a type="button" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">สมาชิก</a>
 						 </div>
 						 <div class="col-3">
-							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="add-procedure.php" role="button">+ เพิ่มประเภทการนัด</a>
+							<a type="button" style="color: lemonchiffon;float: right;height: 45px;background: goldenrod; border-color: goldenrod;" class="btn " href="add-procedure.php" role="button">+ เพิ่มรายการหัตถการ</a>
 						 </div> 
 					</div>
 				</div>

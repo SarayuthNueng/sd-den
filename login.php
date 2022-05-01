@@ -23,17 +23,15 @@
             $_SESSION['user_level'] = $num['user_level'];
 
             if ($_SESSION['user_level'] == 'admin') {
-                echo "<script>alert('Login Admin Successful!');</script>";
                 echo "<script>window.location.href='list-den.php'</script>";
             }
 
             if ($_SESSION['user_level'] == 'user') {
-                echo "<script>alert('Login User Successful!');</script>";
                 echo "<script>window.location.href='add-calendar.php'</script>";
             }
             
         } else {
-            echo "<script>alert('Something went wrong! Please try again.');</script>";
+            echo "<script>alert('รหัสผ่านไม่ถูกต้อง | กรุณาใส่รหัสผ่าอีกครั้ง');</script>";
             echo "<script>window.location.href='login.php'</script>";
         }
     } 
