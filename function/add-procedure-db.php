@@ -1,4 +1,8 @@
 <?php
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
 session_start();    // เขียนทุกครั้งที่มีการใช้ตัวแปร session
 include('../db/db_conn.php');  // นำเข้าไฟล์ database
 
@@ -17,13 +21,20 @@ if (isset($_POST['submit'])) {
         // ถ้ารหัสผ่านกับยืนยันรหัสผ่านตรงกันจะทำการ query ข้อมูล เพื่อเช็คว่ามี procedure นี้อยู่ในระบบหรือไม่
         else {
             // query ข้อมูล เพื่อเช็คว่ามี procedure นี้อยู่ในระบบหรือไม่
-            // $select_stmt = $db->prepare("SELECT COUNT(color) AS count_color FROM procedures WHERE color = :color ");
-            // $select_stmt->bindParam(':color', $color);
-            // $select_stmt->execute();
-            // $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
-            $select_stmt = "SELECT COUNT(color) AS count_color FROM procedures WHERE color = '$color'";
-            $result = mysqli_query($conn, $select_stmt);
-            $row = mysqli_fetch_assoc($result);
+            // $select_stmt = "SELECT COUNT(color) AS count_color FROM procedures WHERE color = '$color'";
+            // $result = mysqli_query($conn, $select_stmt);
+            // $row = mysqli_fetch_assoc($result);
+            $query = "SELECT procedure_name, color FROM procedures WHERE procedure_name='$procedure_name' AND color='$color'";
+            $result = mysqli_query($conn, $query);
+            //echo 'จำนวนข้อมูลที่ query ได้' .mysqli_num_rows($result);
+
+            if(mysqli_num_rows($result) > 0){
+                echo 'หัตถการนี้ มีอยู่แล้ว' ;
+            }else{
+                echo 'สามารถใช้ หัตถการนี้ได้';
+            }
+
+            exit();
 
             // ถ้ามี procedure ในระบบให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
             if ($row['count_color'] != 0)  {
@@ -34,12 +45,8 @@ if (isset($_POST['submit'])) {
             // ถ้าไม่มี procedure จะทำการบันทึกข้อมูล
             else {
                 // ทำการบันทึกข้อมูล
-                // $insert_stmt = $db->prepare("INSERT INTO procedures (procedure_name, color) VALUES (:procedure_name, :color)");
-                // $insert_stmt->bindParam(':procedure_name', $procedure_name);
-                // $insert_stmt->bindParam(':color', $color);
-                // $result = $insert_stmt->execute();
-                $select_stmt = "INSERT INTO procedures (procedure_name, color) VALUES ('$procedure_name', '$color')";
-                $result = mysqli_query($conn, $select_stmt);
+                // $select_stmt = "INSERT INTO procedures (procedure_name, color) VALUES ('$procedure_name', '$color')";
+                // $result = mysqli_query($conn, $select_stmt);
 
 
                     // sweet alert 

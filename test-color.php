@@ -9,8 +9,9 @@
 </head>
 <body>
     <form action="save-color.php" method="post">
+        <input type="text" name="procedure_name" id="">
         เลือกสี
-        <input type="color" name="mycolor" id="">
+        <input type="color" name="color" id="">
         <button type="submit">save</button>
     </form>
     

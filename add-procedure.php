@@ -56,24 +56,10 @@ $เขียวเทา = '#2F4F4F';
 								</div>
 							</div>
 							<div class="col-md-12 mb-3">
-								<!-- <div class="form-group ">
-										<label>สีประเภทหัตถการ</label>
-										<input class="form-control" type="text" name="color" placeholder="สีประเภทหัตถการ"> 
-                                    </div> -->
 								<label for="color">สีหัตถการ</label>
-								<select class="form-control" name="color" id="color">
-									<option style="color: white; background-color: <?php echo $เหลือง ?>;"><?php echo $เหลือง ?></option>
-									<option style="color: white; background-color: <?php echo $แดง ?>;"><?php echo $แดง ?></option>
-									<option style="color: white; background-color: <?php echo $ม่วง ?>;"><?php echo $ม่วง ?></option>
-									<option style="color: white; background-color: <?php echo $เขียว ?>;"><?php echo $เขียว ?></option>
-									<option style="color: white; background-color: <?php echo $น้ำตาล ?>;"><?php echo $น้ำตาล ?></option>
-									<option style="color: white; background-color: <?php echo $ฟ้า ?>;"><?php echo $ฟ้า ?></option>
-									<option style="color: white; background-color: <?php echo $เทา ?>;"><?php echo $เทา ?></option>
-									<option style="color: white; background-color: <?php echo $น้ำเงิน ?>;"><?php echo $น้ำเงิน ?></option>
-									<option style="color: white; background-color: <?php echo $ชมพู ?>;"><?php echo $ชมพู ?></option>
-									<option style="color: white; background-color: <?php echo $ดำ ?>;"><?php echo $ดำ ?></option>
-									<option style="color: white; background-color: <?php echo $เขียวเทา ?>;"><?php echo $เขียวเทา ?></option>
-								</select>
+								<div class="form-group ">
+										<input class="form-control" type="color" name="color" placeholder="สีประเภทหัตถการ"> 
+                                    </div>
 							</div>
 						</div>
 						<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
