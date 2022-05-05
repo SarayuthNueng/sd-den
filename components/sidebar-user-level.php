@@ -6,6 +6,12 @@
   $select_stmt->execute();
   $row = $select_stmt->fetch(PDO::FETCH_ASSOC); 
 
+  //list procedures
+$sql = "SELECT * FROM procedures ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$procedures_color = $stmt->fetchAll();
+
 ?>
 <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
@@ -92,17 +98,9 @@
                   <span class="menu-arrow"></span>
                 </a>
                 <ul class="submenu_class" style="display: none">
-                  <li><a style="pointer-events: none; color: #FFCC00;" href="">ตรวจฟันและให้คำปรึกษา </a></li>
-                  <li><a style="pointer-events: none; color: #FF3300;" href="">อุดฟัน</a></li>
-                  <li><a style="pointer-events: none; color: #CC33FF;" href="">ถอนฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #66CC33;" href="">ผ่าฟันคุด</a></li>
-                  <li><a style="pointer-events: none; color: #996600;" href="">รักษารากฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #6699FF;" href="">ฟันปลอมฐานพลาสติก/โลหะ </a></li>
-                  <li><a style="pointer-events: none; color: #666666;" href="">อุดปิดฟันห่าง </a></li>
-                  <li><a style="pointer-events: none; color: #000080;" href="">เคลือบหลุมร่องฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #FF69B4;" href="">เคลือบฟลูออไรด์ </a></li>
-                  <li><a style="pointer-events: none; color: #000000;" href="">เอ็กซเรย์ฟัน </a></li>
-                  <li><a style="pointer-events: none; color: #2F4F4F;" href="">ครอบฟัน </a></li>
+                <?php foreach ($procedures_color as $color) : ?>
+                  <li><a style="pointer-events: none; color: <?= $color['color']; ?>" href=""><?= $color['procedure_name']; ?></a></li>
+                  <?php endforeach; ?>
                 </ul>
               </li>
 

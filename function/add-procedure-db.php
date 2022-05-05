@@ -1,7 +1,7 @@
 <?php
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 session_start();    // เขียนทุกครั้งที่มีการใช้ตัวแปร session
 include('../db/db_conn.php');  // นำเข้าไฟล์ database
@@ -21,66 +21,56 @@ if (isset($_POST['submit'])) {
         // ถ้ารหัสผ่านกับยืนยันรหัสผ่านตรงกันจะทำการ query ข้อมูล เพื่อเช็คว่ามี procedure นี้อยู่ในระบบหรือไม่
         else {
             // query ข้อมูล เพื่อเช็คว่ามี procedure นี้อยู่ในระบบหรือไม่
-            // $select_stmt = "SELECT COUNT(color) AS count_color FROM procedures WHERE color = '$color'";
-            // $result = mysqli_query($conn, $select_stmt);
-            // $row = mysqli_fetch_assoc($result);
-            $query = "SELECT procedure_name, color FROM procedures WHERE procedure_name='$procedure_name' AND color='$color'";
-            $result = mysqli_query($conn, $query);
-            //echo 'จำนวนข้อมูลที่ query ได้' .mysqli_num_rows($result);
+            $name_procedure = "SELECT procedure_name FROM procedures WHERE procedure_name='$procedure_name'";
+            $color_procedure = "SELECT color FROM procedures WHERE color='$color'";
+            $result_name = mysqli_query($conn, $name_procedure);
+            $result_color = mysqli_query($conn, $color_procedure);
+            // echo 'จำนวนข้อมูลที่ query name ได้' .mysqli_num_rows($result_name);
+            // echo 'จำนวนข้อมูลที่ query color ได้' .mysqli_num_rows($result_color);
 
-            if(mysqli_num_rows($result) > 0){
-                echo 'หัตถการนี้ มีอยู่แล้ว' ;
-            }else{
-                echo 'สามารถใช้ หัตถการนี้ได้';
-            }
-
-            exit();
-
-            // ถ้ามี procedure ในระบบให้ทำการส่งข้อความกลับไปยังหน้า add-den.php
-            if ($row['count_color'] != 0)  {
+            if(mysqli_num_rows($result_name) > 0 || mysqli_num_rows($result_color) > 0){
+                // echo 'หัตถการนี้ มีอยู่แล้ว' ;
                 $_SESSION['exist_color'] = "มีรายการหัตถการหรือสีหัตถการ นี้ในระบบแล้ว";
                 header('location: ../add-procedure.php');
-            } 
-
-            // ถ้าไม่มี procedure จะทำการบันทึกข้อมูล
-            else {
+            }else{
+                // echo 'สามารถใช้ หัตถการนี้ได้';
                 // ทำการบันทึกข้อมูล
-                // $select_stmt = "INSERT INTO procedures (procedure_name, color) VALUES ('$procedure_name', '$color')";
-                // $result = mysqli_query($conn, $select_stmt);
+                $select_stmt = "INSERT INTO procedures (procedure_name, color) VALUES ('$procedure_name', '$color')";
+                $result = mysqli_query($conn, $select_stmt);
 
+                // sweet alert 
+                echo '
+                <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
 
-                    // sweet alert 
-                    echo '
-                    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
-
-                    if($result){
-                        echo '<script>
-                            setTimeout(function() {
-                            swal({
-                                title: "เพิ่มข้อมูลสำเร็จ",
-                                type: "success"
-                            }, function() {
-                                window.location = "../list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
-                            });
-                            }, 1000);
-                        </script>';
-                    }else{
+                if($result){
                     echo '<script>
-                            setTimeout(function() {
-                            swal({
-                                title: "เกิดข้อผิดพลาด",
-                                type: "error"
-                            }, function() {
-                                window.location = "../add-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
-                            });
-                            }, 1000);
-                        </script>';
-                    }
-
-                
+                        setTimeout(function() {
+                        swal({
+                            title: "เพิ่มข้อมูลสำเร็จ",
+                            type: "success"
+                        }, function() {
+                            window.location = "../list-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                        });
+                        }, 1000);
+                    </script>';
+                }else{
+                echo '<script>
+                        setTimeout(function() {
+                        swal({
+                            title: "เกิดข้อผิดพลาด",
+                            type: "error"
+                        }, function() {
+                            window.location = "../add-procedure.php"; //หน้าที่ต้องการให้กระโดดไป
+                        });
+                        }, 1000);
+                    </script>';
+                }
             }
+
+             exit();     
+            
         }
     
 $conn = null; //close connect db

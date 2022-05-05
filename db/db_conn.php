@@ -16,7 +16,7 @@ if (!$conn) {
 
 $db_server2= "localhost";
 $db_user2= "root";
-$password2 = "1213";
+$password2 = "";
 
 $db_name2 = "sd_den_calendar";
 
