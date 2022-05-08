@@ -31,6 +31,7 @@ $procedures_color = $stmt->fetchAll();
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
+                    <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
                     <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
                     <li><a  href="list-procedure.php">รายการหัตถการ</a></li>
                   </ul>
@@ -45,7 +46,6 @@ $procedures_color = $stmt->fetchAll();
                   <ul class="submenu_class" style="display: none">
                     <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
                     <li><a  href="add-calendar.php">เพิ่มข้อมูลในปฏิทิน</a></li>
-                    <li><a  href="logout.php">ออกจากระบบ</a></li>
                   </ul>
                 </li>
 
@@ -97,16 +97,21 @@ $procedures_color = $stmt->fetchAll();
                   <i class="fas fa-tooth"></i> <span> สีรายการหัตถการ </span>
                   <span class="menu-arrow"></span>
                 </a>
+                <ul class="submenu_class" style="display: none">
                 <?php foreach ($procedures_color as $color) : ?>
                   <li><a style="pointer-events: none; color: <?= $color['color']; ?>" href=""><?= $color['procedure_name']; ?></a></li>
                   <?php endforeach; ?>
+                  </ul>
               </li>
 
-              <!-- <li>
-                <a href="search.php">
-                  <i class="fas fa-sign-out-alt"></i><span>ออกจากระบบ</span>
+
+              <?php if(isset($_SESSION['user_id'])){ ?>
+              <li>
+                <a href="logout.php">
+                <i class="fas fa-sign-out-alt"></i><span>ออกจากระบบ</span>
                 </a>
-              </li> -->
+              </li>
+              <?php } ?>
               
               
             </ul>
