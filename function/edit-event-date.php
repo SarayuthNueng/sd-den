@@ -1,7 +1,7 @@
 <?php
 
-// Connexion à la base de données
-require_once('bdd.php');
+
+require_once('../db/connect.php');
 
 if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Event'][2])){
 
@@ -10,7 +10,7 @@ if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Even
 	$start = $_POST['Event'][1];
 	$end = $_POST['Event'][2];
 
-	$sql = "UPDATE events_demo SET  start = '$start', end = '$end' WHERE id = $id ";
+	$sql = "UPDATE calendar SET  start = '$start', end = '$end' WHERE id = $id ";
 
 
 	$query = $bdd->prepare( $sql );

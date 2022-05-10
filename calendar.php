@@ -51,6 +51,7 @@
                   <h4>ปฏิทินการนัดทันตกรรม</h4>
                 </div>
 
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalShow">test modal show</button>
                 <div id='calendar'></div>
               
 
@@ -65,42 +66,7 @@
               </div>
             </div>
 
-                <!-- Modal For new data-->
-            <div class="modal fade" id="new_calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="text-center modal-title" id="myModalLabel">New Fullcalendar</h4>
-                </div>
-                <div class="modal-body">
-                  <form id="new_calendar">
-                    <div class="form-group">
-                    <label >เรื่อง</label>
-                    <input type="text" class="form-control" name="title" placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >รายละเอียด</label>
-                    <input type="text" class="form-control" name="detail" placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >วันที่เริมต้น</label>
-                    <input type="date" class="form-control" name="start"  placeholder="">
-                    </div>
-                    <div class="form-group">
-                    <label >วันที่สิ้นสุด</label>
-                    <input type="date" class="form-control" name="end"  placeholder="">
-                    </div>
-                    <input type="hidden" name="new_calendar_form">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                
-                </div>
-              </div>
-              </div>
-            </div>
+            
 
             <!-- เรียก model มาใช้ แก้ไขข้อมูลลงใน calendar -->
             <?php include('modal.php'); ?>
@@ -115,150 +81,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
             <!-- script นำเข้า calendar -->
-            <script>
-            $(document).ready(function() {
-
-
-                $('#calendar').fullCalendar({
-                    plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay,listMonth',
-                    },
-                    editable: true,
-                    eventLimit: true, // allow "more" link when too many events
-                    selectable: true,
-                    selectHelper: true,
-                    timeFormat: "h:mma",
-                    defaultView: 'month',
-                    scrollTime: '08:00', // undo default 6am scrollTime
-                    eventOverlap: false,
-                    allDaySlot: false,
-
-
-
-                    select: function(start, end) {
-
-                        //$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
-                        $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
-                        $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
-                        $('#ModalAdd').modal('show');
-                    },
-                    eventRender: function(event, element) {
-                        element.bind('click', function() { //gawin mong CLICK yung parameter para maging single
-                            $('#ModalEdit #id').val(event.id);
-                            $('#ModalEdit #title').val(event.title);
-                            $('#ModalEdit #color').val(event.color);
-                            //$('#ModalEdit #start').val(event.start);
-                            $('#ModalEdit #start').val(moment(event.start).format('YYYY-MM-DD HH:mm:ss'));
-                            $('#ModalEdit #end').val(moment(event.end).format('YYYY-MM-DD HH:mm:ss'));
-                            //	$('#ModalEdit #end').val(event.end);
-                            $('#ModalEdit').modal('show');
-                            //var formattedTime = $.fullCalendar.formatDates(event.start, event.end, "HH:mm { - HH:mm}");
-
-                        });
-
-                    },
-
-                    eventDrop: function(event, delta, revertFunc) { // si changement de position
-
-                        edit(event);
-
-                    },
-                    eventResize: function(event, dayDelta, minuteDelta, revertFunc) { // si changement de longueur
-
-                        edit(event);
-
-                    },
-
-                    //แสดงข้อมูล เมื่อชี้เมาส์ 
-                    eventMouseover: function(Event, jsEvent) {
-                        /*var tooltip = '<div class="tooltip" >' +'<b>ACTIVITY :</b>&nbsp;'+ Event.title + '<br><b>TIME :</b>&nbsp;'+(moment(Event.start).format('HH:mma'))+'</div>';*/
-
-                        var tooltip = '<div class="tooltip" >' + '<b>WHAT :</b>&nbsp;' + Event.title + '<br><b>DURATION :</b>&nbsp;' + (moment(Event.start).format('HH:mma')) + '&nbsp;-&nbsp;' + (moment(Event.end).format('HH:mma')) + '</div>';
-
-                        var $tooltip = $(tooltip).appendTo('body');
-
-                        $(this).mouseover(function(e) {
-                            $(this).css('z-index', 10000);
-                            $tooltip.fadeIn('500');
-                            $tooltip.fadeTo('10', 1.9);
-                        }).mousemove(function(e) {
-                            $tooltip.css('top', e.pageY + 10);
-                            $tooltip.css('left', e.pageX + 20);
-                        });
-                    },
-
-                    eventMouseout: function(Event, jsEvent) {
-                        $(this).css('z-index', 8);
-                        $('.tooltip').remove();
-                    },
-
-                    // เรียก event มาแสดง
-                    events: [
-                        <?php foreach ($events as $event) :
-
-
-                            $start = explode(" ", $event['start']);
-                            $end = explode(" ", $event['end']);
-                            if ($start[1] == '00:00:00') {
-                                $start = $start[0];
-                            } else {
-                                $start = $event['start'];
-                            }
-                            if ($end[1] == '00:00:00') {
-                                $end = $end[0];
-                            } else {
-                                $end = $event['end'];
-                            }
-                        ?> {
-                                id: '<?php echo $event['id']; ?>',
-                                title: '<?php echo $event['title']; ?>',
-                                start: '<?php echo $start; ?>',
-                                end: '<?php echo $end; ?>',
-                                color: '<?php echo $event['color']; ?>',
-                            },
-                        <?php endforeach; ?>
-                    ]
-                });
-
-
-                function edit(event) {
-                    start = event.start.format('YYYY-MM-DD HH:mm:ss');
-                    if (event.end) {
-                        end = event.end.format('YYYY-MM-DD HH:mm:ss');
-                    } else {
-                        end = start;
-                    }
-
-                    id = event.id;
-
-                    Event = [];
-                    Event[0] = id;
-                    Event[1] = start;
-                    Event[2] = end;
-
-                    $.ajax({
-                        url: 'editEventDate.php',
-                        type: "POST",
-                        data: {
-                            Event: Event
-                        },
-                        success: function(rep) {
-                            if (rep == 'OK') {
-                                //alert('Saved');
-                                swal("Done!", "Successfully MOVED!", "success");
-                            } else {
-                                //alert('Could not be saved. try again.');
-                                swal("Cancelled", "Could not be saved. Please try again", "error");
-                            }
-                        }
-                    });
-                }
-
-            });
-        </script>	
+            <script src='script-show.js'></script>
                   
 
 						</div>

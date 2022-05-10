@@ -1,7 +1,7 @@
 <?php
     // เชื่อม db
     require_once('db/connect.php');
-    date_default_timezone_set("Asia/Manila");
+    date_default_timezone_set("Asia/Bangkok");
 
     // sql show data in calendar
     $sql = "SELECT * FROM calendar ";
@@ -51,6 +51,7 @@ $stmt->execute();
 $procedures_color = $stmt->fetchAll();
 
 
+
 ?>
 <div class="main-wrapper">
 
@@ -71,89 +72,6 @@ $procedures_color = $stmt->fetchAll();
             </div>
 
             <div id='calendar'></div>
-
-
-            <!-- Button trigger modal Edit data-->
-            <span id="trigger_modal" data-toggle="modal" data-target="#calendar_modal"></span>
-
-            <!-- Modal For edit data-->
-            <div class="modal fade" id="calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="text-center modal-title" id="myModalLabel">Fullcalendar</h4>
-                  </div>
-                  <div id="get_calendar"></div>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- Modal For new data-->
-            <div class="modal fade" id="new_calendar_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="text-center modal-title" id="myModalLabel">เพิ่มข้อมูลในปฏิทิน</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form id="new_calendar">
-                    <div class="form-group">
-                        <label for="color" class="control-label">แพทย์</label>
-                        <div class="">
-                          <select name="title" class="form-control" id="title">
-                            <option value="">กรุณาเลือก</option>
-                            <?php foreach ($dentist as $den) : ?>
-                              <option value="<?= $den['pname']; ?><?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?>"><?= $den['pname']; ?>&nbsp;<?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?></option>
-                            <?php endforeach; ?>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- <div class="form-group">
-                        <label>แพทย์</label>
-                        <input type="text" class="form-control" name="title" placeholder="">
-                      </div> -->
-                      <div class="form-group">
-                        <label>ชื่อคนไข้</label>
-                        <input type="text" class="form-control" name="patient_name" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label>เบอร์โทรศัพท์คนไข้</label>
-                        <input type="text" class="form-control" name="patient_tel" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="color" class="control-label">ประเภทหัตถการ</label>
-                        <div class="">
-                          <select name="color" class="form-control" id="color">
-                            <option value="">กรุณาเลือก</option>
-                            <?php foreach ($procedures_color as $color) : ?>
-                              <option style="color:<?= $color['color']; ?>" value="<?= $color['color']; ?>"><?= $color['procedure_name']; ?></option>
-                            <?php endforeach; ?>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label>รายละเอียด</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label>วันที่เริมต้น</label>
-                        <input type="datetime-local" class="form-control" name="start" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label>วันที่สิ้นสุด</label>
-                        <input type="datetime-local" class="form-control" name="end" placeholder="">
-                      </div>
-                      <input type="hidden" name="new_calendar_form">
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="return new_calendar();">บันทึกข้อมูล</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">ปิด</button>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <!-- เรียก model มาใช้ แก้ไขข้อมูลลงใน calendar -->
             <?php include('modal.php'); ?>
@@ -183,7 +101,7 @@ $procedures_color = $stmt->fetchAll();
                     eventLimit: true, // allow "more" link when too many events
                     selectable: true,
                     selectHelper: true,
-                    timeFormat: "h:mma",
+                    timeFormat: "H:mm น.",
                     defaultView: 'month',
                     scrollTime: '08:00', // undo default 6am scrollTime
                     eventOverlap: false,
@@ -193,23 +111,22 @@ $procedures_color = $stmt->fetchAll();
 
                     select: function(start, end) {
 
-                        //$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
                         $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
                         $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
                         $('#ModalAdd').modal('show');
                     },
+                    // ส่งค่าไปแก้ไข
                     eventRender: function(event, element) {
                         element.bind('click', function() { //gawin mong CLICK yung parameter para maging single
                             $('#ModalEdit #id').val(event.id);
                             $('#ModalEdit #title').val(event.title);
-                            $('#ModalEdit #color').val(event.color);
-                            //$('#ModalEdit #start').val(event.start);
+                            $('#ModalEdit #detail').val(event.detail);
                             $('#ModalEdit #start').val(moment(event.start).format('YYYY-MM-DD HH:mm:ss'));
                             $('#ModalEdit #end').val(moment(event.end).format('YYYY-MM-DD HH:mm:ss'));
-                            //	$('#ModalEdit #end').val(event.end);
+                            $('#ModalEdit #color').val(event.color);
+                            $('#ModalEdit #patient_name').val(event.patient_name);
+                            $('#ModalEdit #patient_tel').val(event.patient_tel);
                             $('#ModalEdit').modal('show');
-                            //var formattedTime = $.fullCalendar.formatDates(event.start, event.end, "HH:mm { - HH:mm}");
-
                         });
 
                     },
@@ -227,9 +144,8 @@ $procedures_color = $stmt->fetchAll();
 
                     //แสดงข้อมูล เมื่อชี้เมาส์ 
                     eventMouseover: function(Event, jsEvent) {
-                        /*var tooltip = '<div class="tooltip" >' +'<b>ACTIVITY :</b>&nbsp;'+ Event.title + '<br><b>TIME :</b>&nbsp;'+(moment(Event.start).format('HH:mma'))+'</div>';*/
-
-                        var tooltip = '<div class="tooltip" >' + '<b>WHAT :</b>&nbsp;' + Event.title + '<br><b>DURATION :</b>&nbsp;' + (moment(Event.start).format('HH:mma')) + '&nbsp;-&nbsp;' + (moment(Event.end).format('HH:mma')) + '</div>';
+                       
+                        var tooltip = '<div class="tooltip" >' + '<b>แพทย์ :</b>&nbsp;' + Event.title + '<br><b>เวลา :</b>&nbsp;' + (moment(Event.start).format('H:mm น.')) + '&nbsp;-&nbsp;' + (moment(Event.end).format('H:mm น.')) + '</div>';
 
                         var $tooltip = $(tooltip).appendTo('body');
 
@@ -248,7 +164,7 @@ $procedures_color = $stmt->fetchAll();
                         $('.tooltip').remove();
                     },
 
-                    // เรียก event มาแสดง
+                    // เรียก event มาแสดงก่อน ถึงจะสามารถส่งค่าไปแก้ไขได้
                     events: [
                         <?php foreach ($events as $event) :
 
@@ -268,9 +184,12 @@ $procedures_color = $stmt->fetchAll();
                         ?> {
                                 id: '<?php echo $event['id']; ?>',
                                 title: '<?php echo $event['title']; ?>',
+                                detail: '<?php echo $event['detail']; ?>',
                                 start: '<?php echo $start; ?>',
                                 end: '<?php echo $end; ?>',
                                 color: '<?php echo $event['color']; ?>',
+                                patient_name: '<?php echo $event['patient_name']; ?>',
+                                patient_tel: '<?php echo $event['patient_tel']; ?>',
                             },
                         <?php endforeach; ?>
                     ]
@@ -293,7 +212,7 @@ $procedures_color = $stmt->fetchAll();
                     Event[2] = end;
 
                     $.ajax({
-                        url: 'editEventDate.php',
+                        url: 'edit-event-date.php',
                         type: "POST",
                         data: {
                             Event: Event
