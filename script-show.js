@@ -8,6 +8,13 @@ $(document).ready(function() {
 		},
 		editable: false,
 		eventLimit: true, // allow "more" link when too many events
+		selectable: false,
+        selectHelper: true,
+        timeFormat: "H:mm น.",
+        defaultView: 'month',
+        scrollTime: '08:00', // undo default 6am scrollTime
+        eventOverlap: false,
+        allDaySlot: false,
 		events:{
 			url:'json-event-show.php?get_json=get_json',
 		}
