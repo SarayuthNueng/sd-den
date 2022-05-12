@@ -23,6 +23,35 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
     <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- datatable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- DataTable แบบภาษาไทย -->
+    <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+            $('#myTable').dataTable( {
+            "oLanguage": {
+            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+            "sSearch": "ค้นหา :",
+            "aaSorting" :[[0,'desc']],
+            "oPaginate": {
+            "sFirst":    "หน้าแรก",
+            "sPrevious": "ก่อนหน้า",
+            "sNext":     "ถัดไป",
+            "sLast":     "หน้าสุดท้าย"
+            },
+            }
+            } );
+            } );
+    </script>
+
     <meta charset='utf-8' />
 
   </head>

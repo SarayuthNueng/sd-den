@@ -29,7 +29,7 @@ if (isset($_GET['get_json'])) {
 	echo json_encode($json);
 }
 
-//show edit data modal
+//show show data modal
 if (isset($_POST['id'])) {
 
 	$get_data = $fullcalendar->get_fullcalendar_id($_POST['id']);
@@ -37,133 +37,130 @@ if (isset($_POST['id'])) {
 	echo '
 
 
-	
-	
-<div class="container ">
-
-<div class="modal modal-tour position-static d-block  py-5" tabindex="-1" role="dialog" id="modalTour">
-		<div class="modal-dialog" role="document">
-		<div class="modal-content rounded-6 shadow">
-		<div class="modal-body ">
-		<h4 class="text-center fw-bold mb-0">ข้อมูลการนัด</h4>
-
-			<div class="row">
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/dentist.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">แพทย์</h6>
-					' . $get_data['title'] . '
-				</div>
-				</li>
-				</div>
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/circular-arrows.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">ประเภทหัตถการ</h6>
-					' . $get_data['procedure_name'] . '
-				</div>
-				</li>
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/patient.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">ชื่อคนไข้</h6>
-					' . $get_data['patient_name'] . '
-				</div>
-				</li>
-				</div>
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/telephone.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">เบอร์โทรศัพท์คนไข้</h6>
-					' . $get_data['patient_tel'] . '
-				</div>
-				</li>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 offset-md-0">
-					<li class=" py-3" style="display: -webkit-box;">
-						<img
-						src="components/assets/img/report.png"
-						width="30"
-						height="30"
-						alt="logo"
-						/>
-						<div class="px-4 col-md-12">
-							<h6 class="mb-0" style="font-weight: bold;">รายละเอียด</h6>
-							<p class="card-text" >
-							' . $get_data['detail'] . '
-							</p>
-							
+			<form class="form-horizontal" >
+				<div class=" modal-header">
+					<!-- แพทย์ -->
+					<div class="col-md-7 text-center">
+						<h6 style="font-weight: bold;" class="modal-title" id="myModalLabel">' . $get_data['title'] . '</h6>
+					</div>
+					<div class="col-md-3">
+						<h6 style="font-weight: bold; color: ' . $get_data['color'] . '" class="modal-title" id="myModalLabel">(' . $get_data['procedure_name'] . ')</h6>
+					</div>
+					<div class="col-md-2">
+						<div>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
-					</li>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/calendar.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">วันที่และเวลาที่เริ่ม</h6>
-					' . $get_data['start'] . '
+
+				<div class="modal-body ">
+
+					<div class="container mt-2">
+						<div class="row justify-content-evenly mx-5 ">
+							<div class="col-md-6">
+								<div class="col-auto">
+									<i class="mx-3 fa-solid fa-hospital-user"></i>
+									<label for="patient_name" class="col-form-label">ชื่อคนไข้ :</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mt-2">
+								' . $get_data['patient_name'] . '
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container mt-2 ">
+						<div class="row justify-content-evenly mx-5 ">
+							<div class="col-md-6">
+								<div class="col-auto">
+									<i class="mx-3 fa-solid fa-phone"></i>
+									<label for="patient_tel" class="col-form-label">เบอร์โทรศัพท์คนไข้ :</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mt-2">
+								' . $get_data['patient_tel'] . '
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container mt-2">
+						<div class="row justify-content-evenly mx-5 ">
+							<div class="col-md-6  ">
+								<div class="col-auto">
+									<i class="mx-3 fa-solid fa-tooth"></i>
+									<label for="color" class="col-form-label">ประเภทหัตถการ :</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mt-2">
+								' . $get_data['procedure_name'] . '
+								</div>
+							</div>
+						</div>
+					</div>
+
+						<div class="container mt-2 ">
+							<div class="row justify-content-evenly mx-5 ">
+								<div class="col-md-6">
+									<div class="col-auto">
+										<i class="mx-3 fa-solid fa-circle-info"></i>
+										<label for="color" class="col-form-label">รายละเอียด :</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="mt-2">
+									<p class="card-text" >
+									' . $get_data['detail'] . '
+									</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="container mt-2">
+						<div class="row justify-content-evenly mx-5 ">
+							<div class="col-md-6  ">
+								<div class="col-auto">
+									<i class="mx-3 fa-solid fa-stopwatch"></i>
+									<label for="color" class="col-form-label">วันที่และเวลาที่เริ่ม :</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mt-2">
+								' . $get_data['start'] . '
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container mt-2">
+						<div class="row justify-content-evenly mx-5 ">
+							<div class="col-md-6  ">
+								<div class="col-auto">
+									<i class="mx-3 fa-solid fa-stopwatch-20"></i>
+									<label for="color" class="col-form-label">วันที่และเวลาที่สิ้นสุด :</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mt-2">
+								' . $get_data['end'] . '
+								</div>
+							</div>
+						</div>
+					</div>
+						
 				</div>
-				</li>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
 				</div>
-				<div class="col-md-6">
-				<li class=" py-3" style="display: -webkit-box;">
-				<img
-				  src="components/assets/img/calendar2.png"
-				  width="30"
-				  height="30"
-				  alt="logo"
-				/>
-				<div class="px-4 col-md-12">
-					<h6 class="mb-0" style="font-weight: bold;">วันที่และเวลาที่สิ้นสุด</h6>
-					' . $get_data['end'] . '
-				</div>
-				</li>
-				</div>
-			</div>
-			<button type="button" class="text-center btn btn-danger mt-5 w-100" data-dismiss="modal">ปิด</button>
-		</div>
-		</div>
-		</div>
-		</div>
-</div>
-		
+
+
+			</form>
 
 	
   

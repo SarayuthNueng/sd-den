@@ -1,13 +1,14 @@
 @import "../../../../../css.css";
+@import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
 @font-face {
-  font-family: material icons;
+  font-family: 'Kanit', sans-serif;
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/MaterialIcons-Regular.eot);
+  /* src: url(../fonts/MaterialIcons-Regular.eot);
   src: local("Material Icons"), local("MaterialIcons-Regular"),
     url(../fonts/MaterialIcons-Regular.woff2) format("woff2"),
     url(../fonts/MaterialIcons-Regular.woff) format("woff"),
-    url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+    url(../fonts/MaterialIcons-Regular.ttf) format("truetype"); */
 }
 html {
   height: 100%;
@@ -19,6 +20,7 @@ body {
   height: 100%;
   line-height: 1.5;
   overflow-x: hidden;
+  font-family: 'Kanit', sans-serif;
 }
 h1,
 h2,
@@ -26,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: rubik, sans-serif;
+  font-family: 'Kanit', sans-serif;
   margin-top: 0;
 }
 a:hover,

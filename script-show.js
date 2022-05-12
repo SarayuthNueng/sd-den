@@ -22,7 +22,7 @@ $(document).ready(function() {
 	
 });
 
-//show data for edit	
+//show data for show	
 function get_modal(id){
 	
 	//trigger modal

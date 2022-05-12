@@ -204,7 +204,7 @@
 	 	<div class="modal-dialog modal-lg" role="document">
 	 		<div class="modal-content">
 
-	 			<form class="form-horizontal" method="POST" action="function/edit-event-title.php">
+	 			<form class="form-horizontal" >
 	 				<div class=" modal-header">
 	 					<!-- แพทย์ -->
 	 					<div class="col-md-10">
@@ -219,77 +219,76 @@
 
 	 				<div class="modal-body ">
 
-	 					<div class="container text-center mt-3">
-	 						<div class="row justify-content-evenly ">
+	 					<div class="container  mt-3">
+	 						<div class="row justify-content-evenly mx-5 ">
 	 							<div class="col-6">
 	 								<div class="col-auto">
+	 									<i class="mx-3 fa-solid fa-hospital-user"></i>
 	 									<label for="patient_name" class="col-form-label" style="font-weight: bold;">ชื่อคนไข้ :</label>
 	 								</div>
 	 							</div>
 	 							<div class="col-6">
 	 								<div>
-	 									<input id="patient_name" class="form-control" name="patient_name" >
+	 									<input id="patient_name" class="form-control" name="patient_name">
 	 								</div>
 	 							</div>
 	 						</div>
 	 					</div>
 
-	 					<div class="container text-center">
-	 						<div class="row justify-content-evenly ">
+	 					<div class="container ">
+	 						<div class="row justify-content-evenly mx-5 ">
 	 							<div class="col-6">
 	 								<div class="col-auto">
+	 									<i class="mx-3 fa-solid fa-phone"></i>
 	 									<label for="patient_tel" class="col-form-label" style="font-weight: bold;">เบอร์โทรศัพท์คนไข้ :</label>
 	 								</div>
 	 							</div>
 	 							<div class="col-6">
 	 								<div>
-	 									<input id="patient_tel" class="form-control" name="patient_tel" >
+	 									<input id="patient_tel" class="form-control" name="patient_tel">
 	 								</div>
 	 							</div>
 	 						</div>
 	 					</div>
 
 	 					<div class="container">
-	 						<div class="row justify-content-evenly ">
-	 							<div class="col-6  text-center">
+	 						<div class="row justify-content-evenly mx-5 ">
+	 							<div class="col-6  ">
 	 								<div class="col-auto">
+	 									<i class="mx-3 fa-solid fa-tooth"></i>
 	 									<label for="color" class="col-form-label" style="font-weight: bold;">ประเภทหัตถการ :</label>
 	 								</div>
 	 							</div>
 	 							<div class="col-6">
-									 <div>
-									 <input id="procedure_name" class="form-control" name="patient_tel" >
-									 <select name="color" class="form-control" id="color" >
-	 										<?php foreach ($procedures_color as $color) : ?>
-	 											<option style="color:<?= $color['color']; ?>" value="<?= $color['color']; ?>"><?= $color['procedure_name']; ?></option>
-	 										<?php endforeach; ?>
-	 									</select>
-	 									
-	 							</div>
-	 						</div>
-	 					</div>
-
-	 					<div class="container text-center">
-	 						<div class="row justify-content-evenly ">
-	 							<div class="col-6">
-	 								<div class="col-auto">
-	 									<label for="color" class="col-form-label" style="font-weight: bold;">รายละเอียด :</label>
-	 								</div>
-	 							</div>
-	 							<div class="col-6">
 	 								<div>
-	 									<textarea id="detail" class="form-control" rows="3" name="detail" maxlength="300" value="color" ></textarea>
+	 									<input id="procedure_name" class="form-control" name="patient_tel">
 	 								</div>
 	 							</div>
 	 						</div>
+
+	 						<div class="container ">
+	 							<div class="row justify-content-evenly mx-5 ">
+	 								<div class="col-6">
+	 									<div class="col-auto">
+	 										<i class="mx-3 fa-solid fa-circle-info"></i>
+	 										<label for="color" class="col-form-label" style="font-weight: bold;">รายละเอียด :</label>
+	 									</div>
+	 								</div>
+	 								<div class="col-6">
+	 									<div>
+	 										<textarea id="detail" class="form-control" rows="3" name="detail" maxlength="300" value="color"></textarea>
+	 									</div>
+	 								</div>
+	 							</div>
+	 						</div>
+
 	 					</div>
-
-
 	 				</div>
-
 	 				<div class="modal-footer">
 	 					<button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
 	 				</div>
+
+
 	 			</form>
 	 		</div>
 	 	</div>

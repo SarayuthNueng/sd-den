@@ -1,5 +1,3 @@
-
-
 <?php include "components/header.php" ?>
 
 <?php include "components/sidebar.php" ?>
@@ -16,7 +14,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-lg-12">
 					<form>
 						<div class="row formtype">
@@ -58,13 +56,13 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			</div> -->
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="card">
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="datatable table table-stripped">
+								<table id="myTable" class=" table table table-stripped" style="width:100%">
 									<thead>
 										<tr>
 											<th>Item</th>
@@ -121,10 +119,10 @@
 							</div>
 						</div>
 					</div>
-					<?php include "components/footer.php" ?>
 				</div>
 			</div>
 		</div>
+		<?php include "components/footer.php" ?>
 	</div>
 </div>
 
@@ -144,7 +142,7 @@
 
 <script src="components/assets/js/script.js"></script>
 <script>
-	$(function () {
+	$(function() {
 		$('#datetimepicker3').datetimepicker({
 			format: 'LT'
 

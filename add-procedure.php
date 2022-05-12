@@ -63,7 +63,7 @@ $เขียวเทา = '#2F4F4F';
 							</div>
 						</div>
 						<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
-						<button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มประเภทหัตถการ</button>
+						<button type="submit" name="submit" class="btn btn-primary ml-2" style="float: right;">เพิ่มประเภทหัตถการ</button>
 
 					</form>
 				</div>
