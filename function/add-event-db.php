@@ -10,7 +10,7 @@
 <?php
 
 // Connexion à la base de données
-require_once('../db/connect.php');
+require_once('../db/pdo_connect.php');
 
 if (isset($_POST['title']) && isset($_POST['detail']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['patient_name']) && isset($_POST['patient_tel'])) {
 

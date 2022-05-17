@@ -1,5 +1,5 @@
-<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
 	<div class="page-wrapper">
@@ -16,7 +16,7 @@
 					<div class="col-3">
 						<a type="button" style="color: lemonchiffon;float: right;background: goldenrod; border-color: goldenrod;" class="btn ml-2" href="list-procedure.php" role="button">รายการหัตถการ</a>
 					</div>
-					
+
 				</div>
 
 				<div class=" mt-4 content container-fluid">
@@ -45,43 +45,43 @@
 												</tr>
 											</thead>
 											<tbody>
-										<tr>
-											<?php
-											//คิวรี่ข้อมูลมาแสดงในตาราง
-											require_once 'db/connect.php';
-											$stmt = $db->prepare("SELECT* FROM users");
-											$stmt->execute();
-											$result = $stmt->fetchAll();
-											foreach ($result as $k) {
-											?>
-												<td><?= $k['user_id']; ?></td>
-												<td><?= $k['username']; ?></td>
-												<td>
-													<a type="button" style="color: steelblue; font-weight: bold;" href="edit-password-den.php?user_id=<?= $k['user_id']; ?>">
-														แก้ไขรหัสผ่าน
-													</a>
-												</td>
-												<td><?= $k['pname'] ?></td>
-												<td><?= $k['firstname']; ?></td>
-												<td><?= $k['lastname']; ?></td>
-												<td><?= $k['cid']; ?></td>
-												<td><?= $k['address']; ?></td>
-												<td><?= $k['email']; ?></td>
-												<td><?= $k['tel']; ?></td>
-												<td><?= $k['date']; ?></td>
-												<td><?= $k['user_level']; ?></td>
-												<td>
-													<a type="button" class="fas fa-edit ml-2" href="edit-den.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:steelblue;">
-													</a>
-												</td>
-												<td>
-													<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');" href="function/del-user.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
-													</a>
-												</td>
+												<tr>
+													<?php
+													//คิวรี่ข้อมูลมาแสดงในตาราง
+													require_once 'db/pdo_connect.php';
+													$stmt = $db->prepare("SELECT* FROM users");
+													$stmt->execute();
+													$result = $stmt->fetchAll();
+													foreach ($result as $k) {
+													?>
+														<td><?= $k['user_id']; ?></td>
+														<td><?= $k['username']; ?></td>
+														<td>
+															<a type="button" style="color: steelblue; font-weight: bold;" href="edit-password-den.php?user_id=<?= $k['user_id']; ?>">
+																แก้ไขรหัสผ่าน
+															</a>
+														</td>
+														<td><?= $k['pname'] ?></td>
+														<td><?= $k['firstname']; ?></td>
+														<td><?= $k['lastname']; ?></td>
+														<td><?= $k['cid']; ?></td>
+														<td><?= $k['address']; ?></td>
+														<td><?= $k['email']; ?></td>
+														<td><?= $k['tel']; ?></td>
+														<td><?= $k['date']; ?></td>
+														<td><?= $k['user_level']; ?></td>
+														<td>
+															<a type="button" class="fas fa-edit ml-2" href="edit-den.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:steelblue;">
+															</a>
+														</td>
+														<td>
+															<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');" href="function/del-user.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
+															</a>
+														</td>
 
-										</tr>
-									<?php } ?>
-									</tbody>
+												</tr>
+											<?php } ?>
+											</tbody>
 										</table>
 									</div>
 								</div>
@@ -90,9 +90,8 @@
 					</div>
 				</div>
 			</div>
-			
-			<?php include "components/footer.php" ?>
 		</div>
+		<?php include "components/footer.php" ?>
 	</div>
 </div>
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>

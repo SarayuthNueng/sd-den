@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('../db/connect.php');
+require_once('../db/pdo_connect.php');
 
 if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Event'][2])){
 

@@ -1,6 +1,6 @@
 <?php
 session_start();  // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-include('../db/connect.php');  // นำเข้าไฟล์ database
+include('../db/pdo_connect.php');  // นำเข้าไฟล์ database
 
 // ทำการเช็คว่ามีการ submit form หรือไม่ isset() จะเช็คว่ามี data หรือไม่
 if (isset($_POST['submit'])) {

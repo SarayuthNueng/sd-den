@@ -1,8 +1,8 @@
-<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 <?php
 
-require_once 'db/connect.php';
+require_once 'db/pdo_connect.php';
 
 //Our select statement. This will retrieve the data that we want.
 $sql = "SELECT * FROM kname";
@@ -135,6 +135,7 @@ $kumnum = $stmt->fetchAll();
 				</div>
 			</div>
 		</div>
+		<?php include "components/footer.php" ?>
 	</div>
 </div>
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>

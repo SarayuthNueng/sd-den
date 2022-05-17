@@ -1,6 +1,6 @@
 <?php
     session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-	include('db/connect.php');  // นำเข้าไฟล์ database
+	include('db/pdo_connect.php');  // นำเข้าไฟล์ database
 
     // ถ้าไม่มี $_SESSION['is_logged_in'] (เก็บสถานะ login โดยจะเก็บตอนที่สมัครสมาชิกหรือ login แล้วเท่านั้น) ให้กลับไปยังหน้า login.php เพื่อทำการ login ก่อน
     if ($_SESSION['user_id'] == "") {

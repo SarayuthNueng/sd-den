@@ -3,7 +3,7 @@
 if(isset($_POST['user_id']) && isset($_POST['pname']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid'])  
     && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['tel'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once '../db/connect.php';
+     require_once '../db/pdo_connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
 $pname = $_POST['pname'];

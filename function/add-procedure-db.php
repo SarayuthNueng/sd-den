@@ -4,7 +4,7 @@
 // echo '</pre>';
 
 session_start();    // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-include('../db/db_conn.php');  // นำเข้าไฟล์ database
+include('../db/connect.php');  // นำเข้าไฟล์ database
 
 // ทำการเช็คว่ามีการ submit form หรือไม่ isset() จะเช็คว่ามี data หรือไม่
 if (isset($_POST['submit'])) {

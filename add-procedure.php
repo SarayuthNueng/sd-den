@@ -1,24 +1,6 @@
-<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
-<?php
-$เหลือง = '#FFCC00';
-$แดง = '#FF3300';
-$ม่วง = '#CC33FF';
-$เขียว = '#66CC33';
-$น้ำตาล = '#996600';
-$ฟ้า = '#6699FF';
-$เทา = '#666666';
-$น้ำเงิน = '#000080';
-$ชมพู = '#FF69B4';
-$ดำ = '#000000';
-$เขียวเทา = '#2F4F4F';
-// $แดงอ่อน = '#CD5C5C';
-
-
-
-
-?>
 
 <div class="main-wrapper">
 	<div class="page-wrapper">
@@ -30,45 +12,50 @@ $เขียวเทา = '#2F4F4F';
 					</div>
 				</div>
 			</div>
-			<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
-				<div class="col-lg-12">
-					<?php if (isset($_SESSION['err_fill'])) : ?>
-						<div class="alert alert-danger alert-custom" role="alert">
-							<?php echo $_SESSION['err_fill']; ?>
-						</div>
-					<?php endif; ?>
-					<?php if (isset($_SESSION['exist_color'])) : ?>
-						<div class="alert alert-danger alert-custom" role="alert">
-							<?php echo $_SESSION['exist_color']; ?>
-						</div>
-					<?php endif; ?>
-					<?php if (isset($_SESSION['err_insert'])) : ?>
-						<div class="alert alert-danger alert-custom" role="alert">
-							<?php echo $_SESSION['err_insert']; ?>
-						</div>
-					<?php endif; ?>
-					<form action="function/add-procedure-db.php" method="post">
-						<div class="row formtype">
-							<div class="col-md-12">
-								<div class="form-group ">
-									<label>ชื่อหัตถการ</label>
-									<input class="form-control" type="text" name="procedure_name" minlength="3" placeholder="ชื่อประเภทหัตถการ">
+			<div class="card">
+				<div class="card-body">
+					<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
+						<div class="col-lg-12">
+							<?php if (isset($_SESSION['err_fill'])) : ?>
+								<div class="alert alert-danger alert-custom" role="alert">
+									<?php echo $_SESSION['err_fill']; ?>
 								</div>
-							</div>
-							<div class="col-md-12 mb-3">
-								<label for="color">สีหัตถการ</label>
-								<div class="form-group ">
-										<input class="form-control" type="color" name="color" placeholder="สีประเภทหัตถการ"> 
-                                    </div>
-							</div>
-						</div>
-						<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
-						<button type="submit" name="submit" class="btn btn-primary ml-2" style="float: right;">เพิ่มประเภทหัตถการ</button>
+							<?php endif; ?>
+							<?php if (isset($_SESSION['exist_color'])) : ?>
+								<div class="alert alert-danger alert-custom" role="alert">
+									<?php echo $_SESSION['exist_color']; ?>
+								</div>
+							<?php endif; ?>
+							<?php if (isset($_SESSION['err_insert'])) : ?>
+								<div class="alert alert-danger alert-custom" role="alert">
+									<?php echo $_SESSION['err_insert']; ?>
+								</div>
+							<?php endif; ?>
+							<form action="function/add-procedure-db.php" method="post">
+								<div class="row formtype">
+									<div class="col-md-12">
+										<div class="form-group ">
+											<label>ชื่อหัตถการ</label>
+											<input class="form-control" type="text" name="procedure_name" minlength="3" placeholder="ชื่อประเภทหัตถการ">
+										</div>
+									</div>
+									<div class="col-md-12 mb-3">
+										<label for="color">สีหัตถการ</label>
+										<div class="form-group ">
+											<input class="form-control" type="color" name="color" placeholder="สีประเภทหัตถการ">
+										</div>
+									</div>
+								</div>
+								<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
+								<button type="submit" name="submit" class="btn btn-primary ml-2" style="float: right;">เพิ่มประเภทหัตถการ</button>
 
-					</form>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+		<?php include "components/footer.php" ?>
 	</div>
 </div>
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>

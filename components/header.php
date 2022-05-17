@@ -99,12 +99,5 @@
         </a>
         <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
         
-        <!-- <div class="top-nav-search">
-          <form>
-            <input type="text" class="form-control" placeholder="Search here" />
-            <button class="btn" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        </div> -->
+        
       </div>

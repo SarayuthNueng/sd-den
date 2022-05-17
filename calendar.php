@@ -1,6 +1,6 @@
 <?php
 // เชื่อม db
-require_once('db/connect.php');
+require_once('db/pdo_connect.php');
 date_default_timezone_set("Asia/Manila");
 
 // sql show data in calendar
@@ -36,14 +36,17 @@ $events = $req->fetchAll();
 
 <?php include "components/header.php" ?>
 
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/sidebar.php" ?>
 
 <div class="main-wrapper">
 
   <div class="page-wrapper">
     <div class="content container-fluid">
       <div class="col-lg-12 col-md-8">
-        <div class="card">
+        <div class="mt-5 container col-md-12">
+          <h4>ปฏิทินการนัดทันตกรรม</h4>
+        </div>
+        <div class="mt-5 card">
           <div class="card-body">
 
 

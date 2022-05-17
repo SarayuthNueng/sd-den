@@ -6,7 +6,7 @@
 
 	<?php
 	if (isset($_GET['procedure_id'])) {
-		require_once 'db/connect.php';
+		require_once 'db/pdo_connect.php';
 		$stmt = $db->prepare("SELECT* FROM procedures WHERE procedure_id=?");
 		$stmt->execute([$_GET['procedure_id']]);
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);

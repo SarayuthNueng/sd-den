@@ -5,7 +5,7 @@
 <div class="main-wrapper">
 	<?php
 	if (isset($_GET['user_id'])) {
-		require_once 'db/connect.php';
+		require_once 'db/pdo_connect.php';
 		$stmt = $db->prepare("SELECT* FROM users WHERE user_id=?");
 		$stmt->execute([$_GET['user_id']]);
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);

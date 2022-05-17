@@ -2,7 +2,7 @@
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['user_id']) && isset($_POST['password'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-     require_once '../db/connect.php';
+     require_once '../db/pdo_connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
 $user_id = $_POST['user_id'];
 $password = $_POST['password'];

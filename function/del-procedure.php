@@ -1,6 +1,6 @@
 <?php 
 if(isset($_GET['procedure_id'])){
-require_once '../db/connect.php';
+require_once '../db/pdo_connect.php';
 //ประกาศตัวแปรรับค่าจาก param method get
 $procedure_id = $_GET['procedure_id'];
 $stmt = $db->prepare('DELETE FROM procedures WHERE procedure_id=:procedure_id');

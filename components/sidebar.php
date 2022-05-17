@@ -1,6 +1,6 @@
 <?php
-session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-include('db/connect.php');  // นำเข้าไฟล์ database
+
+include('db/pdo_connect.php');  // นำเข้าไฟล์ database
 $select_stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
 $select_stmt->bindParam(':username', $_SESSION['username']);
 $select_stmt->execute();

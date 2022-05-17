@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 
-    include "db/db_conn.php"; //ต่อกับ database
+    include "db/connect.php"; //ต่อกับ database
 
 	// เชคค่าที่ส่งมา
 	if (isset($_POST['op']) && isset($_POST['np'])

@@ -6,7 +6,7 @@
 ?>
 <?php
 
-require_once('../db/connect.php');
+require_once('../db/pdo_connect.php');
 
 // ถ้าส่งค่า delete มา
 if (isset($_POST['delete']) && isset($_POST['id'])){

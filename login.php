@@ -40,7 +40,7 @@
 
 <?php include "components/header.php" ?>
 
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/sidebar.php" ?>
 
 <div class="main-wrapper">
 <div class="page-wrapper">

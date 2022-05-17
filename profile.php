@@ -1,10 +1,10 @@
-﻿<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+﻿<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
 	<?php
 	if (isset($_GET['user_id'])) {
-		require_once 'db/connect.php';
+		require_once 'db/pdo_connect.php';
 		$stmt = $db->prepare("SELECT* FROM users WHERE user_id=?");
 		$stmt->execute([$_GET['user_id']]);
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -226,6 +226,7 @@
 				</div>
 			</div>
 		</div>
+		<?php include "components/footer.php" ?>
 	</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
