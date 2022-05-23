@@ -106,7 +106,7 @@ $procedures_color = $stmt->fetchAll();
 
               <?php if(isset($_SESSION['user_id'])){ ?>
               <li>
-                <a href="logout.php">
+                <a class="exit-btn" href="logout.php">
                 <i class="fas fa-sign-out-alt"></i><span>ออกจากระบบ</span>
                 </a>
               </li>
@@ -117,3 +117,28 @@ $procedures_color = $stmt->fetchAll();
           </div>
         </div>
       </div>
+      
+      <script>
+        $('.exit-btn').on('click', function(e) {
+            e.preventDefault();
+            var self = $(this);
+            console.log(self.data('title'));
+            Swal.fire({
+                title: 'คุณต้องการออกจากระบบหรือไม่ ?',
+                // text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'ใช่',
+                cancelButtonText: 'ยกเลิก'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = self.attr('href');
+                }
+
+            })
+        })
+    </script>
+
+      

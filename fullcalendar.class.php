@@ -62,13 +62,13 @@ class Fullcalendar {
 	public function get_fullcalendar_id($get_id){
 		
 		$db = $this->connect();
-		$get_user = $db->prepare(" SELECT c.id,c.title,c.detail,c.start,c.end,c.color,c.patient_name,c.patient_tel,p.procedure_name 
+		$get_user = $db->prepare(" SELECT c.id,c.title,c.detail,c.start,c.end,c.color,c.pname_patient,c.patient_name,c.patient_tel,p.procedure_name 
 		FROM calendar c
 		LEFT JOIN procedures p ON p.color = c.color
 		WHERE id = ? ");
 		$get_user->bind_param('i',$get_id);
 		$get_user->execute();
-		$get_user->bind_result($id,$title,$detail,$start,$end,$color,$patient_name,$patient_tel,$procedure_name);
+		$get_user->bind_result($id,$title,$detail,$start,$end,$color,$pname_patient,$patient_name,$patient_tel,$procedure_name);
 		$get_user->fetch();
 		
 		$result = array(
@@ -78,6 +78,7 @@ class Fullcalendar {
 			'start'=>$start,
 			'end'=>$end,
 			'color'=>$color,
+			'pname_patient'=>$pname_patient,
 			'patient_name'=>$patient_name,
 			'patient_tel'=>$patient_tel,
 			'procedure_name'=>$procedure_name

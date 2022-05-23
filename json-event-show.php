@@ -19,6 +19,7 @@ if (isset($_GET['get_json'])) {
 			'start' => $calendar['start'],
 			'end' => $calendar['end'],
 			'color' => $calendar['color'],
+			'pname_patient' => $calendar['pname_patient'],
 			'patient_name' => $calendar['patient_name'],
 			'patient_tel' => $calendar['patient_tel'],
 			'url' => 'javascript:get_modal(' . $calendar['id'] . ');',
@@ -60,12 +61,12 @@ if (isset($_POST['id'])) {
 							<div class="col-md-6">
 								<div class="col-auto">
 									<i class="mx-3 fa-solid fa-hospital-user"></i>
-									<label for="patient_name" class="col-form-label">ชื่อคนไข้ :</label>
+									<label for="patient_name" class="col-form-label">ชื่อ - นามสกุล คนไข้ :</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="mt-2">
-								' . $get_data['patient_name'] . '
+								' . $get_data['pname_patient'] . ' ' . $get_data['patient_name'] . '
 								</div>
 							</div>
 						</div>
@@ -76,7 +77,7 @@ if (isset($_POST['id'])) {
 							<div class="col-md-6">
 								<div class="col-auto">
 									<i class="mx-3 fa-solid fa-phone"></i>
-									<label for="patient_tel" class="col-form-label">เบอร์โทรศัพท์คนไข้ :</label>
+									<label for="patient_tel" class="col-form-label">เบอร์โทรศัพท์ คนไข้ :</label>
 								</div>
 							</div>
 							<div class="col-md-6">

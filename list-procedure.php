@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-3">
                         <a type="button"
-                            style="color: lemonchiffon;float: right;background: goldenrod; border-color: goldenrod;"
+                            style="float: right;background: #fff799; border-color: #fff799;"
                             class="btn " href="add-procedure.php" role="button">+ เพิ่มรายการหัตถการ</a>
                     </div>
                 </div>

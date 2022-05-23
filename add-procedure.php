@@ -14,8 +14,8 @@
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
-						<div class="col-lg-12">
+					<div class="row justify-content-center" >
+						<div class="col-lg-4">
 							<?php if (isset($_SESSION['err_fill'])) : ?>
 								<div class="alert alert-danger alert-custom" role="alert">
 									<?php echo $_SESSION['err_fill']; ?>

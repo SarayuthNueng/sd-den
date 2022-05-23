@@ -12,17 +12,18 @@
 // Connexion à la base de données
 require_once('../db/pdo_connect.php');
 
-if (isset($_POST['title']) && isset($_POST['detail']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['patient_name']) && isset($_POST['patient_tel'])) {
+if (isset($_POST['title']) && isset($_POST['detail']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['pname_patient']) && isset($_POST['patient_name']) && isset($_POST['patient_tel'])) {
 
 	$title = $_POST['title'];
 	$detail = $_POST['detail'];
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
+	$pname_patient = $_POST['pname_patient'];
 	$patient_name = $_POST['patient_name'];
 	$patient_tel = $_POST['patient_tel'];
 
-	$sql = "INSERT INTO calendar(title, detail, start, end, color, patient_name, patient_tel) values ('$title', '$detail', '$start', '$end', '$color', '$patient_name', '$patient_tel')";
+	$sql = "INSERT INTO calendar(title, detail, start, end, color, pname_patient, patient_name, patient_tel) values ('$title', '$detail', '$start', '$end', '$color', '$pname_patient', '$patient_name', '$patient_tel')";
 	echo $sql;
 
 	$query = $db->prepare($sql);

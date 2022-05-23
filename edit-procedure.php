@@ -1,5 +1,5 @@
-<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 
 <div class="main-wrapper">
@@ -27,33 +27,37 @@
 					</div>
 				</div>
 			</div>
-			<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
-				<div class="col-lg-12">
-					<?php if (isset($_SESSION['exist_editcolor'])) : ?>
-						<div class="alert alert-danger alert-custom" role="alert">
-							<?php echo $_SESSION['exist_editcolor']; ?>
-						</div>
-					<?php endif; ?>
-					<form action="function/edit-procedure-db.php" method="post">
-						<div class="row formtype">
-							<div class="col-md-12">
-								<div class="form-group ">
-									<label>ชื่อรายการหัตถการ</label>
-									<input class="form-control" type="text" name="procedure_name" required value="<?= $row['procedure_name']; ?>" minlength="3" placeholder="ชื่อรายการหัตถการ">
+			<div class="card">
+				<div class="card-body">
+					<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 3%;">
+						<div class="col-lg-12">
+							<?php if (isset($_SESSION['exist_editcolor'])) : ?>
+								<div class="alert alert-danger alert-custom" role="alert">
+									<?php echo $_SESSION['exist_editcolor']; ?>
 								</div>
-							</div>
-							<div class="col-md-12 mb-3">
-								<div class="form-group ">
-										<label>สีรายการหัตถการ</label>
-										<input class="form-control" type="color" name="color" required value="<?= $row['color'];?>" placeholder="สีรายการหัตถการ"> 
-                                </div>
-							</div>
-						</div>
-						<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
-						<input type="hidden" name="procedure_id" value="<?= $row['procedure_id']; ?>">
-						<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขรายการหัตถการ</button>
+							<?php endif; ?>
+							<form action="function/edit-procedure-db.php" method="post">
+								<div class="row formtype">
+									<div class="col-md-12">
+										<div class="form-group ">
+											<label>ชื่อรายการหัตถการ</label>
+											<input class="form-control" type="text" name="procedure_name" required value="<?= $row['procedure_name']; ?>" minlength="3" placeholder="ชื่อรายการหัตถการ">
+										</div>
+									</div>
+									<div class="col-md-12 mb-3">
+										<div class="form-group ">
+											<label>สีรายการหัตถการ</label>
+											<input class="form-control" type="color" name="color" required value="<?= $row['color']; ?>" placeholder="สีรายการหัตถการ">
+										</div>
+									</div>
+								</div>
+								<a type="submit" class="btn btn-secondary " href="list-procedure.php" role="button">กลับ</a>
+								<input type="hidden" name="procedure_id" value="<?= $row['procedure_id']; ?>">
+								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไขรายการหัตถการ</button>
 
-					</form>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

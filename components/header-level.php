@@ -41,6 +41,11 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
     <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- sweetalert -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Sweet Alert CDN-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

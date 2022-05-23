@@ -105,7 +105,7 @@
 										</div>
 									</div>
 									<div class="modal fade" id="edit_personal_details" aria-hidden="true" role="dialog">
-										<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-dialog modal-dialog-centered modal-dialog-lg" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
 													<h5 class="modal-title">Personal Details</h5>
@@ -122,8 +122,8 @@
 																	</div>
 																</div>
 															</div>
-															<div class="mb-3 col-12 col-sm-12">
-																<label>คำนำหน้าและชื่อ</label>
+															<div class="mb-3 col-6 col-sm-6">
+																<label>ชื่อ</label>
 																<div class="input-group">
 																	<div class="input-group-prepend">
 																		<select class="form-control" name="pname" id="pname">
@@ -137,37 +137,38 @@
 																</div>
 															</div>
 
-															<div class="col-12 col-sm-6">
+															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>นามสกุล</label>
 																	<input type="text" class="form-control" name="lastname" value="<?php echo $row['lastname']; ?>">
 																</div>
 															</div>
-															<div class="col-12 col-sm-6">
+															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>เลขบัตรประจำตัวประชาชน</label>
 																	<input type="text" class="form-control" name="cid" value="<?php echo $row['cid']; ?>">
 																</div>
 															</div>
-															<div class="col-12 col-sm-6">
-																<div class="form-group">
-																	<label>ที่อยู่</label>
-																	<input type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control">
-																</div>
-															</div>
-															<div class="col-12 col-sm-6">
+															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>อีเมล</label>
 																	<input type="text" name="email" value="<?php echo $row['email']; ?>" class="form-control">
 																</div>
 															</div>
-															<div class="col-12 col-sm-6">
+															<div class="col-12 col-sm-12">
+																<div class="form-group">
+																	<label>ที่อยู่</label>
+																	<textarea type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control"  rows="2"><?php echo $row['address']; ?></textarea>
+																</div>
+															</div>
+															
+															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>เบอร์โทรศัพท์</label>
 																	<input type="text" name="tel" value="<?php echo $row['tel']; ?>" class="form-control">
 																</div>
 															</div>
-															<div class="col-12 col-sm-6">
+															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>วันที่สมัคร</label>
 																	<input type="datetime-local" name="date" value="<?php echo $row['date']; ?>" class="form-control">

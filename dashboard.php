@@ -1,3 +1,15 @@
+<?php
+
+include('db/pdo_connect.php');  // นำเข้าไฟล์ database
+
+//list procedures
+$sql = "SELECT * FROM procedures ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$procedures_color = $stmt->fetchAll();
+
+?>
+
 <?php include "components/header.php" ?>
 
 <?php include "components/sidebar.php" ?>
@@ -17,16 +29,16 @@
 
       <div class="row">
         <div class="col-xl-4 col-sm-6 col-12">
-          <div class="card board1 fill">
+          <div class="card board1 ">
             <div class="card-body">
               <div class="dash-widget-header">
                 <div>
-                  <h3 class="card_widget_header">236</h3>
+                  <h3 class="dashboard-text card_widget_header">236</h3>
                   <h6 class="text-muted">จำนวนการนัดวันนี้</h6>
                 </div>
                 <div class="ml-auto mt-md-3 mt-lg-0">
                   <span style="font-size: 3em; color: Tomato;">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="dashboard-text fas fa-calendar-alt"></i>
                   </span>
                 </div>
               </div>
@@ -34,16 +46,16 @@
           </div>
         </div>
         <div class="col-xl-4 col-sm-6 col-12">
-          <div class="card board1 fill">
+          <div class="card board1 ">
             <div class="card-body">
               <div class="dash-widget-header">
                 <div>
-                  <h3 class="card_widget_header">180</h3>
+                  <h3 class= "dashboard-text card_widget_header">180</h3>
                   <h6 class="text-muted">จำนวนแพทย์นัดวันนี้</h6>
                 </div>
                 <div class="ml-auto mt-md-3 mt-lg-0">
                   <span style="font-size: 3em; color: Tomato;">
-                    <i class="fas fa-user-md"></i>
+                    <i class="dashboard-text fas fa-user-md"></i>
                   </span>
                 </div>
               </div>
@@ -51,16 +63,16 @@
           </div>
         </div>
         <div class="col-xl-4 col-sm-6 col-12">
-          <div class="card board1 fill">
+          <div class="card board1 ">
             <div class="card-body">
               <div class="dash-widget-header">
                 <div>
-                  <h3 class="card_widget_header">1538</h3>
+                  <h3 class= "dashboard-text card_widget_header">1538</h3>
                   <h6 class="text-muted">จำนวนประเภทการนัดวันนี้</h6>
                 </div>
                 <div class="ml-auto mt-md-3 mt-lg-0">
                   <span style="font-size: 3em; color: Tomato;">
-                    <i class="fas fa-sort-alpha-down-alt"></i>
+                    <i class="dashboard-text fas fa-sort-alpha-down-alt"></i>
                   </span>
                 </div>
               </div>
@@ -79,125 +91,26 @@
         </div>
       </div>
       <div class="row">
+      <?php foreach ($procedures_color as $color) : ?>
         <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
+          <div class="card board1 ">
             <div class="card-body">
               <div class="dash-widget-header">
                 <div>
-                  <h3 class="card_widget_header">236</h3>
-                  <h6 class="text-muted">ขูดหินปูน/อุดคอฟัน</h6>
+                  <h3 style="color: <?= $color['color']; ?>;" class= "dashboard-text card_widget_header">236</h3>
+                  <h6 class="text-muted"><?= $color['procedure_name']; ?></h6>
                   <h7>ดูเพิ่มเติม</h7>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">180</h3>
-                  <h6 class="text-muted">รักษารากฟัน/เดือยฟัน/ครอบฟัน/สะพานฟัน</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">1538</h3>
-                  <h6 class="text-muted">อุดฟัน</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">364</h3>
-                  <h6 class="text-muted">ผ่าฟันคุด/ฟันฝัง/แต่งกระดูก</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
+        
       </div>
 
 
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">236</h3>
-                  <h6 class="text-muted">ฟันปลอม</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">180</h3>
-                  <h6 class="text-muted">เด็ก</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">1538</h3>
-                  <h6 class="text-muted">Swab</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card board1 fill">
-            <div class="card-body">
-              <div class="dash-widget-header">
-                <div>
-                  <h3 class="card_widget_header">364</h3>
-                  <h6 class="text-muted">อื่นๆ</h6>
-                  <h7>ดูเพิ่มเติม</h7>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
 
       <div class="page-header">

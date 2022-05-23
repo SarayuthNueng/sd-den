@@ -1,6 +1,6 @@
 
-<?php include "components/header-user-level.php" ?>
-<?php include "components/sidebar-user-level.php" ?>
+<?php include "components/header-level.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 
 <div class="main-wrapper">
@@ -25,6 +25,8 @@
 							<h3 class="page-title mt-5 text-center">แก้ไขรหัสผ่าน</h3> </div>
 					</div>
 				</div>
+				<div class="card">
+				<div class="card-body">
 				<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 0%;">
 					<div class="col-lg-12">
 					<form action="function/edit-password-den-db.php" method="post">
@@ -44,6 +46,8 @@
 								<button type="submit" class="btn btn-primary buttonedit ml-2">แก้ไข</button>
 					</form>
 					</div>
+				</div>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -14,7 +14,7 @@
 						<a type="button" class="btn btn-primary ml-2" href="add-den.php" role="button">+ เพิ่มสมาชิก</a>
 					</div>
 					<div class="col-3">
-						<a type="button" style="color: lemonchiffon;float: right;background: goldenrod; border-color: goldenrod;" class="btn ml-2" href="list-procedure.php" role="button">รายการหัตถการ</a>
+						<a type="button" style="float: right;background: #fff799; border-color: #fff799;" class="btn ml-2" href="list-procedure.php" role="button">รายการหัตถการ</a>
 					</div>
 
 				</div>
@@ -49,7 +49,7 @@
 													<?php
 													//คิวรี่ข้อมูลมาแสดงในตาราง
 													require_once 'db/pdo_connect.php';
-													$stmt = $db->prepare("SELECT* FROM users");
+													$stmt = $db->prepare("SELECT * FROM users WHERE user_level = 'user'");
 													$stmt->execute();
 													$result = $stmt->fetchAll();
 													foreach ($result as $k) {

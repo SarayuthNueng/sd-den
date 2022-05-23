@@ -9,6 +9,10 @@ $req = $db->prepare($sql);
 $req->execute();
 $events = $req->fetchAll();
 ?>
+
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -49,6 +53,15 @@ $sql = "SELECT * FROM procedures ";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $procedures_color = $stmt->fetchAll();
+
+
+//list kname_patient
+$sql = "SELECT * FROM kname_patient ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$kumname_patient = $stmt->fetchAll();
+
+
 
 
 
