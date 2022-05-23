@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2022 at 06:54 AM
+-- Generation Time: May 23, 2022 at 06:25 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -34,6 +34,7 @@ CREATE TABLE `calendar` (
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
   `color` varchar(7) DEFAULT NULL,
+  `pname_patient` varchar(255) NOT NULL,
   `patient_name` varchar(255) NOT NULL,
   `patient_tel` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -42,10 +43,16 @@ CREATE TABLE `calendar` (
 -- Dumping data for table `calendar`
 --
 
-INSERT INTO `calendar` (`id`, `title`, `detail`, `start`, `end`, `color`, `patient_name`, `patient_tel`) VALUES
-(21, 'test', 'tststsststddddddddddddddddddddddddddddddddddddddddd', '2022-04-04 11:01:39', '2022-04-04 16:30:39', '#000080', 'ศรายุทธ นวะศรี', '0980877876'),
-(31, 'นพ.ทดสอบหมอ  หมอทดสอบ', 'sdsvsdvsdvs', '2022-04-27 15:14:00', '2022-04-27 17:14:00', '#000080', 'ssssss', '0981234123'),
-(32, 'นพ.ทดสอบหมอ  หมอทดสอบ', 'aaaaasadasdasd', '2022-04-27 16:16:00', '2022-04-27 19:16:00', '#66CC33', 'sarayuth', '0981234567');
+INSERT INTO `calendar` (`id`, `title`, `detail`, `start`, `end`, `color`, `pname_patient`, `patient_name`, `patient_tel`) VALUES
+(31, 'นพ.ทดสอบหมอ  หมอทดสอบ', 'sdsvsdvsdvs', '2022-04-27 15:14:00', '2022-04-27 17:14:00', '#000080', '', 'ssssss', '0981234123'),
+(32, 'นพ.ทดสอบหมอ  หมอทดสอบ', 'aaaaasadasdasd', '2022-04-27 16:16:00', '2022-04-27 19:16:00', '#66CC33', '', 'sarayuth', '0981234567'),
+(38, 'นพ.ทดสอบหมอ  หมอทดสอบ', ' ghghgghghghghghgh ghghgghghghghghgh ghghgghghghghghgh ghghgghghghghghgh ', '2022-05-10 15:00:00', '2022-05-10 16:00:00', '#CC33FF', '', 'sarayuth navasri', '0980877876'),
+(39, 'นายsarayuth1  navasri1', 'hghghghghgghgjjkjkjkjj', '2022-05-19 15:41:00', '2022-05-20 15:41:00', '#996600', '', 'ศรายุทธ นวะศรี1', '0981234125'),
+(40, 'นพ.test  testtest', 'testttttttttttttt', '2022-05-20 10:22:00', '2022-05-20 13:22:00', '#ff3300', '', 'ศรายุทธ นวะศรี', '0981234123'),
+(41, 'นพ.ทดสอบหมอ  หมอทดสอบ', 'sssssssssss', '2022-05-20 11:57:00', '2022-05-20 15:57:00', '#FF69B4', '', 'ศรายุทธ นวะศรี', '0980877876'),
+(43, 'นพ.test  testtest', '2 ซี่', '2022-05-20 15:11:00', '2022-05-20 16:11:00', '#6699FF', 'นาย', 'ศรายุทธ นวะศรี', '0981234123'),
+(44, 'นายsarayuth1  navasri1', '4 ซี่', '2022-05-20 15:08:00', '2022-05-20 16:08:00', '#66CC33', 'นาย', 'sarayuth navasri', '0981234567'),
+(45, 'นพ.ทดสอบหมอ  หมอทดสอบ', '6 ซี่', '2022-05-20 15:10:00', '2022-05-20 17:10:00', '#000080', 'นาง', 'ศรายุทธ นวะศรี', '0980877876');
 
 -- --------------------------------------------------------
 
@@ -70,6 +77,26 @@ INSERT INTO `kname` (`kumnum_id`, `kumnum_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kname_patient`
+--
+
+CREATE TABLE `kname_patient` (
+  `kumnum_patient_id` int(11) NOT NULL,
+  `kumnum_patient` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `kname_patient`
+--
+
+INSERT INTO `kname_patient` (`kumnum_patient_id`, `kumnum_patient`) VALUES
+(1, 'นาย'),
+(2, 'นาง'),
+(3, 'น.ส.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `procedures`
 --
 
@@ -84,8 +111,8 @@ CREATE TABLE `procedures` (
 --
 
 INSERT INTO `procedures` (`procedure_id`, `procedure_name`, `color`) VALUES
-(1, 'ตรวจฟันและให้คำปรึกษา', '#FFCC00'),
-(2, 'อุดฟัน', '#FF3300'),
+(1, 'ตรวจฟันและให้คำปรึกษา', '#f4d248'),
+(2, 'อุดฟัน', '#ff3300'),
 (3, 'ถอนฟัน', '#CC33FF'),
 (4, 'ผ่าฟันคุด', '#66CC33'),
 (5, 'รักษารากฟัน', '#996600'),
@@ -94,9 +121,7 @@ INSERT INTO `procedures` (`procedure_id`, `procedure_name`, `color`) VALUES
 (8, 'เคลือบหลุมร่องฟัน', '#000080'),
 (9, 'เคลือบฟลูออไรด์', '#FF69B4'),
 (10, 'เอ็กซเรย์ฟัน', '#000000'),
-(13, 'ครอบฟัน', '#2F4F4F'),
-(14, 'test', '#000000'),
-(15, 'test2', '#39a02c');
+(13, 'ครอบฟัน', '#2F4F4F');
 
 -- --------------------------------------------------------
 
@@ -124,10 +149,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `pname`, `firstname`, `lastname`, `cid`, `address`, `email`, `tel`, `user_level`, `date`) VALUES
-(16, 'admin@nueng', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'sarayuth', 'navasri', '1400900249352', 'Somdet', 'test@gmail.com', '0870877876', 'admin', '2022-04-27 04:39:58'),
-(18, 'user@nueng', 'e10adc3949ba59abbe56e057f20f883e', 'นพ.', 'ทดสอบหมอ', 'หมอทดสอบ', '12345678910', 'Somdet', 'test@gmail.com', '0812345678', 'user', '2022-04-27 04:40:17'),
-(21, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'sarayuth', 'navasri', '1234567891234567', 'Somdet', 'test@gmail.com', '0870877876', 'user', '2022-04-27 04:13:47'),
-(30, 'u1', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'sarayuth1', 'navasri1', '12345678910', 'somdet', 'test@gmail.com', '0812345678', 'user', '2022-04-27 03:43:12');
+(16, 'admin@nueng', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'sarayuth', 'navasri', '1400900249352', 'Somdet', 'test@gmail.com', '0870877876', 'admin', '2022-05-20 02:45:00'),
+(18, 'user@nueng', 'e10adc3949ba59abbe56e057f20f883e', 'นพ.', 'ทดสอบหมอ', 'หมอทดสอบ', '12345678910', 'Somdet', 'test@gmail.com', '0812345678', 'user', '2022-05-20 04:03:00'),
+(30, 'u1', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'sarayuth1', 'navasri1', '12345678910', 'somdet', 'test@gmail.com', '0812345678', 'user', '2022-04-27 03:43:12'),
+(31, 'testden', '?\n?9I?Y??V?W??>', 'นพ.', 'test', 'testtest', '12345678910', 'somdet', 'test@gmail.com', '0912345678', 'user', '2022-05-20 04:37:07');
 
 --
 -- Indexes for dumped tables
@@ -144,6 +169,12 @@ ALTER TABLE `calendar`
 --
 ALTER TABLE `kname`
   ADD PRIMARY KEY (`kumnum_id`);
+
+--
+-- Indexes for table `kname_patient`
+--
+ALTER TABLE `kname_patient`
+  ADD PRIMARY KEY (`kumnum_patient_id`);
 
 --
 -- Indexes for table `procedures`
@@ -165,7 +196,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `kname`
@@ -174,16 +205,22 @@ ALTER TABLE `kname`
   MODIFY `kumnum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `kname_patient`
+--
+ALTER TABLE `kname_patient`
+  MODIFY `kumnum_patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `procedures`
 --
 ALTER TABLE `procedures`
-  MODIFY `procedure_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `procedure_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
