@@ -10,6 +10,14 @@
 <?php
 
 // Connexion à la base de données
+// try
+// {
+// 	$bdd = new PDO('mysql:host=192.168.0.208;dbname=sd_den_calendar;charset=utf8', 'root', 'sd11087');
+// }
+// catch(Exception $e)
+// {
+//         die('Error : '.$e->getMessage());
+// }
 require_once('../db/pdo_connect.php');
 
 if (isset($_POST['title']) && isset($_POST['detail']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['pname_patient']) && isset($_POST['patient_name']) && isset($_POST['patient_tel'])) {

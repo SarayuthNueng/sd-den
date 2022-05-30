@@ -31,15 +31,10 @@
     <link rel="stylesheet" href="components/assets/plugins/morris/morris.css" />
     <link rel="stylesheet" href="components/assets/css/style.css" />
     <link rel="stylesheet" href="components/assets/css/footers.css" />
-    <link rel="stylesheet" href="components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="components/assets/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="components/assets/plugins/datatables/datatables.min.css">
-    <link rel="stylesheet" type="text/css" href="components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="components/assets/img/favicon.png">
 	  <link rel="stylesheet" type="text/css" href="components/assets/plugins/fontawesome/css/all.min.css">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
-    <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- sweetalert -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

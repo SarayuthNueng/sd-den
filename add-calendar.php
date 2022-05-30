@@ -24,7 +24,7 @@ $events = $req->fetchAll();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css"> -->
 
     <style>
     #calendar {
@@ -60,10 +60,6 @@ $sql = "SELECT * FROM kname_patient ";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $kumname_patient = $stmt->fetchAll();
-
-
-
-
 
 ?>
 <div class="main-wrapper">

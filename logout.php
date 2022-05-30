@@ -10,8 +10,10 @@
     <script>
              setTimeout(function() {
               swal({
-                  title: "ออกจากระบบสำเร็จ",
-                  type: "success"
+                title: "ออกจากระบบสำเร็จ",
+                type: "success",
+                showConfirmButton: false,
+                timer: 1500
               }, function() {
                   window.location = "login.php"; //หน้าที่ต้องการให้กระโดดไป
               });
