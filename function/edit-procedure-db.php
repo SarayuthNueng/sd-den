@@ -9,7 +9,7 @@ session_start();    // เขียนทุกครั้งที่มีก
 //ถ้ามีค่าส่งมาจากฟอร์ม
 if (isset($_POST['procedure_id']) && isset($_POST['procedure_name']) && isset($_POST['color'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
-    require_once '../db/connect.php';
+    require_once '../db/connect_main.php';
     //ประกาศตัวแปรรับค่าจากฟอร์ม
     $procedure_id = $_POST['procedure_id'];
     $procedure_name = $_POST['procedure_name'];
