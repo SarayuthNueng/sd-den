@@ -10,9 +10,9 @@ $procedures_color = $stmt->fetchAll();
 
 ?>
 
-<?php include "components/header.php" ?>
+<?php include "components/header-level.php" ?>
 
-<?php include "components/sidebar.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
   <div class="page-wrapper">
@@ -287,7 +287,7 @@ $procedures_color = $stmt->fetchAll();
 </div>
 
 
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>
 <script src="components/assets/js/popper.min.js"></script>
 <script src="components/assets/js/bootstrap.min.js"></script>

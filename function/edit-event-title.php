@@ -29,19 +29,20 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	}
 
 	// ถ้าส่งevent ที่จะแก้ไขมา
-}elseif (isset($_POST['title']) && isset($_POST['detail']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['patient_name']) && isset($_POST['patient_tel']) && isset($_POST['id'])){
+}elseif (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['pname_patient']) && isset($_POST['patient_name']) && isset($_POST['patient_tel']) && isset($_POST['id'])){
 
 	$id = $_POST['id'];
 	$title = $_POST['title'];
-	$detail = $_POST['detail'];
+	$more = $_POST['more'];
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
+	$pname_patient = $_POST['pname_patient'];
 	$patient_name = $_POST['patient_name'];
 	$patient_tel = $_POST['patient_tel'];
 
 	// ทำการ update
-	$sql = "UPDATE calendar SET  title = '$title',detail = '$detail',start = '$start',end = '$end', color = '$color',patient_name = '$patient_name',patient_tel = '$patient_tel' WHERE id = $id ";
+	$sql = "UPDATE calendar SET  title = '$title',more = '$more',start = '$start',end = '$end', color = '$color', pname_patient = '$pname_patient', patient_name = '$patient_name',patient_tel = '$patient_tel' WHERE id = $id ";
 
 
 	$query = $db->prepare( $sql );

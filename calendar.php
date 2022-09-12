@@ -1,4 +1,5 @@
-<?php
+<?php if (!$_SESSION) { ?>
+  <?php
 // เชื่อม db
 require_once('db/pdo_connect.php');
 date_default_timezone_set("Asia/Manila");
@@ -20,7 +21,7 @@ $events = $req->fetchAll();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css"> -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -34,9 +35,9 @@ $events = $req->fetchAll();
 
 </head>
 
-<?php include "components/header.php" ?>
+<?php include "components/header-level.php" ?>
 
-<?php include "components/sidebar.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
 
@@ -103,3 +104,8 @@ $events = $req->fetchAll();
 <script src="components/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="components/assets/js/jquery-ui.min.js"></script>
 <script src="components/assets/js/script.js"></script>
+<?php } else { ?>
+
+  <?php Header("Location: test.php"); ?>
+
+<?php } ?>

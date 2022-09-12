@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+<?php
+
+if (!$_SESSION["user_id"]) {  //check session
+
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า index
+
+} else { ?>
+
 <?php include "components/header-level.php" ?>
 <?php include "components/sidebar-level.php" ?>
 
@@ -78,3 +87,4 @@ if (isset($_SESSION['err_fill']) || isset($_SESSION['exist_color']) || isset($_S
 	unset($_SESSION['err_insert']);
 }
 ?>
+<?php } ?>

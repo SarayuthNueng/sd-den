@@ -1,6 +1,6 @@
-<?php include "components/header.php" ?>
+<?php include "components/header-level.php" ?>
 
-<?php include "components/sidebar.php" ?>
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
 	<div class="page-wrapper">

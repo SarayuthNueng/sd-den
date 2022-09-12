@@ -21,12 +21,18 @@
             $_SESSION['tel'] = $num['tel'];
             $_SESSION['address'] = $num['address'];
             $_SESSION['user_level'] = $num['user_level'];
+			$_SESSION['cid'] = $num['cid'];
+			$_SESSION['title'] = $num['title'];
 
             if ($_SESSION['user_level'] == 'admin') {
                 echo "<script>window.location.href='list-den.php'</script>";
             }
 
-            if ($_SESSION['user_level'] == 'user') {
+            else if ($_SESSION['user_level'] == 'doctor') {
+                echo "<script>window.location.href='check-status-user.php'</script>";
+            }
+
+			else if ($_SESSION['user_level'] == 'user') {
                 echo "<script>window.location.href='add-calendar.php'</script>";
             }
             
@@ -38,9 +44,10 @@
 
 ?>
 
-<?php include "components/header.php" ?>
 
-<?php include "components/sidebar.php" ?>
+<?php include "components/header-level.php" ?>
+
+<?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
 <div class="page-wrapper">
@@ -60,14 +67,13 @@
 								<div class="form-group">
 									<input class="form-control" type="password" name="password" required placeholder="รหัสผ่าน"> </div>
 								<div class="form-group">
-								<!-- <button type="submit" name="submit" class="btn login-btn-blue btn-block text-white">Login</button> -->
 									<button type="submit" name="login" class="btn btn-primary btn-block" role="button">เข้าสู่ระบบ</button>
 								</div>
 							</form>
 
 							<!-- <div class="text-center forgotpass"><a href="forgot-password.html">หากลืมรหัสผ่าน?</a> </div> -->
-							<!-- <div class="login-or"> <span class="or-line"></span> <span class="span-or">หรือ</span> </div>
-							<div class="text-center dont-have">ยังไม่มีบัญชี? <a href="register.php">สมัครสมาชิก</a></div> -->
+							<!-- <div class="login-or"> <span class="or-line"></span> <span class="span-or">หรือ</span> </div> -->
+							<div class="text-center dont-have">ยังไม่มีบัญชี ? <a style="color: #009ce7;" href="register.php">สมัครสมาชิก</a></div>
 						</div>
 					</div>
 				</div>

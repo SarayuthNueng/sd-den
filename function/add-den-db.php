@@ -1,4 +1,9 @@
 <?php
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
+// exit;
+
 session_start();    // เขียนทุกครั้งที่มีการใช้ตัวแปร session
 include('../db/pdo_connect.php');  // นำเข้าไฟล์ database
 
@@ -48,7 +53,7 @@ if (isset($_POST['submit'])) {
                 // ทำการเข้ารหัสโดย password_hash()
                 // $password = md5($password, PASSWORD_DEFAULT);
                 $insert_stmt = $db->prepare("INSERT INTO users (username, password, pname, firstname, lastname, cid, 
-                address, email, tel, user_level) VALUES (:username, :password, :pname, :firstname, :lastname, :cid, :address, :email, :tel, 'user')");
+                address, email, tel, user_level) VALUES (:username, :password, :pname, :firstname, :lastname, :cid, :address, :email, :tel, 'doctor')");
                 $insert_stmt->bindParam(':username', $username);
                 $insert_stmt->bindParam(':password', $password);
                 $insert_stmt->bindParam(':pname', $pname);

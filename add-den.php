@@ -1,5 +1,14 @@
-<?php include "components/header-level.php" ?>
-<?php include "components/sidebar-level.php" ?>
+<?php session_start(); ?>
+<?php
+
+if (!$_SESSION["user_id"]) {  //check session
+
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า index
+
+} else { ?>
+
+<?php include "components/header-level.php"?>
+<?php include "components/sidebar-level.php"?>
 <?php
 
 require_once 'db/pdo_connect.php';
@@ -16,7 +25,6 @@ $stmt->execute();
 //Retrieve the rows using fetchAll.
 $kumnum = $stmt->fetchAll();
 
-
 ?>
 
 <div class="main-wrapper">
@@ -26,7 +34,7 @@ $kumnum = $stmt->fetchAll();
 			<div class="page-header">
 				<div class="row align-items-center">
 					<div class="col">
-						<h3 class="page-title ">เพิ่มสมาชิก</h3>
+						<h3 class="page-title ">เพิ่มทันตแพทย์</h3>
 					</div>
 				</div>
 			</div>
@@ -34,26 +42,26 @@ $kumnum = $stmt->fetchAll();
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<?php if (isset($_SESSION['err_fill'])) : ?>
+							<?php if (isset($_SESSION['err_fill'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
 									<?php echo $_SESSION['err_fill']; ?>
 								</div>
-							<?php endif; ?>
-							<?php if (isset($_SESSION['err_pw'])) : ?>
+							<?php endif;?>
+							<?php if (isset($_SESSION['err_pw'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
 									<?php echo $_SESSION['err_pw']; ?>
 								</div>
-							<?php endif; ?>
-							<?php if (isset($_SESSION['exist_uname'])) : ?>
+							<?php endif;?>
+							<?php if (isset($_SESSION['exist_uname'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
 									<?php echo $_SESSION['exist_uname']; ?>
 								</div>
-							<?php endif; ?>
-							<?php if (isset($_SESSION['err_insert'])) : ?>
+							<?php endif;?>
+							<?php if (isset($_SESSION['err_insert'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
 									<?php echo $_SESSION['err_insert']; ?>
 								</div>
-							<?php endif; ?>
+							<?php endif;?>
 							<form action="function/add-den-db.php" method="post">
 								<div class="row formtype">
 									<div class="col-md-4">
@@ -79,9 +87,9 @@ $kumnum = $stmt->fetchAll();
 										<div class="input-group">
 											<div class="input-group-prepend">
 												<select class="form-control" name="pname" id="pname">
-													<?php foreach ($kumnum as $kum) : ?>
-														<option value="<?= $kum['kumnum_name']; ?>"><?= $kum['kumnum_name']; ?></option>
-													<?php endforeach; ?>
+													<?php foreach ($kumnum as $kum): ?>
+														<option value="<?=$kum['kumnum_name'];?>"><?=$kum['kumnum_name'];?></option>
+													<?php endforeach;?>
 												</select>
 											</div>
 											<input type="text" class="form-control" name="firstname" placeholder="ชื่อ" />
@@ -139,7 +147,7 @@ $kumnum = $stmt->fetchAll();
 				</div>
 			</div>
 		</div>
-		<?php include "components/footer.php" ?>
+		<?php include "components/footer.php"?>
 	</div>
 </div>
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>
@@ -157,9 +165,10 @@ $kumnum = $stmt->fetchAll();
 
 <?php
 if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_insert'])) {
-	unset($_SESSION['err_fill']);
-	unset($_SESSION['err_pw']);
-	unset($_SESSION['exist_uname']);
-	unset($_SESSION['err_insert']);
+    unset($_SESSION['err_fill']);
+    unset($_SESSION['err_pw']);
+    unset($_SESSION['exist_uname']);
+    unset($_SESSION['err_insert']);
 }
 ?>
+<?php } ?> 

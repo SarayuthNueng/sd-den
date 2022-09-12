@@ -1,9 +1,9 @@
 <?php 
 
     // เชื่อมฐานข้อมูล
-    define('DB_SERVER', 'localhost');
+    define('DB_SERVER', '192.168.0.208');
     define('DB_USER', 'root');
-    define('DB_PASS', '');
+    define('DB_PASS', 'sd11087');
     define('DB_NAME', 'sd_den_calendar');
     
     class DB_con {

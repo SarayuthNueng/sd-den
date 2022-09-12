@@ -1,19 +1,16 @@
 <?php
-    session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
-	include('db/pdo_connect.php');  // นำเข้าไฟล์ database
+        session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
+        include('db/pdo_connect.php');  // นำเข้าไฟล์ database
 
-    // ถ้าไม่มี $_SESSION['is_logged_in'] (เก็บสถานะ login โดยจะเก็บตอนที่สมัครสมาชิกหรือ login แล้วเท่านั้น) ให้กลับไปยังหน้า login.php เพื่อทำการ login ก่อน
-    if ($_SESSION['user_id'] == "") {
-        header('location: ../login.php');
-    }
-	// ถ้ามี $_SESSION['is_logged_in'] แสดงว่ามีการ login เข้ามาแล้ว
-    else {
+        
         // query ข้อมูลของคนที่ login เข้ามา เพื่อแสดงผลใน html
         $select_stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
         $select_stmt->bindParam(':username', $_SESSION['username']);
         $select_stmt->execute();
         $row = $select_stmt->fetch(PDO::FETCH_ASSOC);   // ทำบรรทัดนี้ กรณีที่เราต้องการดึงข้อมูลมาแสดง
-    }
+        // }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +28,12 @@
     <link rel="stylesheet" href="components/assets/plugins/morris/morris.css" />
     <link rel="stylesheet" href="components/assets/css/style.css" />
     <link rel="stylesheet" href="components/assets/css/footers.css" />
-    <link rel="stylesheet" href="components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="components/assets/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="components/assets/plugins/datatables/datatables.min.css">
-    <link rel="stylesheet" type="text/css" href="components/assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="components/assets/img/favicon.png">
 	  <link rel="stylesheet" type="text/css" href="components/assets/plugins/fontawesome/css/all.min.css">
 
+    
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
-    <link href="components/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- sweetalert -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

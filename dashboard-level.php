@@ -1,17 +1,29 @@
+<?php session_start(); ?>
 <?php
 
-include('db/pdo_connect.php');  // นำเข้าไฟล์ database
+if (!$_SESSION["user_id"]) {  //check session
 
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า index
+
+} else { ?>
+
+<?php include "components/header-level.php" ?>
+<?php
 //list procedures
 $sql = "SELECT * FROM procedures ";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $procedures_color = $stmt->fetchAll();
 
+
+$sql2 = "SELECT count(o.vn)as cc
+        FROM ovst o WHERE o.vstdate = curdate() AND o.main_dep = '005' ";
+$stmt2 = $db2->prepare($sql2);
+$stmt2->execute();
+$test = $stmt2->fetchAll();
+echo "success";
+
 ?>
-
-<?php include "components/header-level.php" ?>
-
 <?php include "components/sidebar-level.php" ?>
 
 <div class="main-wrapper">
@@ -33,8 +45,10 @@ $procedures_color = $stmt->fetchAll();
             <div class="card-body">
               <div class="dash-widget-header">
                 <div>
-                  <h3 class="dashboard-text card_widget_header">236</h3>
-                  <h6 class="text-muted">จำนวนการนัดวันนี้</h6>
+                <?php foreach ($test as $row) : ?>
+                  <h3 class="dashboard-text card_widget_header"><?= $row['cc']; ?></h3>
+                  <h6 class="text-muted">จำนวนคนไข้วันนี้</h6>
+                  <?php endforeach; ?>
                 </div>
                 <div class="ml-auto mt-md-3 mt-lg-0">
                   <span style="font-size: 3em; color: Tomato;">
@@ -365,10 +379,9 @@ $procedures_color = $stmt->fetchAll();
     <?php include "components/footer.php" ?>
   </div>
 </div>
-</div>
 
 
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>
 <script src="components/assets/js/popper.min.js"></script>
 <script src="components/assets/js/bootstrap.min.js"></script>
@@ -395,3 +408,4 @@ $procedures_color = $stmt->fetchAll();
     });
   });
 </script>
+<?php } ?>

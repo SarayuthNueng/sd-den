@@ -1,5 +1,4 @@
 <?php
-//   session_start(); // เขียนทุกครั้งที่มีการใช้ตัวแปร session
 	include('db/pdo_connect.php');  // นำเข้าไฟล์ database
   $select_stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
   $select_stmt->bindParam(':username', $_SESSION['username']);
@@ -27,20 +26,36 @@ $procedures_color = $stmt->fetchAll();
               <?php if($row['user_level'] == 'admin'){ ?>
                 <li class="submenu">
                   <a href="#">
-                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
+                    <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
                     <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
-                    <li><a  href="list-den.php">สมาชิกทั้งหมด</a></li>
+                    <li><a  href="list-den.php">ทันตแพทย์ทั้งหมด</a></li>
+                    <li><a  href="list-user.php">สมาชิกทั้งหมด</a></li>
                     <li><a  href="list-procedure.php">รายการหัตถการ</a></li>
+                    <li><a  href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
                   </ul>
                 </li>
-              <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
-               <?php }else if($row['user_level'] == 'user'){ ?>
+              <!-- ถ้า user_level = doctor ให้ไปที่ add-calendar.php -->
+               <?php }else if($row['user_level'] == 'doctor'){ ?>
                 <li class="submenu">
                   <a href="#">
-                    <i class="fas fa-user"></i> <span><?php echo $row['username']; ?></span>
+                    <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
+                    <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="submenu_class" style="display: none">
+                    <li><a  href="profile.php?user_id=<?= $row['user_id'];?>">โปรไฟล์</a></li>
+                    <li><a  href="add-calendar-den.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                    <li><a  href="check-status-user.php">เช็คสถานะวันนัด</a></li>
+                  </ul>
+                </li>
+
+              <!-- ถ้า user_level = user ให้ไปที่ add-calendar.php -->
+              <?php }else if($row['user_level'] == 'user'){ ?>
+                <li class="submenu">
+                  <a href="#">
+                    <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
                     <span class="menu-arrow"></span>
                   </a>
                   <ul class="submenu_class" style="display: none">
@@ -71,11 +86,20 @@ $procedures_color = $stmt->fetchAll();
 
               <li class="list-divider"></li>
               
-              <li>
+              <?php if(isset($_SESSION['user_id'])) {?>
+                <li>
                 <a href="calendar-level.php">
                   <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
                 </a>
               </li>
+              <?php }else{ ?>
+                <li>
+                <a href="calendar.php">
+                  <i class="fas fa-calendar-alt"></i><span>ปฏิทินการนัดทันตกรรม</span>
+                </a>
+              </li>
+              <?php } ?>
+              
               
               <li>
                 <a href="dashboard-level.php">

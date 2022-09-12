@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+<?php
+
+if (!$_SESSION["user_id"]) {  //check session
+
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า index
+
+} else { ?>
+
 <?php include "components/header-level.php" ?>
 
 <?php include "components/sidebar-level.php" ?>
@@ -14,49 +23,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="row">
-				<div class="col-lg-12">
-					<form>
-						<div class="row formtype">
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>แพทย์</label>
-									<select class="form-control" id="sel1" name="sellist1">
-										<option>เลือกแพทย์</option>
-										<option>Loren Gatlin</option>
-										<option>Tarah Shrosphire</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>ประเภทการนัด</label>
-									<select class="form-control" id="sel1" name="sellist1">
-										<option>เลือกประเภท</option>
-										<option>Loren Gatlin</option>
-										<option>Tarah Shrosphire</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>วันที่</label>
-									<div class="cal-icon">
-										<input type="text" class="form-control datetimepicker">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>ค้นหาข้อมูลการนัด</label>
-									<a href="#" class="btn btn-success btn-block mt-0 search_button"> ค้นหา </a>
-
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div> -->
+			
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="card">
@@ -152,3 +119,4 @@
 </body>
 
 </html>
+<?php } ?>

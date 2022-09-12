@@ -1,7 +1,12 @@
 <?php
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
+// exit;
+
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['user_id']) && isset($_POST['pname']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid']) && isset($_POST['username']) 
-    && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['tel'])) {
+    && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['user_level'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
      require_once '../db/pdo_connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
@@ -14,9 +19,10 @@ $username = $_POST['username'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $tel = $_POST['tel'];
+$user_level = $_POST['user_level'];
 //sql update
 $stmt = $db->prepare("UPDATE users SET pname=:pname, firstname=:firstname, lastname=:lastname, cid=:cid, username=:username, 
-        address=:address, email=:email, date=:date, tel=:tel WHERE user_id=:user_id");
+        address=:address, email=:email, date=:date, tel=:tel ,user_level=:user_level WHERE user_id=:user_id");
 $stmt->bindParam(':user_id', $user_id , PDO::PARAM_INT);
 $stmt->bindParam(':pname', $pname , PDO::PARAM_STR);
 $stmt->bindParam(':firstname', $firstname , PDO::PARAM_STR);
@@ -27,6 +33,7 @@ $stmt->bindParam(':address', $address , PDO::PARAM_STR);
 $stmt->bindParam(':email', $email , PDO::PARAM_STR);
 $stmt->bindParam(':date', $date , PDO::PARAM_STR);
 $stmt->bindParam(':tel', $tel , PDO::PARAM_STR);
+$stmt->bindParam(':user_level', $user_level , PDO::PARAM_STR);
 $stmt->execute();
 
 // sweet alert 

@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+<?php
+
+if (!$_SESSION["user_id"]) {  //check session
+
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า index
+
+} else { ?>
+
 <?php include "components/header-level.php" ?>
 <?php include "components/sidebar-level.php" ?>
 
@@ -7,17 +16,18 @@
             <div class="page-header ">
 
                 <div class="row formtype mt-5">
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-6">
                         <h3 class="page-title">รายการหัตถการ</h3>
                     </div>
-                    <div class="col-3">
-                        <a type="button" class="btn btn-primary ml-2" href="list-den.php" role="button">สมาชิก</a>
-                    </div>
-                    <div class="col-3">
-                        <a type="button"
-                            style="float: right;background: #fff799; border-color: #fff799;"
-                            class="btn " href="add-procedure.php" role="button">+ เพิ่มรายการหัตถการ</a>
-                    </div>
+                    <div class="col-md-2 col-sm-2">
+						<a type="button" style="float:right;" class="btn btn-primary " href="list-den.php" role="button">ทันตแพทย์</a>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<a type="button" style="float:right; background-color: #7f7fff; border-color: #7f7fff;" class="btn btn-primary " href="list-user.php" role="button">สมาชิกทั้งหมด</a>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<a type="button" style="float: right; background: #fff799; border-color: #fff799;" class="btn " href="add-procedure.php" role="button">+ เพิ่มรายการหัตถการ</a>
+					</div>
                 </div>
             </div>
             <div class="row">
@@ -87,3 +97,5 @@
 </body>
 
 </html>
+
+<?php } ?>
