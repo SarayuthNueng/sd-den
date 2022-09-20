@@ -24,17 +24,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 		
 		// เข้าสู่เงื่อนไข
 		if(empty($op)){
-		header("Location: change-password-profile.php?error=Old Password is required");
+		header("Location: change-password-profile.php?error=กรุณากรอกรหัสผ่านเดิม");
 		exit();
 		}else if(empty($np)){
-		header("Location: change-password-profile.php?error=New Password is required");
+		header("Location: change-password-profile.php?error=กรุณากรอกรหัสผ่านใหม่");
 		exit();
 		}else if($np !== $c_np){
-		header("Location: change-password-profile.php?error=The confirmation password  does not match");
+		header("Location: change-password-profile.php?error=รหัสผ่านไม่ตรงกัน");
 		exit();
 		}else {
 			// hashing the password | ตรวจสอบค่า op,np
 			$op = md5($op);
+
 			$np = md5($np);
 			$user_id = $_SESSION['user_id'];
 
@@ -51,11 +52,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 						SET password='$np'
 						WHERE user_id='$user_id'";
 				mysqli_query($conn, $sql_2);
-				header("Location: change-password-profile.php?success=Your password has been changed successfully");
+				header("Location: change-password-profile.php?success=เปลี่ยนรหัสผ่านสำเร็จ");
 				exit();
 
 			}else {
-				header("Location: change-password-profile.php?error=Incorrect password");
+				header("Location: change-password-profile.php?error=รหัสผ่านเดิมไม่ถูกต้อง");
 				exit();
 			}
 

@@ -40,6 +40,7 @@ $row = $select_stmt->fetch(PDO::FETCH_ASSOC);   // ทำบรรทัดน�
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--Sweet Alert CDN-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 
   <!-- datatable -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">

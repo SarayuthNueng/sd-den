@@ -48,7 +48,7 @@ if (!$_SESSION["user_id"]) {  //check session
 			<div class="page-header mt-5">
 				<div class="row">
 					<div class="col">
-						<h3 class="page-title">Profile</h3>
+						<h3 class="page-title">โปรไฟล์</h3>
 						<!-- <ul class="breadcrumb">
 								<li class="breadcrumb-item"><a href="add-calendar.php">Add Event calendar</a></li>
 								<li class="breadcrumb-item active">Profile</li>
@@ -60,8 +60,8 @@ if (!$_SESSION["user_id"]) {  //check session
 				<div class="col-md-12">
 					<div class="profile-menu">
 						<ul class="nav nav-tabs nav-tabs-solid">
-							<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a> </li>
-							<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password_tab">Password</a> </li>
+							<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#per_details_tab">เกี่ยวกับ</a> </li>
+							<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password_tab">รหัสผ่าน</a> </li>
 						</ul>
 					</div>
 					<div class="tab-content profile-tab-cont">
@@ -71,8 +71,8 @@ if (!$_SESSION["user_id"]) {  //check session
 									<div class="card ">
 										<div class="card-body ">
 											<h5 class="card-title d-flex justify-content-between ">
-												<span>Personal Details</span>
-												<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>Edit</a>
+												<span>ข้อมูลผู้ใช้งาน</span>
+												<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>แก้ไข</a>
 											</h5>
 
 											<div class="row mt-5">
@@ -107,10 +107,10 @@ if (!$_SESSION["user_id"]) {  //check session
 												<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">เบอร์โทรศัพท์ :</p>
 												<p class="col-sm-9"><?php echo $row['tel']; ?></p>
 											</div>
-											<div class="row ">
+											<!-- <div class="row ">
 												<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">วันที่สมัคร :</p>
-												<p class="col-sm-9"><?php echo $row['date']; ?></p>
-											</div>
+												<p class="col-sm-9"><?php //echo $row['date']; ?></p>
+											</div> -->
 
 										</div>
 									</div>
@@ -118,7 +118,7 @@ if (!$_SESSION["user_id"]) {  //check session
 										<div class="modal-dialog modal-dialog-centered modal-dialog-lg" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h5 class="modal-title">Personal Details</h5>
+													<h5 class="modal-title">ข้อมูลผู้ใช้งาน</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
 												</div>
 												<div class="modal-body">
@@ -172,22 +172,22 @@ if (!$_SESSION["user_id"]) {  //check session
 																</div>
 															</div>
 															
-															<div class="col-6 col-sm-6">
+															<div class="col-12 col-sm-12">
 																<div class="form-group">
 																	<label>เบอร์โทรศัพท์</label>
 																	<input type="text" name="tel" value="<?php echo $row['tel']; ?>" class="form-control">
 																</div>
 															</div>
-															<div class="col-6 col-sm-6">
+															<!-- <div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>วันที่สมัคร</label>
-																	<input type="datetime-local" name="date" value="<?php echo $row['date']; ?>" class="form-control">
+																	<input type="datetime-local" name="date" value="<?php //echo $row['date']; ?>" class="form-control">
 																</div>
-															</div>
+															</div> -->
 
 														</div>
 														<input type="hidden" name="user_id" value="<?= $row['user_id']; ?>">
-														<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+														<button type="submit" class="btn btn-primary btn-block">บันทึกการแก้ไข</button>
 													</form>
 												</div>
 											</div>
@@ -199,7 +199,7 @@ if (!$_SESSION["user_id"]) {  //check session
 						<div id="password_tab" class="tab-pane fade">
 							<div class="card">
 								<div class="card-body">
-									<h5 class="card-title">Change Password</h5>
+									<h5 class="card-title">เปลี่ยนรหัสผ่าน</h5>
 									<div class="row">
 										<div class="col-md-10 col-lg-6">
 											<form action="change_p.php" method="post">
@@ -212,21 +212,21 @@ if (!$_SESSION["user_id"]) {  //check session
 													<?php if (isset($_GET['success'])) { ?>
 														<p class="success"><?php echo $_GET['success']; ?></p>
 													<?php } ?>
-													<label>Old Password</label>
-													<input type="text" name="op" class="form-control">
+													<label>รหัสผ่านเดิม</label>
+													<input type="password" name="op" class="form-control">
 												</div>
 
 												<div class="form-group">
-													<label>New Password</label>
-													<input type="text" name="np" class="form-control">
+													<label>รหัสผ่านใหม่</label>
+													<input type="password" name="np" class="form-control">
 												</div>
 
 												<div class="form-group">
-													<label>Confirm Password</label>
-													<input type="text" name="c_np" class="form-control">
+													<label>ยืนยันรหัสผ่านใหม่</label>
+													<input type="password" name="c_np" class="form-control">
 												</div>
 
-												<button class="btn btn-primary" type="submit">Save Changes</button>
+												<button class="btn btn-primary" type="submit">บันทึกการแก้ไข</button>
 											</form>
 										</div>
 									</div>

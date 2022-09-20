@@ -15,18 +15,41 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	$id = $_POST['id'];
 
 	// ให้ทำการลบ
-	$sql = "DELETE FROM calendar WHERE id = $id";
-	$query = $db->prepare( $sql );
-	if ($query == false) {
-	 echo($db->errorInfo());
-	 die ('Error prepare');
-	 echo "<script>alert('Data added Successfully');</script>" ;
+
+	$stmt_del = $db->prepare('DELETE FROM calendar WHERE id=:id');
+	$stmt_del->bindParam(':id', $id , PDO::PARAM_INT);
+	$stmt_del->execute();
+
+	//  sweet alert 
+	echo '
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
+
+	if($stmt_del->rowCount() > 0){
+		echo '<script>
+			setTimeout(function() {
+			swal({
+				title: "ลบข้อมูลสำเร็จ",
+				type: "success"
+			}, function() {
+				window.location = "../add-calendar.php"; //หน้าที่ต้องการให้กระโดดไป
+			});
+			}, 1000);
+		</script>';
+	}else{
+	echo '<script>
+			setTimeout(function() {
+			swal({
+				title: "เกิดข้อผิดพลาดในการลบ",
+				type: "error"
+			}, function() {
+				window.location = "../add-calendar.php"; //หน้าที่ต้องการให้กระโดดไป
+			});
+			}, 1000);
+		</script>';
 	}
-	$res = $query->execute();
-	if ($res == false) {
-	 print_r($query->errorInfo());
-	 die ('Error execute');
-	}
+
 
 	// ถ้าส่งevent ที่จะแก้ไขมา
 }elseif (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($_POST['pname_patient']) && isset($_POST['patient_name']) && isset($_POST['patient_tel']) && isset($_POST['id'])){
@@ -43,9 +66,8 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 
 	// ทำการ update
 	$sql = "UPDATE calendar SET  title = '$title',more = '$more',start = '$start',end = '$end', color = '$color', pname_patient = '$pname_patient', patient_name = '$patient_name',patient_tel = '$patient_tel' WHERE id = $id ";
-
-
 	$query = $db->prepare( $sql );
+
 	if ($query == false) {
 	 print_r($db->errorInfo());
 	 die ('Error prepare');
@@ -57,4 +79,32 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	}
 
 }
-header('Location: ../add-calendar.php');
+// sweet alert 
+    echo '
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
+
+	if($query !== false){
+        echo '<script>
+             setTimeout(function() {
+              swal({
+                  title: "แก้ไขข้อมูลสำเร็จ",
+                  type: "success"
+              }, function() {
+                  window.location = "../add-calendar.php"; //หน้าที่ต้องการให้กระโดดไป
+              });
+            }, 1000);
+        </script>';
+    }else{
+       echo '<script>
+             setTimeout(function() {
+              swal({
+                  title: "เกิดข้อผิดพลาด",
+                  type: "error"
+              }, function() {
+                  window.location = "../add-calendar.php"; //หน้าที่ต้องการให้กระโดดไป
+              });
+            }, 1000);
+        </script>';
+    }

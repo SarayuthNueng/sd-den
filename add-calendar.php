@@ -36,6 +36,7 @@ if (!$_SESSION["user_id"]) {  //check session
 
 require_once 'db/connect_main.php';
 
+
 //list dentist.
 $sql = "SELECT * FROM users WHERE user_level='doctor' ";
 $stmt = $db->prepare($sql);
@@ -78,7 +79,11 @@ $kumname_patient = $stmt->fetchAll();
             <div class="col-lg-12 col-md-8">
                 <div class="card">
                     <div class="card-body">
-
+                    <?php if (isset($_SESSION['exist_calendar'])) : ?>
+								<div class="alert alert-danger alert-custom" role="alert">
+									<?php echo $_SESSION['exist_calendar']; ?>
+								</div>
+							<?php endif; ?>
                         <div class="mb-5 row">
                             <div class=" col-md-6 ">
                                 <h4>เพิ่มข้อมูลในปฏิทิน</h4>
@@ -273,28 +278,13 @@ $kumname_patient = $stmt->fetchAll();
     </div>
 
 </div>
-<script>
-    $('.del-btn').on('click', function(e) {
-        e.preventDefault();
-        var self = $(this);
-        console.log(self.data('title'));
-        Swal.fire({
-            title: 'คุณต้องการลบหรือไม่ ?',
-            // text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'ใช่',
-            cancelButtonText: 'ยกเลิก'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = self.attr('href');
-            }
+<?php
+if (isset($_SESSION['err_fill']) || isset($_SESSION['exist_calendar']) || isset($_SESSION['err_insert'])) {
+	unset($_SESSION['exist_calendar']);
+}
+?>
 
-        })
-    })
-</script>
+
 <script src="components/assets/js/popper.min.js"></script>
 <script src="components/assets/js/bootstrap.min.js"></script>
 <script src="components/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>

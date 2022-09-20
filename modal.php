@@ -211,7 +211,7 @@
 	 				</div>
 	 				<div class="modal-footer">
 					 	<button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
-	 					<button type="submit" class="btn btn-danger" name="delete" id="id" >ลบข้อมูล</button>
+	 					<button type="submit" class="delete-btn btn btn-danger" name="delete" id="id" >ลบข้อมูล</button>
 	 					<button type="button" class="btn btn-warning" data-dismiss="modal">ปิด</button>
 	 				</div>
 	 			</form>
