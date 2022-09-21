@@ -57,9 +57,9 @@ $kumnum = $stmt->fetchAll();
 									<?php echo $_SESSION['exist_uname']; ?>
 								</div>
 							<?php endif;?>
-							<?php if (isset($_SESSION['err_insert'])): ?>
+							<?php if (isset($_SESSION['err_cid'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
-									<?php echo $_SESSION['err_insert']; ?>
+									<?php echo $_SESSION['err_cid']; ?>
 								</div>
 							<?php endif;?>
 							<form action="function/add-den-db.php" method="post">
@@ -122,7 +122,7 @@ $kumnum = $stmt->fetchAll();
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>อีเมล</label>
-											<input class="form-control" type="text" name="email" placeholder="อีเมล">
+											<input class="form-control" type="email" name="email" placeholder="อีเมล">
 										</div>
 									</div>
 
@@ -164,11 +164,11 @@ $kumnum = $stmt->fetchAll();
 </html>
 
 <?php
-if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_insert'])) {
+if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_cid'])) {
     unset($_SESSION['err_fill']);
     unset($_SESSION['err_pw']);
     unset($_SESSION['exist_uname']);
-    unset($_SESSION['err_insert']);
+    unset($_SESSION['err_cid']);
 }
 ?>
 <?php } ?> 

@@ -87,7 +87,7 @@ if (!$_SESSION["user_id"]) {  //check session
 															</a>
 														</td>
 														<td>
-															<a type="button" class="fa fa-trash ml-2 " aria-hidden="true" onclick="return confirm('ยืนยันการลบข้อมูล !!');" href="function/del-user.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
+															<a type="button" class="del-btn fa fa-trash ml-2 " aria-hidden="true" href="function/del-user.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
 															</a>
 														</td>
 
@@ -106,6 +106,28 @@ if (!$_SESSION["user_id"]) {  //check session
 		<?php include "components/footer.php" ?>
 	</div>
 </div>
+<script>
+  $('.del-btn').on('click', function(e) {
+    e.preventDefault();
+    var self = $(this);
+    console.log(self.data('title'));
+    Swal.fire({
+      title: 'คุณต้องการลบข้อมูลหรือไม่ ?',
+      // text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ใช่',
+      cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        location.href = self.attr('href');
+      }
+
+    })
+  })
+</script>
 <script src="components/assets/js/jquery-3.5.1.min.js"></script>
 <script src="components/assets/js/popper.min.js"></script>
 <script src="components/assets/js/bootstrap.min.js"></script>

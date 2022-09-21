@@ -2,7 +2,7 @@
 	 <div class="modal fade" id="ModalAddAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	     <div class="modal-dialog modal-lg" role="document">
 	         <div class="modal-content">
-	             <form class="form-horizontal" method="POST" action="function/add-event-den-db.php">
+	             <form class="form-horizontal" method="POST" action="function/add-event-admin-db.php">
 
 	                 <div class="modal-header">
 	                     <h4 class="modal-title" id="myModalLabel">เพิ่มข้อมูลในปฏิทิน</h4>

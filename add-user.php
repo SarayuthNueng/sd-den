@@ -42,24 +42,14 @@ $kumnum = $stmt->fetchAll();
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<?php if (isset($_SESSION['err_fill'])): ?>
+							<?php if (isset($_SESSION['err_username'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
-									<?php echo $_SESSION['err_fill']; ?>
+									<?php echo $_SESSION['err_username']; ?>
 								</div>
 							<?php endif;?>
-							<?php if (isset($_SESSION['err_pw'])): ?>
+							<?php if (isset($_SESSION['err_cid'])): ?>
 								<div class="alert alert-danger alert-custom" role="alert">
-									<?php echo $_SESSION['err_pw']; ?>
-								</div>
-							<?php endif;?>
-							<?php if (isset($_SESSION['exist_uname'])): ?>
-								<div class="alert alert-danger alert-custom" role="alert">
-									<?php echo $_SESSION['exist_uname']; ?>
-								</div>
-							<?php endif;?>
-							<?php if (isset($_SESSION['err_insert'])): ?>
-								<div class="alert alert-danger alert-custom" role="alert">
-									<?php echo $_SESSION['err_insert']; ?>
+									<?php echo $_SESSION['err_cid']; ?>
 								</div>
 							<?php endif;?>
 							<form action="function/add-user-db.php" method="post">
@@ -139,7 +129,7 @@ $kumnum = $stmt->fetchAll();
 								</div>
 								<!-- <button type="button" class="btn btn-primary buttonedit ml-2" href="#" >เพิ่ม</button> -->
 								<!-- <a type="submit" class="btn btn-primary buttonedit ml-2" href="list-den.php" role="button">เพิ่ม</a> -->
-								<a type="submit" class="btn btn-secondary" href="list-den.php" role="button">กลับ</a>
+								<a type="submit" class="btn btn-secondary" href="list-user.php" role="button">กลับ</a>
 								<button type="submit" name="submit" class="btn btn-primary buttonedit ml-2">เพิ่มข้อมูล</button>
 							</form>
 						</div>
@@ -164,11 +154,9 @@ $kumnum = $stmt->fetchAll();
 </html>
 
 <?php
-if (isset($_SESSION['err_fill']) || isset($_SESSION['err_pw']) || isset($_SESSION['exist_uname']) || isset($_SESSION['err_insert'])) {
-    unset($_SESSION['err_fill']);
-    unset($_SESSION['err_pw']);
-    unset($_SESSION['exist_uname']);
-    unset($_SESSION['err_insert']);
+if (isset($_SESSION['err_username']) || isset($_SESSION['err_cid'])) {
+    unset($_SESSION['err_username']);
+    unset($_SESSION['err_cid']);
 }
 ?>
 <?php } ?>

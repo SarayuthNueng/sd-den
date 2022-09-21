@@ -38,7 +38,7 @@ if (!$_SESSION["user_id"]) {  //check session
 				<div class="card-body">
 				<div class="row" style="padding-left: 35%; padding-right: 35%; padding-top: 0%;">
 					<div class="col-lg-12">
-					<form action="function/edit-password-den-db.php" method="post">
+					<form action="function/edit-password-user-db.php" method="post">
 							<div class="row ">
 								
 								<div class="col-md-12">

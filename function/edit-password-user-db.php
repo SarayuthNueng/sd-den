@@ -30,7 +30,7 @@ $result_resetpass = mysqli_query($conn, $reset_password);
                   title: "แก้ไขข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "../list-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../list-user.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -41,7 +41,7 @@ $result_resetpass = mysqli_query($conn, $reset_password);
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "../edit-password-den.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "../edit-password-user.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

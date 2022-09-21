@@ -25,9 +25,9 @@ if (isset($_POST['submit'])) {
             $color_procedure = "SELECT color FROM procedures WHERE color='$color'";
             $result_name = mysqli_query($conn, $name_procedure);
             $result_color = mysqli_query($conn, $color_procedure);
-            echo 'จำนวนข้อมูลที่ query name ได้' .mysqli_num_rows($result_name);
-            echo 'จำนวนข้อมูลที่ query color ได้' .mysqli_num_rows($result_color);
-            exit;
+            // echo 'จำนวนข้อมูลที่ query name ได้' .mysqli_num_rows($result_name);
+            // echo 'จำนวนข้อมูลที่ query color ได้' .mysqli_num_rows($result_color);
+            // exit;
             if(mysqli_num_rows($result_name) > 0 || mysqli_num_rows($result_color) > 0){
                 // echo 'หัตถการนี้ มีอยู่แล้ว' ;
                 $_SESSION['exist_color'] = "มีรายการหัตถการหรือสีหัตถการ นี้ในระบบแล้ว";

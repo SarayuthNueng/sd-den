@@ -77,9 +77,7 @@ if(isset($_POST['delete']) && isset($_POST['id'])){
          header('location: ../add-calendar.php');
     }else{
         // echo 'สามารถใช้ได้';
-                // ทำการบันทึกข้อมูล
-               
-
+        // ทำการแก้ไขข้อมูล
                 $event_edit = "UPDATE calendar SET 
                             title = '".$_POST["title"]."' ,
                             more = '".$_POST["more"]."' ,
