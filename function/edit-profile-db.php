@@ -1,4 +1,10 @@
 <?php
+
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
+// exit;
+
  //ถ้ามีค่าส่งมาจากฟอร์ม
 if(isset($_POST['user_id']) && isset($_POST['pname']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['cid'])  
     && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['tel'])) {

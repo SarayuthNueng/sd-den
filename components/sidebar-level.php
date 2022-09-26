@@ -35,6 +35,7 @@ $procedures_color = $stmt->fetchAll();
                 <li><a href="list-user.php">สมาชิกทั้งหมด</a></li>
                 <li><a href="list-procedure.php">รายการหัตถการ</a></li>
                 <li><a href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                <li><a href="check-status-user.php">เช็คสถานะวันนัด</a></li>
               </ul>
             </li>
             <!-- ถ้า user_level = doctor ให้ไปที่ add-calendar.php -->

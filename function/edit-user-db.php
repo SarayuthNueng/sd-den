@@ -32,15 +32,15 @@ $user_level = $_POST['user_level'];
   //check database
   // exit;
 
-  if(mysqli_num_rows($result_cid) > 0 ){
-    // echo 'มีอยู่แล้ว' ;
-    $_SESSION['err_cid'] = "เลขบัตรประชาชนนี้ถูกใช้แล้ว";
-    header('location: ../edit-user.php?user_id='.$user_id.'');
-  }else if(mysqli_num_rows($result_username) > 0 ){
-    // echo 'มีอยู่แล้ว' ;
-    $_SESSION['err_cid'] = "มีชื่อผู้ใช้นี้แล้ว";
-    header('location: ../edit-user.php?user_id='.$user_id.'');
-  }else{
+//   if(mysqli_num_rows($result_cid) > 0 ){
+//     // echo 'มีอยู่แล้ว' ;
+//     $_SESSION['err_cid'] = "เลขบัตรประชาชนนี้ถูกใช้แล้ว";
+//     header('location: ../edit-user.php?user_id='.$user_id.'');
+//   }else if(mysqli_num_rows($result_username) > 0 ){
+//     // echo 'มีอยู่แล้ว' ;
+//     $_SESSION['err_cid'] = "มีชื่อผู้ใช้นี้แล้ว";
+//     header('location: ../edit-user.php?user_id='.$user_id.'');
+//   }else{
     // echo 'สามารถใช้ได้';
     // ทำการแก้ไขข้อมูล
                 $user_edit = "UPDATE users SET 
@@ -84,7 +84,7 @@ $user_level = $_POST['user_level'];
                         }, 1000);
                     </script>';
                 }
-  }
+//   }
   exit();
   $conn = null;
 }

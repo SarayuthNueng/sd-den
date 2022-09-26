@@ -87,7 +87,7 @@ if (!$_SESSION["user_id"]) {  //check session
 															</a>
 														</td>
 														<td>
-															<a type="button" class="del-btn fa fa-trash ml-2 " aria-hidden="true" href="function/del-user.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
+															<a type="button" class="del-btn fa fa-trash ml-2 " aria-hidden="true" href="function/del-den.php?user_id=<?= $k['user_id']; ?>" role="button" style="color:tomato">
 															</a>
 														</td>
 

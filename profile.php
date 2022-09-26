@@ -156,7 +156,7 @@ if (!$_SESSION["user_id"]) {  //check session
 															<div class="col-6 col-sm-6">
 																<div class="form-group">
 																	<label>เลขบัตรประจำตัวประชาชน</label>
-																	<input type="text" class="form-control" name="cid" value="<?php echo $row['cid']; ?>">
+																	<input type="text" disabled="disabled"  class="form-control" name="cid" value="<?php echo $row['cid']; ?>">
 																</div>
 															</div>
 															<div class="col-6 col-sm-6">
@@ -186,6 +186,8 @@ if (!$_SESSION["user_id"]) {  //check session
 															</div> -->
 
 														</div>
+														<input type="hidden" name="cid" value="<?= $row['cid']; ?>">
+														<input type="hidden" name="date" value="<?= $row['date']; ?>">
 														<input type="hidden" name="user_id" value="<?= $row['user_id']; ?>">
 														<button type="submit" class="btn btn-primary btn-block">บันทึกการแก้ไข</button>
 													</form>

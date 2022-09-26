@@ -66,8 +66,9 @@ if (!$_SESSION["user_id"]) {  //check session
 
         // sql show data in calendar
         $sql = "SELECT * 
-        FROM calendar
-        WHERE status = 'อนุมัติ' AND cid = '$_SESSION[cid]' ";
+            FROM calendar c
+            LEFT JOIN procedures p ON p.color = c.color
+            WHERE c.status = 'อนุมัติ' AND c.cid = '$_SESSION[cid]' ";
         $req = $db->prepare($sql);
         $req->execute();
         $events = $req->fetchAll();
