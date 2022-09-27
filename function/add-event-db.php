@@ -46,7 +46,7 @@ if (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) &&
             $sToken = "41x7VEDlfFcpVG4YF4bmjLNMiOo5I74GtlmPvCz9fo5";
             $sMessage = "ข้อมูลการจองทันตกรรม\n";
             $sMessage .= "ชื่อแพทย์: " . $title . "\n";
-            $sMessage .= "ประเภทหัตถการ: " . $color . "\n";
+            // $sMessage .= "ประเภทหัตถการ: " . $color . "\n";
             $sMessage .= "ชื่อ-นามสกุล: " . $pname_patient . "" . $patient_name . "\n";
             $sMessage .= "เบอร์โทรศัพท์: " . $patient_tel . "\n";
             $sMessage .= "เวลาเริ่มต้น: " . $start . "\n";
@@ -73,7 +73,7 @@ if (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) &&
             $headers = array('Content-type: multipart/form-data', 'Authorization: Bearer ' . $sToken . '',);
             curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
-            $result = curl_exec($chOne);
+            $result2 = curl_exec($chOne);
 
             // sweet alert 
             echo '
@@ -81,12 +81,12 @@ if (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) &&
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
 
-            if ($result) {
+            if ($result2) {
                 echo '<script>
                 setTimeout(function() {
                 swal({
                     title: "เพิ่มข้อมูลสำเร็จ",
-                    text: "รอการยืนยันกลับ",
+                    text: "รอเจ้าหน้าที่ตอบกลับยืนยันวันนัด",
                     type: "success"
                 }, function() {
                     window.location = "../add-calendar.php"; //หน้าที่ต้องการให้กระโดดไป

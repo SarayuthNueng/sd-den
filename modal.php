@@ -71,7 +71,7 @@
 	 							<div class="form-group">
 	 								<label for="more" class="control-label">รายละเอียด</label>
 	 								<div>
-	 									<textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="" required></textarea>
+	 									<textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="" placeholder="กรอกการรักษาที่อยากทำ" required></textarea>
 	 								</div>
 	 							</div>
 	 						</div>
