@@ -289,6 +289,20 @@ if (!$_SESSION["user_id"]) {  //check session
         unset($_SESSION['exist_calendar_edit']);
     }
     ?>
+    <!-- กำหนดไม่ให้เลือกวันย้อนหลัง -->
+    <script>
+        var today_start = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("add_start")[0].min = today_start;
+
+        var today_end = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("add_end")[0].min = today_end;
+
+        var today_edit_start = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("edit_start")[0].min = today_edit_start;
+
+        var today_edit_end = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("edit_end")[0].min = today_edit_end;
+    </script>
 
 
     <script src="components/assets/js/popper.min.js"></script>

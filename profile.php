@@ -75,7 +75,7 @@ if (!$_SESSION["user_id"]) {  //check session
 												<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>แก้ไข</a>
 											</h5>
 
-											<div class="row mt-5">
+											<div class="row mt-3">
 												<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">ชื่อผู้ใช้งาน :</p>
 												<p class="col-sm-9"><?php echo $row['username']; ?></p>
 											</div>

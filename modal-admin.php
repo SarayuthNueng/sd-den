@@ -77,7 +77,7 @@
 	                             <div class="form-group">
 	                                 <label for="more" class="control-label">รายละเอียด</label>
 	                                 <div>
-	                                     <textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="" required></textarea>
+	                                     <textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="" placeholder="กรอกการรักษาที่อยากทำ" required></textarea>
 	                                 </div>
 	                             </div>
 	                         </div>
@@ -86,7 +86,7 @@
 	                             <div class="form-group">
 	                                 <label for="start" class="control-label">วันที่เริ่มต้น</label>
 	                                 <div>
-	                                     <input type="datetime-local" name="start" class="form-control" id="start" required>
+	                                     <input type="datetime-local" name="start" class="add_start form-control" id="start" required>
 	                                 </div>
 	                             </div>
 	                         </div>
@@ -95,7 +95,7 @@
 	                             <div class="form-group">
 	                                 <label for="end" class="control-label">วันที่สิ้นสุด</label>
 	                                 <div>
-	                                     <input type="datetime-local" name="end" class="form-control" id="end" required>
+	                                     <input type="datetime-local" name="end" class="add_end form-control" id="end" required>
 	                                 </div>
 	                             </div>
 	                         </div>
@@ -189,7 +189,7 @@
 	 							<div class="form-group">
 	 								<label for="start" class="control-label">วันที่เริ่มต้น</label>
 	 								<div>
-	 									<input type="datetime-local" name="start" class="form-control" id="start">
+	 									<input type="datetime-local" name="start" class="edit_start form-control" id="start">
 	 								</div>
 	 							</div>
 	 						</div>
@@ -198,7 +198,7 @@
 	 							<div class="form-group">
 	 								<label for="end" class="control-label">วันที่สิ้นสุด</label>
 	 								<div>
-	 									<input type="datetime-local" name="end" class="form-control" id="end">
+	 									<input type="datetime-local" name="end" class="edit_end form-control" id="end">
 	 								</div>
 	 							</div>
 	 						</div>

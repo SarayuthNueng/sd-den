@@ -77,7 +77,15 @@ if (!$_SESSION["user_id"]) {  //check session
         <div class="page-wrapper mt-5">
             <div class="content container-fluid">
                 <div class="col-lg-12 col-md-8">
-                    <div class="card">
+                    <div class="mb-3 row text-center">
+                        <div class="col-md-6">
+                            <h4>เพิ่มข้อมูลในปฏิทิน</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddAdmin">+ เพิ่มข้อมูล</button>
+                        </div>
+                    </div>
+                    <div class="mt-3 card">
                         <div class="card-body">
                             <?php if (isset($_SESSION['exist_calendar'])) : ?>
                                 <div class="alert alert-danger alert-custom" role="alert">
@@ -89,14 +97,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                     <?php echo $_SESSION['exist_calendar_edit']; ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="mb-5 row">
-                                <div class=" col-md-6 ">
-                                    <h4>เพิ่มข้อมูลในปฏิทิน</h4>
-                                </div>
-                                <div class=" container text-center col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddAdmin">+ เพิ่มข้อมูล</button>
-                                </div>
-                            </div>
+
 
                             <div id='calendar'></div>
 
@@ -308,6 +309,20 @@ if (!$_SESSION["user_id"]) {  //check session
 
             })
         })
+    </script>
+    <!-- กำหนดไม่ให้เลือกวันย้อนหลัง -->
+    <script>
+        var today_start = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("add_start")[0].min = today_start;
+
+        var today_end = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("add_end")[0].min = today_end;
+
+        var today_edit_start = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("edit_start")[0].min = today_edit_start;
+
+        var today_edit_end = new Date().toISOString().slice(0, 16);
+        document.getElementsByClassName("edit_end")[0].min = today_edit_end;
     </script>
     <script src="components/assets/js/popper.min.js"></script>
     <script src="components/assets/js/bootstrap.min.js"></script>

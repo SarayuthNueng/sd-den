@@ -40,6 +40,14 @@ a:focus {
   outline: none;
   text-decoration: none;
 }
+
+/* .sidebar-active.active, */
+.sidebar-active:hover{
+  color: #c184ff !important;
+}
+.sidebar-active.active{
+  color: #c184ff;
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -2490,13 +2498,13 @@ html.menu-opened body {
   background: #fff;
 }
 .fc-event {
-  border-radius: 2px;
-  border: none;
+  border-radius: 0px;
+  /* border: none; */
   color: #fff !important;
   cursor: move;
-  font-size: 13px;
-  margin: 1px 7px;
-  padding: 5px;
+  font-size: 10px;
+  /* margin: 1px 7px; */
+  /* padding: 5px; */
   text-align: center;
 }
 .fc-basic-view td.fc-week-number span {
@@ -5424,6 +5432,7 @@ h3.page-sub-title {
   .mini-sidebar .sidebar-menu > ul > li > a {
     padding: 12px 14px;
   }
+ 
 }
 @media only screen and (max-width: 1400px) {
   .chat-window

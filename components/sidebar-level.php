@@ -30,12 +30,12 @@ $procedures_color = $stmt->fetchAll();
                 <span class="menu-arrow"></span>
               </a>
               <ul class="submenu_class" style="display: none">
-                <li><a href="profile.php?user_id=<?= $row['user_id']; ?>">โปรไฟล์</a></li>
-                <li><a href="list-den.php">ทันตแพทย์ทั้งหมด</a></li>
-                <li><a href="list-user.php">สมาชิกทั้งหมด</a></li>
-                <li><a href="list-procedure.php">รายการหัตถการ</a></li>
-                <li><a href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
-                <li><a href="check-status-user.php">เช็คสถานะวันนัด</a></li>
+                <li ><a href="profile.php?user_id=<?= $row['user_id']; ?>">โปรไฟล์</a></li>
+                <li ><a href="list-den.php">ทันตแพทย์ทั้งหมด</a></li>
+                <li ><a href="list-user.php">สมาชิกทั้งหมด</a></li>
+                <li ><a href="list-procedure.php">รายการหัตถการ</a></li>
+                <li ><a href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                <li ><a href="check-status-user.php">เช็คสถานะวันนัด</a></li>
               </ul>
             </li>
             <!-- ถ้า user_level = doctor ให้ไปที่ add-calendar.php -->
@@ -142,6 +142,17 @@ $procedures_color = $stmt->fetchAll();
     </div>
   </div>
 </div>
+<script>
+  document.querySelectorAll(".nav-item").forEach((ele) =>
+    ele.addEventListener("click", function(event) {
+      event.preventDefault();
+      document
+        .querySelectorAll(".nav-item")
+        .forEach((ele) => ele.classList.remove("active"));
+      this.classList.add("active")
+    })
+  );
+</script>
 
 <script>
   $('.exit-btn').on('click', function(e) {
@@ -165,4 +176,3 @@ $procedures_color = $stmt->fetchAll();
     })
   })
 </script>
-

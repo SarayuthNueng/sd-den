@@ -17,18 +17,18 @@ if (!$_SESSION["user_id"]) {  //check session
 		<div class="content container-fluid">
 			<div class="page-header ">
 
-				<div class="row formtype mt-5">
-					<div class="col-md-6 col-sm-6">
+				<div class="row formtype mt-5 text-center">
+					<div class="col-md-3 mt-2 ">
 						<h3 class="page-title">สมาชิกทั้งหมด</h3>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a type="button" style="float:right;" class="btn btn-primary " href="list-den.php" role="button">ทันตแพทย์</a>
+					<div class="col-md-3 mt-2">
+						<a type="button" class="btn btn-primary " href="list-den.php" role="button">ทันตแพทย์</a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a type="button" style="float:right; background-color: #7f7fff; border-color: #7f7fff;" class="btn btn-primary " href="add-user.php" role="button">+ สมาชิกทั้งหมด</a>
+					<div class="col-md-3 mt-2">
+						<a type="button" style=" background-color: #7f7fff; border-color: #7f7fff;" class="btn btn-primary " href="add-user.php" role="button">+ สมาชิกทั้งหมด</a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a type="button" style="float: right; background: #fff799; border-color: #fff799;" class="btn " href="list-procedure.php" role="button">รายการหัตถการ</a>
+					<div class="col-md-3 mt-2">
+						<a type="button" style=" background: #fff799; border-color: #fff799;" class="btn " href="list-procedure.php" role="button">รายการหัตถการ</a>
 					</div>
 
 				</div>
