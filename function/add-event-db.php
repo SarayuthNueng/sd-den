@@ -21,6 +21,7 @@ if (isset($_POST['title']) && isset($_POST['more']) && isset($_POST['start']) &&
     $patient_tel = $_POST['patient_tel'];
     $cid = $_POST['cid'];
 
+
     // query ข้อมูล เพื่อเช็คว่า นี้อยู่ในระบบหรือไม่
     $title_calendar = "SELECT title FROM calendar WHERE title='$title'";
     $start_calendar = "SELECT start FROM calendar WHERE start='$start'";
