@@ -26,7 +26,7 @@ $procedures_color = $stmt->fetchAll();
           <?php if ($row['user_level'] == 'admin') { ?>
             <li class="submenu">
               <a href="#">
-                <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
+                <i class="fas fa-user"></i> <span style="font-size: 12px;"><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
                 <span class="menu-arrow"></span>
               </a>
               <ul class="submenu_class" style="display: none">
@@ -42,7 +42,7 @@ $procedures_color = $stmt->fetchAll();
           <?php } else if ($row['user_level'] == 'doctor') { ?>
             <li class="submenu">
               <a href="#">
-                <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
+                <i class="fas fa-user"></i> <span style="font-size: 12px;"><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
                 <span class="menu-arrow"></span>
               </a>
               <ul class="submenu_class" style="display: none">
@@ -56,7 +56,7 @@ $procedures_color = $stmt->fetchAll();
           <?php } else if ($row['user_level'] == 'user') { ?>
             <li class="submenu">
               <a href="#">
-                <i class="fas fa-user"></i> <span><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
+                <i class="fas fa-user"></i> <span style="font-size: 12px;"><?php echo $row['pname']; ?><?php echo $row['firstname']; ?><?php echo ' ' ?><?php echo $row['lastname']; ?></span>
                 <span class="menu-arrow"></span>
               </a>
               <ul class="submenu_class" style="display: none">
