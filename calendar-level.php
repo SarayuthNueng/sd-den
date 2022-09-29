@@ -51,14 +51,14 @@ if (!$_SESSION["user_id"]) {  //check session
 
         <div class="page-wrapper">
             <div class="content container-fluid">
-                <div class="col-lg-12 col-md-8">
-                    <div class="mt-5 container col-md-12 text-center">
-                        <h4>ปฏิทินการนัดทันตกรรม</h4>
-                    </div>
-                    <div class="mt-3 card">
+                <div class="col-lg-12">
+                    <div class="mt-5 card">
                         <div class="card-body">
+                            <div class="mb-4 container text-center col-md-12">
+                                <h4>ปฏิทินการนัดทันตกรรม</h4>
+                            </div>
                             <div class="mb-5" id='calendar'></div>
-                            
+
                             <!-- Button trigger modal Edit data-->
                             <span id="trigger_modal" data-toggle="modal" data-target="#calendar_modal"></span>
 

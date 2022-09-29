@@ -30,12 +30,12 @@ $procedures_color = $stmt->fetchAll();
                 <span class="menu-arrow"></span>
               </a>
               <ul class="submenu_class" style="display: none">
-                <li ><a href="profile.php?user_id=<?= $row['user_id']; ?>">โปรไฟล์</a></li>
-                <li ><a href="list-den.php">ทันตแพทย์ทั้งหมด</a></li>
-                <li ><a href="list-user.php">สมาชิกทั้งหมด</a></li>
-                <li ><a href="list-procedure.php">รายการหัตถการ</a></li>
-                <li ><a href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
-                <li ><a href="check-status-user.php">เช็คสถานะวันนัด</a></li>
+                <li><a href="profile.php?user_id=<?= $row['user_id']; ?>">โปรไฟล์</a></li>
+                <li><a href="list-den.php">ทันตแพทย์ทั้งหมด</a></li>
+                <li><a href="list-user.php">สมาชิกทั้งหมด</a></li>
+                <li><a href="list-procedure.php">รายการหัตถการ</a></li>
+                <li><a href="add-calendar-admin.php">เพิ่มข้อมูลในปฏิทิน</a></li>
+                <li><a href="check-status-user.php">เช็คสถานะวันนัด</a></li>
               </ul>
             </li>
             <!-- ถ้า user_level = doctor ให้ไปที่ add-calendar.php -->
@@ -100,16 +100,14 @@ $procedures_color = $stmt->fetchAll();
             </a>
           </li>
         <?php } ?>
-
-
         <li>
-          <a href="dashboard-level.php">
+          <a href="dashboard.php">
             <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
           </a>
         </li>
 
         <li>
-          <a href="search-level.php">
+          <a href="search.php">
             <i class="fas fa-search"></i><span>ค้นหาข้อมูล</span>
           </a>
         </li>

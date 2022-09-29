@@ -112,7 +112,7 @@
 	 		<div class="modal-content">
 	 			<form class="form-horizontal" method="POST" action="function/edit-event-title.php">
 	 				<div class="modal-header">
-	 					<h4 class="modal-title" id="myModalLabel">แก้ไขข้อมูลในปฏิทิน</h4>
+	 					<h4 class="modal-title" id="myModalLabel">ข้อมูลการนัดปฏิทิน</h4>
 	 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
 	 				</div>
@@ -122,7 +122,7 @@
 	 							<div class="form-group">
 	 								<label for="title" class="control-label">แพทย์</label>
 	 								<div>
-	 									<select name="title" class="form-control" id="title" >
+	 									<select name="title" class="form-control" id="title" disabled="disabled">
 	 										<option value="">กรุณาเลือก</option>
 	 										<?php foreach ($dentist as $den) : ?>
 	 											<option value="<?= $den['pname']; ?><?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?>">&nbsp;<?= $den['pname']; ?>&nbsp;<?= $den['firstname']; ?>&nbsp;&nbsp;<?= $den['lastname']; ?></option>
@@ -136,7 +136,7 @@
 	 							<div class="form-group">
 	 								<label for="color" class="control-label">ประเภทหัตถการ</label>
 	 								<div>
-	 									<select name="color" class="form-control" id="color" >
+	 									<select name="color" class="form-control" id="color" disabled="disabled">
 	 										<option value="">กรุณาเลือก</option>
 	 										<?php foreach ($procedures_color as $color) : ?>
 	 											<option style="color:<?= $color['color']; ?>" value="<?= $color['color']; ?>"><?= $color['procedure_name']; ?></option>
@@ -150,14 +150,14 @@
 	 							<label>ชื่อ - นามสกุล คนไข้</label>
 	 							<div class="input-group form-group">
 	 								<div class="input-group-prepend">
-	 									<select class="form-control" name="pname_patient" id="pname_patient" >
+	 									<select class="form-control" name="pname_patient" id="pname_patient" disabled="disabled">
 										 <option value="">คำนำหน้า</option>
 	 										<?php foreach ($kumname_patient as $kum_patient) : ?>
 	 											<option value="<?= $kum_patient['kumnum_patient']; ?>"><?= $kum_patient['kumnum_patient']; ?></option>
 	 										<?php endforeach; ?>
 	 									</select>
 	 								</div>
-	 								<input id="patient_name" class="form-control" name="patient_name">
+	 								<input id="patient_name" class="form-control" name="patient_name" disabled="disabled">
 	 							</div>
 	 						</div>
 
@@ -165,7 +165,7 @@
 	 							<div class="form-group">
 	 								<label for="patient_tel" class="control-label">เบอร์โทรศัพท์คนไข้</label>
 	 								<div>
-	 									<input type="text" name="patient_tel" class="form-control" id="patient_tel">
+	 									<input type="text" name="patient_tel" class="form-control" id="patient_tel" disabled="disabled">
 	 								</div>
 	 							</div>
 	 						</div>
@@ -174,16 +174,16 @@
 	 							<div class="form-group">
 	 								<label for="more" class="control-label">รายละเอียด</label>
 	 								<div>
-	 									<textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="more"></textarea>
+	 									<textarea rows="4" cols="10" id="more" class="form-control" name="more" maxlength="300" value="more" disabled="disabled"></textarea>
 	 								</div>
 	 							</div>
 	 						</div>
 
 	 						<div class="col-md-6">
 	 							<div class="form-group">
-	 								<label for="start" class="control-label">วันที่เริ่มต้น</label>
+	 								<label for="start" class="control-label" >วันที่เริ่มต้น</label>
 	 								<div>
-	 									<input type="datetime-local" name="start" class="edit_start form-control" id="start">
+	 									<input type="datetime-local" name="start" class="edit_start form-control" id="start" disabled="disabled">
 	 								</div>
 	 							</div>
 	 						</div>
@@ -192,7 +192,7 @@
 	 							<div class="form-group">
 	 								<label for="end" class="control-label">วันที่สิ้นสุด</label>
 	 								<div>
-	 									<input type="datetime-local" name="end" class="edit_end form-control" id="end">
+	 									<input type="datetime-local" name="end" class="edit_end form-control" id="end" disabled="disabled">
 	 								</div>
 	 							</div>
 	 						</div>
@@ -210,8 +210,8 @@
 
 	 				</div>
 	 				<div class="modal-footer">
-					 	<button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
-	 					<button type="submit" class="delete-btn btn btn-danger" name="delete" id="id" >ลบข้อมูล</button>
+					 	<!-- <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button> -->
+	 					<!-- <button type="submit" class="delete-btn btn btn-danger" name="delete" id="id" >ลบข้อมูล</button> -->
 	 					<button type="button" class="btn btn-warning" data-dismiss="modal">ปิด</button>
 	 				</div>
 	 			</form>

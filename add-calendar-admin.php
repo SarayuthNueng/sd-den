@@ -76,15 +76,7 @@ if (!$_SESSION["user_id"]) {  //check session
 
         <div class="page-wrapper mt-5">
             <div class="content container-fluid">
-                <div class="col-lg-12 col-md-8">
-                    <div class="mb-3 row text-center">
-                        <div class="col-md-6">
-                            <h4>เพิ่มข้อมูลในปฏิทิน</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddAdmin">+ เพิ่มข้อมูล</button>
-                        </div>
-                    </div>
+                <div class="col-lg-12">
                     <div class="mt-3 card">
                         <div class="card-body">
                             <?php if (isset($_SESSION['exist_calendar'])) : ?>
@@ -97,6 +89,14 @@ if (!$_SESSION["user_id"]) {  //check session
                                     <?php echo $_SESSION['exist_calendar_edit']; ?>
                                 </div>
                             <?php endif; ?>
+                            <div class="mb-4 row text-center">
+                                <div class=" col-md-6 ">
+                                    <h4>เพิ่มข้อมูลในปฏิทิน</h4>
+                                </div>
+                                <div class=" col-md-6 ">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdd">+ เพิ่มข้อมูล</button>
+                                </div>
+                            </div>
 
 
                             <div id='calendar'></div>
