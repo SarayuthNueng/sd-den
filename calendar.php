@@ -44,7 +44,7 @@
     <div class="page-wrapper">
       <div class="content container-fluid">
         <div class="col-lg-12">
-          <div class="mt-5 card">
+          <div class="mt-5 card" data-aos="fade-left">
             <div class="card-body">
               <div class="mb-4 container text-center col-md-12">
                 <h4>ปฏิทินการนัดทันตกรรม</h4>

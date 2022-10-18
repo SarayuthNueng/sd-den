@@ -34,7 +34,7 @@ echo "success";
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" data-aos="fade-down">
         <div class="col-xl-4 col-sm-6 col-12">
           <div class="card board1 ">
             <div class="card-body">
@@ -99,7 +99,7 @@ echo "success";
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" data-aos="fade-down">
         <?php foreach ($procedures_color as $color) : ?>
           <div class="col-xl-3 col-sm-6 col-12">
             <div class="card board1 ">
@@ -132,7 +132,7 @@ echo "success";
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" data-aos="fade-down">
         <div class="col-xl-6 col-sm-6 col-12">
           <div class="card board1 ">
             <div class="card-body">
@@ -172,7 +172,7 @@ echo "success";
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" data-aos="fade-down">
         <div class="col-md-12 col-lg-12">
           <div class="card card-chart">
             <div class="card-header">
@@ -196,7 +196,7 @@ echo "success";
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" data-aos="fade-down">
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">

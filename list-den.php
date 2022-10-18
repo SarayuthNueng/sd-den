@@ -29,7 +29,7 @@ if (!$_SESSION["user_id"]) {  //check session
 						</div>
 					</div>
 
-					<div class=" mt-4 content container-fluid">
+					<div class=" mt-4 content container-fluid" data-aos="zoom-in">
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="card">

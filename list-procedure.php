@@ -30,10 +30,10 @@ if (!$_SESSION["user_id"]) {  //check session
 					</div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-aos="zoom-in">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" >
                             <div class="table-responsive">
                                 <table id="myTable" class=" table table table-stripped" style="width:100%">
                                     <thead>

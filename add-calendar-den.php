@@ -98,7 +98,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                 </div>
                             </div>
 
-                            <div id='calendar'></div>
+                            <div id='calendar' data-aos="fade-left"></div>
 
                             <!-- เรียก model มาใช้ แก้ไขข้อมูลลงใน calendar -->
                             <?php include('modal-den.php'); ?>

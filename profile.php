@@ -57,14 +57,14 @@ if (!$_SESSION["user_id"]) {  //check session
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
-					<div class="profile-menu">
-						<ul class="nav nav-tabs nav-tabs-solid">
+				<div class="col-md-12" >
+					<div class="profile-menu" data-aos="zoom-in">
+						<ul class="nav nav-tabs nav-tabs-solid" >
 							<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#per_details_tab">เกี่ยวกับ</a> </li>
 							<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password_tab">รหัสผ่าน</a> </li>
 						</ul>
 					</div>
-					<div class="tab-content profile-tab-cont">
+					<div class="tab-content profile-tab-cont" data-aos="zoom-in">
 						<div class="tab-pane fade show active" id="per_details_tab">
 							<div class="row ">
 								<div class="col-lg-12">

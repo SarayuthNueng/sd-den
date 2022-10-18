@@ -25,7 +25,7 @@ if (!$_SESSION["user_id"]) {  //check session
 						<a type="button" class="btn btn-primary " href="list-den.php" role="button">ทันตแพทย์</a>
 					</div>
 					<div class="col-md-3 mt-2">
-						<a type="button" style=" background-color: #7f7fff; border-color: #7f7fff;" class="btn btn-primary " href="add-user.php" role="button">+ สมาชิกทั้งหมด</a>
+						<a type="button" style=" background-color: #7f7fff; border-color: #7f7fff;" class="btn btn-primary " href="add-user.php" role="button">+ สมาชิก</a>
 					</div>
 					<div class="col-md-3 mt-2">
 						<a type="button" style=" background: #fff799; border-color: #fff799;" class="btn " href="list-procedure.php" role="button">รายการหัตถการ</a>
@@ -33,7 +33,7 @@ if (!$_SESSION["user_id"]) {  //check session
 
 				</div>
 
-				<div class=" mt-4 content container-fluid">
+				<div class=" mt-4 content container-fluid" data-aos="zoom-in">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card">

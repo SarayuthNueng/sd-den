@@ -14,7 +14,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" data-aos="fade-down">
 				<div class="col-sm-12">
 					<div class="card">
 						<div class="card-body">

@@ -36,6 +36,9 @@ $row = $select_stmt->fetch(PDO::FETCH_ASSOC);   // ทำบรรทัดน�
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
 
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <!-- sweetalert -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--Sweet Alert CDN-->

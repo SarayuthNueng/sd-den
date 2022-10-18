@@ -89,7 +89,8 @@ $row = $select_stmt->fetch(PDO::FETCH_ASSOC);   // ทำบรรทัดน�
   <link rel="stylesheet" href="components/assets/plugins/datatables/datatables.min.css">
   <link rel="stylesheet" type="text/css" href="components/assets/plugins/fontawesome/css/all.min.css">
 
-
+<!-- aos -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
 
@@ -183,7 +184,7 @@ $row = $select_stmt->fetch(PDO::FETCH_ASSOC);   // ทำบรรทัดน�
 
 <div class="main-wrapper">
 <div class="page-wrapper">
-	<div class="main-wrapper login-body mt-5">
+	<div class="main-wrapper login-body mt-5 " data-aos="fade-down">
 		<div class="login-wrapper">
 			<div class="container">
 				<div class="loginbox">

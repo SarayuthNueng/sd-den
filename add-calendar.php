@@ -77,8 +77,8 @@ if (!$_SESSION["user_id"]) {  //check session
         <div class="page-wrapper mt-5">
             <div class="content container-fluid">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card" >
+                        <div class="card-body" >
                             <?php if (isset($_SESSION['exist_calendar'])) : ?>
                                 <div class="alert alert-danger alert-custom" role="alert">
                                     <?php echo $_SESSION['exist_calendar']; ?>
@@ -101,7 +101,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                 </div>
                             </div>
 
-                            <div id='calendar'></div>
+                            <div id='calendar' data-aos="fade-left"></div>
 
                             <!-- เรียก model มาใช้ แก้ไขข้อมูลลงใน calendar -->
                             <?php include('modal.php'); ?>

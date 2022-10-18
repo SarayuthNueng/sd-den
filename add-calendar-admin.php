@@ -94,12 +94,12 @@ if (!$_SESSION["user_id"]) {  //check session
                                     <h4>เพิ่มข้อมูลในปฏิทิน</h4>
                                 </div>
                                 <div class=" col-md-6 ">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdd">+ เพิ่มข้อมูล</button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddAdmin">+ เพิ่มข้อมูล</button>
                                 </div>
                             </div>
 
 
-                            <div id='calendar'></div>
+                            <div id='calendar' data-aos="fade-left"></div>
 
                             <!-- เรียก model มาใช้ แก้ไขข้อมูลลงใน calendar -->
                             <?php include('modal-admin.php'); ?>
