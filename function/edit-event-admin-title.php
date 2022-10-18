@@ -76,7 +76,7 @@ if(isset($_POST['delete']) && isset($_POST['id'])){
     if(mysqli_num_rows($result_title) > 0 && mysqli_num_rows($result_start) > 0 && mysqli_num_rows($result_end) > 0){
         //  echo 'มีอยู่แล้ว' ;
          $_SESSION['exist_calendar_edit'] = "โปรดเลือกช่วงเวลาใหม่ มีช่วงเวลานี้ในระบบแล้ว";
-         header('location: ../add-calendar-den.php');
+         header('location: ../add-calendar-admin.php');
     }else{
         // echo 'สามารถใช้ได้';
                 // ทำการบันทึกข้อมูล
